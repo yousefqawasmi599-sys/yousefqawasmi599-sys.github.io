@@ -420,7 +420,7 @@ function setMode(k){mode=k;$('#mode').textContent=k?T(k):''}
 function gameOn(v){window.__gameOn=v;dispatchEvent(new Event('nasamat:game'))}
 function fit(){const r=st.getBoundingClientRect();W=cv.width=r.width*D;H=cv.height=r.height*D}
 const cols=['#5b9bd8','#ec8d3b','#2f6fac','#f7b267','#7cc4f5'];
-function spawn(){const r=(28+Math.random()*30)*D;bubs.push({x:r+Math.random()*(W-2*r),y:H+r,r,c:cols[Math.random()*5|0],v:(.8+Math.random()*1.2)*D,ph:Math.random()*6})}
+function spawn(){const k=Math.max(.5,Math.min(1,W/D/700));const r=(28+Math.random()*30)*D*k;bubs.push({x:r+Math.random()*(W-2*r),y:H+r,r,c:cols[Math.random()*5|0],v:(.8+Math.random()*1.2)*D*Math.max(.6,Math.min(1,W/D/700)),ph:Math.random()*6})}
 function pop(b){score++;$('#sc').textContent=score+' / '+goal;for(let i=0;i<(WEAK?8:14);i++){const a=Math.random()*6.28,s=(2+Math.random()*4)*D;parts.push({x:b.x,y:b.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:b.c,st:i%3==0})}
  if(score>=goal)win()}
 function hit(px,py){if(!run||won)return;bubs=bubs.filter(b=>{if(!won&&Math.hypot(b.x-px,b.y-py)<b.r+14*D){pop(b);return false}return true})}
