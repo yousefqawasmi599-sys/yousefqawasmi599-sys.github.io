@@ -272,7 +272,7 @@ for(let i=0;i<34;i++){const c=[0x9cc8f2,0xffc58f,0xbfe0ff,0xffe0bf][i%4];
  const m=new THREE.Mesh(bg,new THREE.MeshPhysicalMaterial({color:c,roughness:.1,transmission:.6,thickness:.5,transparent:true,opacity:.55}));
  const r=.08+Math.random()*.28;m.scale.setScalar(r);m.position.set((Math.random()-.5)*16,(Math.random()-.5)*12,-2-Math.random()*6);m.userData={v:.004+Math.random()*.01,ph:Math.random()*6};S.add(m);bub.push(m);}
 // clouds
-const clouds=[];for(let i=0;i<5;i++){const g=new THREE.Group();const wm=new THREE.MeshStandardMaterial({color:0xffffff,roughness:1,transparent:true,opacity:.85});
+const clouds=[];for(let i=0;i<5;i++){const g=new THREE.Group();const wm=new THREE.MeshStandardMaterial({color:0xffffff,roughness:1,transparent:true,opacity:.55});
  for(let k=0;k<5;k++){const s=new THREE.Mesh(bg,wm);s.scale.setScalar(.35+Math.random()*.3);s.position.set(k*.45-.9,Math.random()*.25,0);g.add(s);}
  g.position.set((Math.random()-.5)*18,2+Math.random()*4,-6);g.userData={v:.003+Math.random()*.004};S.add(g);clouds.push(g);}
 // stars
@@ -285,8 +285,8 @@ function size(){const w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w
 const mob=()=>innerWidth<760;
 function loop(now){const t=(now-t0)/1000;const doc=document.documentElement;const p=Math.min(1,scrollY/Math.max(1,doc.scrollHeight-innerHeight));
  parts.forEach(q=>{const k=ease((t-.4-q.userData.d)/1.2);q.position.lerpVectors(q.userData.from||(q.userData.from=q.position.clone()),q.userData.home,k)});
- const open=p<.85?Math.min(1,.15+p*1.6):Math.max(0,1-(p-.85)*6);
- pages.forEach(({piv,s})=>piv.rotation.z=s*(.9-open*.75));
+ const open=p<.85?Math.min(1,.6+p*1.5):Math.max(0,1-(p-.85)*6);
+ pages.forEach(({piv,s})=>piv.rotation.z=s*(.12+(1-open)*1.3));
  pen.rotation.y=t*.4+p*6;
  logo.rotation.y=Math.sin(t*.3)*.25+p*Math.PI*1.2+mx*.5;logo.rotation.x=.18+my*.25+Math.sin(t*.5)*.05;
  logo.position.x=mob()?0:-3.3*Math.cos(p*Math.PI);
