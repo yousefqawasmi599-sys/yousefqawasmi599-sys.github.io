@@ -228,7 +228,8 @@ const H={"0": ["07:00", "18:00"], "1": ["07:00", "18:00"], "2": ["07:00", "18:00
 const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Amman'})),d=now.getDay(),m=now.getHours()*60+now.getMinutes(),M=s=>+s.slice(0,2)*60+ +s.slice(3);
 const h=H[d],open=h&&m>=M(h[0])&&m<M(h[1]);
 const st=document.getElementById('status');if(!open)st.classList.add('cl');
-document.getElementById('stxt').textContent=open?`مفتوح الآن · لحد ${h[1]}`:'مغلق حالياً · احجز لبكرا';
+let nx='';for(let k=1;k<=7;k++){const j=(d+k)%7;if(H[j]){nx=(k==1?'بكرا':'يوم '+N[j])+' من الساعة '+H[j][0];break}}
+document.getElementById('stxt').textContent=open?`أبوابنا مفتوحة الآن · لحد ${h[1]}`:`بنستناكم ${nx} 🌙`;
 document.getElementById('today').textContent=h?`اليوم ${h[0]}–${h[1]}`:'اليوم مغلق';
 document.getElementById('hrows').innerHTML=[6,0,1,2,3,4,5].map(i=>`<div class="hr${i===d?' t':''}"><span>${N[i]}</span><span dir="ltr">${H[i]?H[i][0]+' – '+H[i][1]:'مغلق'}</span></div>`).join('');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
