@@ -171,6 +171,7 @@ html[lang=en] h1{letter-spacing:-1.5px;font-size:clamp(40px,5.4vw,70px)}
 .gal figcaption{inset-inline-start:auto;left:50%;right:auto;transform:translateX(-50%)}
 [dir=ltr] .ct small{text-align:left}
 @media(max-width:760px){.hero{padding-top:200px}.brand{font-size:14px;line-height:1.3;max-width:52vw}.brand .logo{width:38px;height:38px}}
+.map{position:relative}.gmap{position:absolute;bottom:16px;inset-inline-start:50%;transform:translateX(50%);background:var(--c1);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:99px;box-shadow:0 12px 26px -10px var(--c1);transition:.25s;white-space:nowrap}.gmap:hover{transform:translateX(50%) translateY(-3px);background:var(--c2)}[dir=ltr] .gmap{transform:translateX(-50%)}[dir=ltr] .gmap:hover{transform:translateX(-50%) translateY(-3px)}
 </style>
 </head>
 <body>
@@ -212,7 +213,7 @@ html[lang=en] h1{letter-spacing:-1.5px;font-size:clamp(40px,5.4vw,70px)}
  <div class="sh rv"><small>زورونا</small><h2>أوقات الدوام والموقع</h2></div>
  <div class="info">
   <div class="hours rv"><h3>أوقات الدوام</h3><div id="hrows"></div><div class="addr">📍 <span>شارع أحمد صويص، بالقرب من أكاديمية القادة الدولية، عمّان</span></div></div>
-  <div class="map rv"><iframe loading="lazy" title="map" src="https://www.openstreetmap.org/export/embed.html?bbox=35.872058%2C31.8832231%2C35.884058%2C31.8912231&layer=mapnik&marker=31.8872231%2C35.878058"></iframe></div>
+  <div class="map rv"><iframe loading="lazy" title="map" src="https://maps.google.com/maps?q=%D8%AD%D8%B6%D8%A7%D9%86%D8%A9%20%D9%86%D8%B3%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B7%D9%81%D9%88%D9%84%D8%A9%4031.8872231%2C35.878058&amp;z=16&amp;hl=ar&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe><a class="gmap" href="https://www.google.com/maps/search/?api=1&amp;query=%D8%AD%D8%B6%D8%A7%D9%86%D8%A9%20%D9%86%D8%B3%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B7%D9%81%D9%88%D9%84%D8%A9&amp;query_place_id=ChIJH1tPN3-nHBURYZqgKkFsOfc" target="_blank" rel="noopener">📍 افتحي على جوجل ماب</a></div>
  </div>
 </div></section>
 
@@ -284,6 +285,7 @@ const EN={
  '#dl':'⬇️ Download the certificate',
  '#again':'🔁 Play again',
  '#pr':'🖨️ Print certificate',
+ '.gmap':'📍 Open in Google Maps',
  '#contact .sh small':'Let’s stay in touch',
  '#contact .sh h2':'Follow us & say hello',
  '.ct:nth-child(1) b':'Instagram','.ct:nth-child(2) b':'Snapchat','.ct:nth-child(3) b':'Facebook',
