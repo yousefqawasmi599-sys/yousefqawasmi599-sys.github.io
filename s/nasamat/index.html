@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--c1:#123b4a;--c2:#ffc56b;--bg:#f7f5f1;--ink:#151515;--mut:#6d6a64;--line:rgba(0,0,0,.09)}
+:root{--c1:#2f6fac;--c2:#ec8d3b;--bg:#f7f5f1;--ink:#151515;--mut:#6d6a64;--line:rgba(0,0,0,.09)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}html,body{overflow-x:clip}
 body{font-family:'Readex Pro',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
@@ -92,11 +92,20 @@ footer a{color:var(--ink);text-decoration:underline}
  .brand{font-size:15px;line-height:1.3}
 }
 @media(max-width:480px){.svs{grid-template-columns:1fr}}
+
+.brand .logo{width:46px;height:46px;border-radius:12px;object-fit:contain;background:#fff;box-shadow:0 4px 14px rgba(47,111,172,.18)}
+.card{background:linear-gradient(180deg,rgba(20,50,90,.15),rgba(20,50,90,.85)),url(img/building.jpg) center/cover}
+.card:before{opacity:.35}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal img{width:100%;height:280px;object-fit:cover;border-radius:22px;transition:transform .5s}
+.gal img:hover{transform:scale(1.03)}
+.gal img:first-child{grid-column:span 2}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.gal img{height:180px}.gal img:first-child{grid-column:span 2}}
 </style>
 </head>
 <body>
-<div class="demo">🎁 <b>هدية</b> لحضانة نسمات الطفولة · مع كل المحبة والتقدير</div>
-<nav><div class="wrap"><a href="#" class="brand"><i>✦</i>حضانة نسمات الطفولة</a><a href="https://wa.me/962790633369" class="btn">احجزي زيارة</a></div></nav>
+
+<nav><div class="wrap"><a href="#" class="brand"><img src="img/logo.jpg" alt="شعار نسمات الطفولة" class="logo">حضانة نسمات الطفولة</a><a href="https://wa.me/962790633369" class="btn">احجزي زيارة</a></div></nav>
 
 <header class="hero"><div class="wrap">
  <div class="rv">
@@ -119,7 +128,12 @@ footer a{color:var(--ink);text-decoration:underline}
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
- <div class="sh rv"><small>من زبائننا</small><h2>كلامهم عنا</h2></div>
+ <div class="sh rv"><small>من داخل الحضانة</small><h2>يوم حلو بكل تفاصيله</h2></div>
+ <div class="gal rv"><img src="img/crafts.jpg" alt="نشاطات يدوية" loading="lazy"><img src="img/garden.jpg" alt="ساحة اللعب" loading="lazy"><img src="img/story.jpg" alt="وقت القصة" loading="lazy"><img src="img/play.jpg" alt="ألعاب حركية" loading="lazy"><img src="img/class.jpg" alt="الصف" loading="lazy"><img src="img/cones.jpg" alt="مهارات حركية" loading="lazy"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="sh rv"><small>من الأهالي</small><h2>كلامهم عنا</h2></div>
  <div class="qs"><figure class="q rv"><div class="st">★★★★★</div><blockquote>«هاد بالزبط اللي كنت بدوّر عليه، الحمدلله.»</blockquote><figcaption>أم</figcaption></figure><figure class="q rv"><div class="st">★★★★★</div><blockquote>«عنوان النظافة والأمانة، والمديرة أخلاق وأمانة.»</blockquote><figcaption>زائرة</figcaption></figure><figure class="q rv"><div class="st">★★★★★</div><blockquote>«من أجمل وأرقى الحضانات بالأردن.»</blockquote><figcaption>أم</figcaption></figure></div>
 </div></section>
 
@@ -135,7 +149,7 @@ footer a{color:var(--ink);text-decoration:underline}
  <div class="final rv"><h2>جاهز تزورنا؟</h2><p>احجز موعدك بثانية، وتعال بدون انتظار.</p><a href="https://wa.me/962790633369" class="btn">💬 احجزي زيارة على واتساب</a></div>
 </div></section>
 
-<footer>صُمّم بكل محبة كهدية من <a href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener">يوسف القواسمي</a> 🤍</footer>
+<footer>صُمّم بكل محبة من <a href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener">يوسف القواسمي</a> 🤍</footer>
 <a class="wa" href="https://wa.me/962790633369" aria-label="واتساب"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
 <script>
 const H={"0": ["07:00", "18:00"], "1": ["07:00", "18:00"], "2": ["07:00", "18:00"], "3": ["07:00", "18:00"], "4": ["07:00", "18:00"], "5": null, "6": ["07:00", "17:00"]},N=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
