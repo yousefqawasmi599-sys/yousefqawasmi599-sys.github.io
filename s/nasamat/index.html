@@ -101,9 +101,67 @@ footer a{color:var(--ink);text-decoration:underline}
 .gal img:hover{transform:scale(1.03)}
 .gal img:first-child{grid-column:span 2}
 @media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.gal img{height:180px}.gal img:first-child{grid-column:span 2}}
+html{background:var(--bg)}body{background:transparent}
+#bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none}
+nav{background:rgba(247,245,241,.7)}
+.hero h1 em{background:linear-gradient(90deg,var(--c2),#f7b267);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* intro */
+#intro{position:fixed;inset:0;z-index:100;background:#fff;display:grid;place-items:center;transition:opacity .8s .2s,visibility .8s .2s}
+#intro.go{opacity:0;visibility:hidden}
+#intro img{width:min(260px,60vw);animation:lgin 1.6s cubic-bezier(.2,.9,.2,1.2) both;clip-path:circle(0% at 50% 50%)}
+@keyframes lgin{0%{clip-path:circle(0% at 50% 45%);transform:scale(.6) rotate(-12deg)}60%{clip-path:circle(75% at 50% 45%)}100%{clip-path:circle(75% at 50% 45%);transform:none}}
+/* gallery */
+.gal{grid-template-columns:repeat(3,1fr);gap:26px}
+.gal figure{margin:0;position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.gal figure:nth-child(odd){transform:rotate(-2deg)}.gal figure:nth-child(even){transform:rotate(2deg) translateY(18px)}
+.gal figure:hover{transform:rotate(0) scale(1.04);z-index:2}
+.gal img{width:100%;height:300px;object-fit:cover;border-radius:46% 54% 42% 58%/55% 45% 55% 45%;border:6px solid #fff;box-shadow:0 22px 50px -24px rgba(47,111,172,.55);animation:blob 9s ease-in-out infinite alternate}
+.gal figure:nth-child(2n) img{animation-delay:-3s;border-color:#fff3e6}
+@keyframes blob{50%{border-radius:58% 42% 55% 45%/45% 58% 42% 55%}}
+.gal figcaption{position:absolute;bottom:-6px;inset-inline-start:50%;transform:translateX(50%);background:var(--c2);color:#fff;font-size:13px;padding:5px 14px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 18px -8px var(--c2)}
+.gal img:first-child,.gal figure:first-child{grid-column:auto}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr;gap:18px}.gal img{height:170px}}
+/* game */
+.game{background:linear-gradient(135deg,#2f6fac,#3f8fd6);border-radius:34px;padding:34px;color:#fff;box-shadow:0 40px 80px -40px #2f6fac;overflow:hidden;position:relative}
+.game h2{color:#fff}.game .sub{opacity:.85;margin:6px 0 20px}
+.gstart{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.gstart input{flex:1;min-width:200px;font:inherit;padding:14px 18px;border-radius:16px;border:0;outline:0;font-size:16px}
+.gbtn{font:inherit;font-weight:600;border:0;cursor:pointer;background:var(--c2);color:#fff;padding:14px 24px;border-radius:16px;box-shadow:0 10px 24px -10px #000;transition:.2s}
+.gbtn:hover{transform:translateY(-2px)}.gbtn.lt{background:rgba(255,255,255,.18)}
+.priv{font-size:12.5px;opacity:.8;margin-top:12px}
+.stage{position:relative;margin-top:22px;border-radius:24px;overflow:hidden;aspect-ratio:16/10;background:#dceeff;display:none;touch-action:none}
+.stage.on{display:block}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);opacity:.35}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.hud{position:absolute;top:12px;inset-inline:12px;display:flex;justify-content:space-between;z-index:2;font-weight:600}
+.hud span{background:rgba(255,255,255,.9);color:#2f6fac;padding:6px 14px;border-radius:99px}
+.lams{position:absolute;bottom:10px;inset-inline-start:14px;font-size:11px;color:#2f6fac;opacity:.75;z-index:2}
+.cert{display:none;margin-top:22px;text-align:center}.cert.on{display:block}
+.cert canvas{width:100%;max-width:620px;border-radius:18px;box-shadow:0 30px 60px -30px #000}
+.cert .row2{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+/* contacts */
+.cts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ct{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:24px;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:.35s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+.ct:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px var(--ac)}
+.ct:before{content:"";position:absolute;inset:auto -30% -60% auto;width:140px;height:140px;border-radius:50%;background:var(--ac);opacity:.12;transition:.5s}
+.ct:hover:before{transform:scale(2.4)}
+.ct i{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--ac);color:#fff;flex:none}
+.ct i svg{width:26px;height:26px;fill:currentColor}
+.ct b{display:block;font-size:15px}.ct small{color:var(--mut);direction:ltr;display:block;text-align:right}
+@media(max-width:760px){.cts{grid-template-columns:1fr}}
+/* signature */
+footer{padding:50px 0 110px}
+.sig{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:99px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 30px -18px rgba(47,111,172,.45);font-size:14px;color:var(--mut)}
+.sig a{font-weight:600;text-decoration:none;background:linear-gradient(90deg,#2f6fac,#ec8d3b,#2f6fac);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite}
+.sig .h{display:inline-block;animation:hb 1.4s ease-in-out infinite;color:#e94b6b}
+@keyframes sh{to{background-position:200%}}@keyframes hb{0%,100%{transform:scale(1)}30%{transform:scale(1.3)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+.hero .card{visibility:hidden}@media(max-width:760px){.hero .card{display:none}.hero{padding-top:230px}}
+
 </style>
 </head>
 <body>
+<div id="intro"><img src="img/logo.jpg" alt=""></div><canvas id="bg"></canvas><img id="logoimg" src="img/logo.jpg" alt="" hidden>
 
 <nav><div class="wrap"><a href="#" class="brand"><img src="img/logo.jpg" alt="شعار نسمات الطفولة" class="logo">حضانة نسمات الطفولة</a><a href="https://wa.me/962790633369" class="btn">احجزي زيارة</a></div></nav>
 
@@ -129,7 +187,7 @@ footer a{color:var(--ink);text-decoration:underline}
 
 <section style="padding-top:0"><div class="wrap">
  <div class="sh rv"><small>من داخل الحضانة</small><h2>يوم حلو بكل تفاصيله</h2></div>
- <div class="gal rv"><img src="img/crafts.jpg" alt="نشاطات يدوية" loading="lazy"><img src="img/garden.jpg" alt="ساحة اللعب" loading="lazy"><img src="img/story.jpg" alt="وقت القصة" loading="lazy"><img src="img/play.jpg" alt="ألعاب حركية" loading="lazy"><img src="img/class.jpg" alt="الصف" loading="lazy"><img src="img/cones.jpg" alt="مهارات حركية" loading="lazy"></div>
+ <div class="gal rv"><figure><img src="img/crafts.jpg" alt="أشغال يدوية" loading="lazy"><figcaption>أشغال يدوية</figcaption></figure><figure><img src="img/garden.jpg" alt="ساحة اللعب" loading="lazy"><figcaption>ساحة اللعب</figcaption></figure><figure><img src="img/story.jpg" alt="وقت القصة" loading="lazy"><figcaption>وقت القصة</figcaption></figure><figure><img src="img/play.jpg" alt="ألعاب حركية" loading="lazy"><figcaption>ألعاب حركية</figcaption></figure><figure><img src="img/class.jpg" alt="صفّنا الحلو" loading="lazy"><figcaption>صفّنا الحلو</figcaption></figure><figure><img src="img/cones.jpg" alt="مهارات وتوازن" loading="lazy"><figcaption>مهارات وتوازن</figcaption></figure></div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -145,11 +203,25 @@ footer a{color:var(--ink);text-decoration:underline}
  </div>
 </div></section>
 
+<section id="game" style="padding-top:0"><div class="wrap">
+ <div class="game rv"><small style="opacity:.8">✨ لعبة لأبطالنا الصغار</small><h2>فقّع الفقاعات… بدون لمس!</h2><p class="sub">اكتبي اسم البطل، وخلّيه يحرك إيده قدام الكاميرا ويفقّع 20 فقاعة، وبياخد شهادة باسمه 🏆</p>
+  <div class="gstart"><input id="kid" maxlength="24" placeholder="اسم البطل أو البطلة"><button class="gbtn" id="play-cam">✋ العب بالكاميرا</button><button class="gbtn lt" id="play-touch">👆 العب باللمس</button></div>
+  <p class="priv">🔒 الكاميرا ما بتشتغل إلا لما تكبسي، والصورة ما بتطلع من جهازك ولا بتنحفظ بأي مكان.</p>
+  <div class="stage" id="stage"><video id="gv" playsinline muted></video><canvas id="gc"></canvas><div class="hud"><span id="who"></span><span id="sc">0 / 20</span></div><div class="hud" style="top:auto;bottom:34px;justify-content:center"><span id="mode"></span></div><div class="lams">بتقنية LAMS · لمس</div></div>
+  <div class="cert" id="cert"><canvas id="cc"></canvas><div class="row2"><button class="gbtn" id="dl">⬇️ حمّلي الشهادة</button><button class="gbtn lt" id="again">🔁 العب مرة ثانية</button></div></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="sh rv"><small>خلّينا على تواصل</small><h2>تابعونا وتواصلوا معنا</h2></div>
+ <div class="cts rv"><a class="ct" style="--ac:#d6337a" href="https://instagram.com/nasamt163" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2A3.2 3.2 0 1112 8.8a3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 2c-2.7 0-3 0-4.1.1C4.7 2.2 2.2 4.7 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.2 2.6 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.2-.1 5.7-2.6 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.2-2.6-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg></i><span><b>إنستغرام</b><small>@nasamt163</small></span></a><a class="ct" style="--ac:#e8c400" href="https://snapchat.com/add/nasamt1874" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 2.5c2.7 0 4.8 2 4.9 4.8v2.6c.4.2.9.1 1.4-.1.5-.2 1.2.3.9.9-.4.6-1.6.8-2 1.2.3 1.6 2 3.2 3.6 3.6.4.1.4.6 0 .8-.7.4-1.6.4-1.9.9-.2.4-.2 1-.9 1-.8 0-1.6-.4-2.7.4-.9.6-1.8 1.4-3.3 1.4s-2.4-.8-3.3-1.4c-1.1-.8-1.9-.4-2.7-.4-.7 0-.7-.6-.9-1-.3-.5-1.2-.5-1.9-.9-.4-.2-.4-.7 0-.8 1.6-.4 3.3-2 3.6-3.6-.4-.4-1.6-.6-2-1.2-.3-.6.4-1.1.9-.9.5.2 1 .3 1.4.1V7.3C7.2 4.5 9.3 2.5 12 2.5z"/></svg></i><span><b>سناب شات</b><small>nasamt1874</small></span></a><a class="ct" style="--ac:#1877f2" href="https://www.facebook.com/profile.php?id=61568243106462" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H17l.6-4h-4v-2c0-.6.4-1 1-1z"/></svg></i><span><b>فيسبوك</b><small>Nasamt Al Tofolah</small></span></a><a class="ct" style="--ac:#25d366" href="https://wa.me/962790633369" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2z"/></svg></i><span><b>واتساب</b><small>+962 79 063 3369</small></span></a><a class="ct" style="--ac:#2f6fac" href="tel:+962790633369" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></i><span><b>اتصلي فينا</b><small>+962 79 063 3369</small></span></a><a class="ct" style="--ac:#ec8d3b" href="mailto:nasamatmb@gmail.com" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 9v8h16V9l-8 5.5L4 9z"/></svg></i><span><b>الإيميل</b><small>nasamatmb@gmail.com</small></span></a></div>
+</div></section>
+
 <section style="padding-top:0"><div class="wrap">
  <div class="final rv"><h2>جاهز تزورنا؟</h2><p>احجز موعدك بثانية، وتعال بدون انتظار.</p><a href="https://wa.me/962790633369" class="btn">💬 احجزي زيارة على واتساب</a></div>
 </div></section>
 
-<footer>صُمّم بكل محبة من <a href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener">يوسف القواسمي</a> 🤍</footer>
+<footer><span class="sig">صُمّم بكل محبة <span class="h">❤</span> من <a href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener">يوسف القواسمي</a></span></footer>
 <a class="wa" href="https://wa.me/962790633369" aria-label="واتساب"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
 <script>
 const H={"0": ["07:00", "18:00"], "1": ["07:00", "18:00"], "2": ["07:00", "18:00"], "3": ["07:00", "18:00"], "4": ["07:00", "18:00"], "5": null, "6": ["07:00", "17:00"]},N=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
@@ -162,5 +234,122 @@ document.getElementById('hrows').innerHTML=[6,0,1,2,3,4,5].map(i=>`<div class="h
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+const cv=document.getElementById('bg');
+const R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
+R.setPixelRatio(Math.min(devicePixelRatio,1.75));
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(40,1,.1,100);C.position.set(0,0,12);
+S.add(new THREE.HemisphereLight(0xffffff,0xbcd4ee,1.6));const dl=new THREE.DirectionalLight(0xffffff,1.6);dl.position.set(4,6,8);S.add(dl);
+const M=c=>new THREE.MeshStandardMaterial({color:c,roughness:.45,metalness:.05});
+const BLUE=0x2f6fac,LB=0x5b9bd8,OR=0xec8d3b,DOR=0xd8742a;
+const logo=new THREE.Group();S.add(logo);
+// book
+const book=new THREE.Group();logo.add(book);
+const pages=[];for(const s of[-1,1]){const piv=new THREE.Group();book.add(piv);
+ for(let k=0;k<4;k++){const m=new THREE.Mesh(new THREE.BoxGeometry(2.6,.06,1.7),M(k%2?LB:BLUE));m.position.set(s*1.3,k*.07,0);piv.add(m);}
+ pages.push({piv,s});}
+book.position.y=-1.2;
+const spine=new THREE.Mesh(new THREE.SphereGeometry(.32,24,16),M(BLUE));spine.position.set(0,-1.35,.2);logo.add(spine);
+// pencil tower
+const pen=new THREE.Group();logo.add(pen);
+const body=new THREE.Mesh(new THREE.CylinderGeometry(.42,.42,2.4,6),M(BLUE));body.position.y=.6;pen.add(body);
+const tip=new THREE.Mesh(new THREE.ConeGeometry(.42,.7,6),M(OR));tip.rotation.x=Math.PI;tip.position.y=-.95;pen.add(tip);
+for(let i=0;i<6;i++){const b=new THREE.Mesh(new THREE.BoxGeometry(.2,.28,.2),M(BLUE));const a=i/6*Math.PI*2;b.position.set(Math.cos(a)*.34,1.94,Math.sin(a)*.34);pen.add(b);}
+// castles
+const castles=[];for(const s of[-1,1]){const g=new THREE.Group();logo.add(g);
+ const t=new THREE.Mesh(new THREE.BoxGeometry(1,1.8,.8),M(OR));g.add(t);
+ for(let i=0;i<3;i++){const c=new THREE.Mesh(new THREE.BoxGeometry(.24,.26,.8),M(DOR));c.position.set(-.36+i*.36,1.03,0);g.add(c);}
+ const door=new THREE.Mesh(new THREE.CylinderGeometry(.2,.2,.82,20,1,false,0,Math.PI),M(0xffffff));door.rotation.z=Math.PI/2;door.rotation.y=Math.PI/2;door.position.set(0,.15,.01);
+ const dr=new THREE.Mesh(new THREE.BoxGeometry(.4,.35,.82),M(0xffffff));dr.position.set(0,-.08,0);g.add(dr,door);
+ g.position.set(s*1.25,.15,-.3);castles.push(g);}
+// leaves
+for(const s of[-1,1]){const l=new THREE.Mesh(new THREE.IcosahedronGeometry(.45,1),M(BLUE));l.scale.set(1,1.2,.6);l.position.set(s*.85,1.75,-.5);logo.add(l);}
+logo.scale.setScalar(.95);
+// bubbles
+const bub=[];const bg=new THREE.SphereGeometry(1,24,16);
+for(let i=0;i<34;i++){const c=[0x9cc8f2,0xffc58f,0xbfe0ff,0xffe0bf][i%4];
+ const m=new THREE.Mesh(bg,new THREE.MeshPhysicalMaterial({color:c,roughness:.1,transmission:.6,thickness:.5,transparent:true,opacity:.55}));
+ const r=.08+Math.random()*.28;m.scale.setScalar(r);m.position.set((Math.random()-.5)*16,(Math.random()-.5)*12,-2-Math.random()*6);m.userData={v:.004+Math.random()*.01,ph:Math.random()*6};S.add(m);bub.push(m);}
+// clouds
+const clouds=[];for(let i=0;i<5;i++){const g=new THREE.Group();const wm=new THREE.MeshStandardMaterial({color:0xffffff,roughness:1,transparent:true,opacity:.85});
+ for(let k=0;k<5;k++){const s=new THREE.Mesh(bg,wm);s.scale.setScalar(.35+Math.random()*.3);s.position.set(k*.45-.9,Math.random()*.25,0);g.add(s);}
+ g.position.set((Math.random()-.5)*18,2+Math.random()*4,-6);g.userData={v:.003+Math.random()*.004};S.add(g);clouds.push(g);}
+// stars
+const stars=[];for(let i=0;i<14;i++){const s=new THREE.Mesh(new THREE.OctahedronGeometry(.12),M(i%2?OR:0xf7c35f));s.position.set((Math.random()-.5)*14,(Math.random()-.5)*9,-3);S.add(s);stars.push(s);}
+// assembly intro
+const parts=[...logo.children];parts.forEach((p,i)=>{p.userData.home=p.position.clone();p.position.add(new THREE.Vector3((Math.random()-.5)*14,(Math.random()-.5)*10,(Math.random()-.5)*6));p.userData.d=i*.06});
+const t0=performance.now();const ease=t=>1-Math.pow(1-Math.min(Math.max(t,0),1),3);
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function size(){const w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();}size();addEventListener('resize',size);
+const mob=()=>innerWidth<760;
+function loop(now){const t=(now-t0)/1000;const doc=document.documentElement;const p=Math.min(1,scrollY/Math.max(1,doc.scrollHeight-innerHeight));
+ parts.forEach(q=>{const k=ease((t-.4-q.userData.d)/1.2);q.position.lerpVectors(q.userData.from||(q.userData.from=q.position.clone()),q.userData.home,k)});
+ const open=p<.85?Math.min(1,.15+p*1.6):Math.max(0,1-(p-.85)*6);
+ pages.forEach(({piv,s})=>piv.rotation.z=s*(.9-open*.75));
+ pen.rotation.y=t*.4+p*6;
+ logo.rotation.y=Math.sin(t*.3)*.25+p*Math.PI*1.2+mx*.5;logo.rotation.x=.18+my*.25+Math.sin(t*.5)*.05;
+ logo.position.x=mob()?0:-3.3*Math.cos(p*Math.PI);
+ logo.position.y=mob()?2.6:.2+Math.sin(t*.8)*.12;logo.scale.setScalar(mob()?.6:.95);
+ C.position.z=12-p*2;C.position.y=-p*1.5;C.lookAt(0,-p*1.5,0);
+ bub.forEach(b=>{b.position.y+=b.userData.v;b.position.x+=Math.sin(t+b.userData.ph)*.003;if(b.position.y>8)b.position.y=-8});
+ clouds.forEach(c=>{c.position.x+=c.userData.v;if(c.position.x>11)c.position.x=-11});
+ stars.forEach((s,i)=>{s.rotation.y=t*2+i;s.scale.setScalar(1+Math.sin(t*3+i)*.3)});
+ R.render(S,C);requestAnimationFrame(loop);}
+requestAnimationFrame(loop);
+</script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s);const st=$('#stage'),cv=$('#gc'),x=cv.getContext('2d'),vid=$('#gv');
+let W,H,bubs=[],parts=[],score=0,goal=20,run=false,hand=null,lm=null,lastT=0,name='';
+function fit(){const r=st.getBoundingClientRect();W=cv.width=r.width*devicePixelRatio;H=cv.height=r.height*devicePixelRatio}
+const cols=['#5b9bd8','#ec8d3b','#2f6fac','#f7b267','#7cc4f5'];
+function spawn(){const r=(28+Math.random()*30)*devicePixelRatio;bubs.push({x:r+Math.random()*(W-2*r),y:H+r,r,c:cols[Math.random()*5|0],v:(.8+Math.random()*1.2)*devicePixelRatio,ph:Math.random()*6})}
+function pop(b){score++;$('#sc').textContent=score+' / '+goal;for(let i=0;i<14;i++){const a=Math.random()*6.28,s=(2+Math.random()*4)*devicePixelRatio;parts.push({x:b.x,y:b.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:b.c,st:i%3==0})}
+ if(score>=goal)win()}
+function hit(px,py){bubs=bubs.filter(b=>{if(Math.hypot(b.x-px,b.y-py)<b.r+14*devicePixelRatio){pop(b);return false}return true})}
+function star(cx,cy,r,c){x.fillStyle=c;x.beginPath();for(let i=0;i<10;i++){const a=i*Math.PI/5-Math.PI/2,rr=i%2?r/2.2:r;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.fill()}
+function draw(t){if(!run)return;x.clearRect(0,0,W,H);
+ if(Math.random()<.035&&bubs.length<9)spawn();
+ bubs.forEach(b=>{b.y-=b.v;b.x+=Math.sin(t/500+b.ph)*.6;const g=x.createRadialGradient(b.x-b.r/3,b.y-b.r/3,b.r/6,b.x,b.y,b.r);g.addColorStop(0,'#fff');g.addColorStop(.35,b.c+'cc');g.addColorStop(1,b.c+'66');x.fillStyle=g;x.beginPath();x.arc(b.x,b.y,b.r,0,7);x.fill();x.strokeStyle='#ffffffaa';x.lineWidth=2*devicePixelRatio;x.stroke()});
+ bubs=bubs.filter(b=>b.y>-b.r);
+ parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15*devicePixelRatio;p.l-=.025;x.globalAlpha=Math.max(p.l,0);p.st?star(p.x,p.y,7*devicePixelRatio,'#f7c35f'):(x.fillStyle=p.c,x.beginPath(),x.arc(p.x,p.y,4*devicePixelRatio,0,7),x.fill())});x.globalAlpha=1;parts=parts.filter(p=>p.l>0);
+ if(lm&&vid.readyState>=2&&t-lastT>45){lastT=t;const r=lm.detectForVideo(vid,t);hand=r.landmarks&&r.landmarks[0]?r.landmarks[0][8]:null}
+ if(hand){const px=(1-hand.x)*W,py=hand.y*H;hit(px,py);x.fillStyle='#ec8d3b';x.beginPath();x.arc(px,py,16*devicePixelRatio,0,7);x.fill();x.strokeStyle='#fff';x.lineWidth=4*devicePixelRatio;x.stroke()}
+ requestAnimationFrame(draw)}
+st.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();hit((e.clientX-r.left)*devicePixelRatio,(e.clientY-r.top)*devicePixelRatio)});
+st.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect();hit((e.clientX-r.left)*devicePixelRatio,(e.clientY-r.top)*devicePixelRatio)});
+async function start(cam){name=$('#kid').value.trim();if(!name){$('#kid').focus();$('#kid').placeholder='اكتبي اسم البطل أول 🙂';return}
+ $('#cert').classList.remove('on');st.classList.add('on');fit();score=0;bubs=[];parts=[];$('#sc').textContent='0 / '+goal;$('#who').textContent='🦸 '+name;run=true;requestAnimationFrame(draw);
+ st.scrollIntoView({behavior:'smooth',block:'center'});
+ if(cam){$('#mode').textContent='⏳ عم نجهّز الكاميرا…';try{
+  const s=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:640,height:480}});vid.srcObject=s;await vid.play();
+  const V=await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs');
+  const fs=await V.FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
+  lm=await V.HandLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task',delegate:'GPU'},runningMode:'VIDEO',numHands:1});
+  $('#mode').textContent='✋ حرّك إيدك بالهوا وفقّع الفقاعات!'}catch(e){$('#mode').textContent='👆 فقّع الفقاعات بإصبعك أو بالماوس'}}
+ else $('#mode').textContent='👆 فقّع الفقاعات بإصبعك أو بالماوس'}
+function stopCam(){if(vid.srcObject){vid.srcObject.getTracks().forEach(t=>t.stop());vid.srcObject=null}lm=null;hand=null}
+function confetti(){for(let i=0;i<160;i++){const a=Math.random()*6.28,s=(3+Math.random()*7)*devicePixelRatio;parts.push({x:W/2,y:H/2,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,l:1.6,c:cols[i%5],st:i%4==0})}}
+function win(){confetti();setTimeout(()=>{run=false;stopCam();cert()},1600)}
+function cert(){const c=$('#cc'),g=c.getContext('2d');c.width=1400;c.height=990;
+ const bg=g.createLinearGradient(0,0,1400,990);bg.addColorStop(0,'#fff8ef');bg.addColorStop(1,'#eaf3ff');g.fillStyle=bg;g.fillRect(0,0,1400,990);
+ g.strokeStyle='#2f6fac';g.lineWidth=14;g.strokeRect(30,30,1340,930);g.strokeStyle='#ec8d3b';g.lineWidth=4;g.strokeRect(56,56,1288,878);
+ for(let i=0;i<26;i++){g.globalAlpha=.25;g.fillStyle=cols[i%5];g.beginPath();g.arc(Math.random()*1400,Math.random()*990,8+Math.random()*26,0,7);g.fill()}g.globalAlpha=1;
+ const lg=$('#logoimg');g.drawImage(lg,600,80,200,190);
+ g.textAlign='center';g.direction='rtl';g.fillStyle='#2f6fac';g.font='700 72px "Readex Pro",sans-serif';g.fillText('شهادة بطل نسمات الطفولة',700,355);
+ g.fillStyle='#6d6a64';g.font='400 36px "Readex Pro",sans-serif';g.fillText('تُمنح هذه الشهادة للبطل/ة',700,440);
+ g.fillStyle='#ec8d3b';g.font='700 96px "Readex Pro",sans-serif';g.fillText(name,700,565);
+ g.fillStyle='#151515';g.font='400 36px "Readex Pro",sans-serif';g.fillText('لأنه فقّع '+score+' فقاعة بمهارة وسرعة! 🫧',700,650);
+ for(let i=0;i<5;i++){g.save();g.translate(540+i*80,740);g.fillStyle='#f7c35f';g.beginPath();for(let k=0;k<10;k++){const a=k*Math.PI/5-Math.PI/2,r=k%2?15:34;g.lineTo(Math.cos(a)*r,Math.sin(a)*r)}g.fill();g.restore()}
+ g.fillStyle='#6d6a64';g.font='400 26px "Readex Pro",sans-serif';g.fillText('حضانة نسمات الطفولة · '+new Date().toLocaleDateString('ar-JO'),700,860);
+ $('#cert').classList.add('on');$('#cert').scrollIntoView({behavior:'smooth',block:'center'})}
+$('#play-cam').onclick=()=>start(true);$('#play-touch').onclick=()=>start(false);
+$('#dl').onclick=()=>{const a=document.createElement('a');a.download='شهادة-'+name+'.png';a.href=$('#cc').toDataURL('image/png');a.click()};
+$('#again').onclick=()=>start(true);
+addEventListener('resize',()=>{if(run)fit()});
+})();
+</script>
+<script>addEventListener('load',()=>setTimeout(()=>document.getElementById('intro').classList.add('go'),1500));setTimeout(()=>document.getElementById('intro').classList.add('go'),3500)</script>
 </body>
 </html>
