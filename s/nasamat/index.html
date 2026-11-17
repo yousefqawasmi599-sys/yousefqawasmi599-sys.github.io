@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>حضانة نسمات الطفولة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--c1:#2f6fac;--c2:#ec8d3b;--bg:#f7f5f1;--ink:#151515;--mut:#6d6a64;--line:rgba(0,0,0,.09)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -25,7 +25,7 @@ nav .wrap{height:70px;display:flex;align-items:center;justify-content:space-betw
 .btn.lt{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.18)}
 .hero{position:relative;padding:70px 0 90px;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:8px 16px 8px 10px;border-radius:40px;font-size:14px;margin-bottom:22px}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:8px 16px;padding-inline:16px 10px;border-radius:40px;font-size:14px;margin-bottom:22px}
 .badge b{background:var(--c1);color:#fff;border-radius:30px;padding:2px 10px;font-weight:500}
 .badge .gs{color:#f5a623;letter-spacing:1px}
 h1{font-size:clamp(44px,6.4vw,84px);line-height:1.12;font-weight:600;letter-spacing:-1px;margin-bottom:20px}
@@ -131,7 +131,7 @@ nav{background:rgba(247,245,241,.7)}
 .priv{font-size:12.5px;opacity:.8;margin-top:12px}
 .stage{position:relative;margin-top:22px;border-radius:24px;overflow:hidden;aspect-ratio:16/10;background:#dceeff;display:none;touch-action:none}
 .stage.on{display:block}
-.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);opacity:.35}
+.stage video{position:absolute;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none}
 .stage canvas{position:absolute;inset:0;width:100%;height:100%}
 .hud{position:absolute;top:12px;inset-inline:12px;display:flex;justify-content:space-between;z-index:2;font-weight:600}
 .hud span{background:rgba(255,255,255,.9);color:#2f6fac;padding:6px 14px;border-radius:99px}
@@ -143,7 +143,7 @@ nav{background:rgba(247,245,241,.7)}
 .cts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .ct{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:24px;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:.35s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
 .ct:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px var(--ac)}
-.ct:before{content:"";position:absolute;inset:auto -30% -60% auto;width:140px;height:140px;border-radius:50%;background:var(--ac);opacity:.12;transition:.5s}
+.ct:before{content:"";position:absolute;inset:auto;inset-block-end:-60%;inset-inline-start:-30%;width:140px;height:140px;border-radius:50%;background:var(--ac);opacity:.12;transition:.5s}
 .ct:hover:before{transform:scale(2.4)}
 .ct i{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--ac);color:#fff;flex:none}
 .ct i svg{width:26px;height:26px;fill:currentColor}
@@ -158,12 +158,24 @@ footer{padding:50px 0 110px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 .hero .card{visibility:hidden}@media(max-width:760px){.hero .card{display:none}.hero{padding-top:230px}}
 
+/* language switch */
+.navr{display:flex;align-items:center;gap:10px}
+.lang{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:60px;border:1.5px solid rgba(0,0,0,.14);background:rgba(255,255,255,.6);font:inherit;cursor:pointer;line-height:1.2}
+.lang span{padding:6px 11px;border-radius:60px;font-size:13px;font-weight:500;color:var(--mut);transition:.25s}
+.lang span.on{background:#ec8d3b;color:#fff}
+.lang i{width:1px;height:14px;background:rgba(0,0,0,.14)}
+.lang:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+@media(max-width:880px){.lang span{padding:5px 8px;font-size:12px}.navr{gap:6px}html[lang=en] .brand{font-size:13.5px}}
+html[lang=en] body{font-family:'Poppins','Readex Pro',system-ui,sans-serif}
+html[lang=en] h1{letter-spacing:-1.5px;font-size:clamp(40px,5.4vw,70px)}
+.gal figcaption{inset-inline-start:auto;left:50%;right:auto;transform:translateX(-50%)}
+[dir=ltr] .ct small{text-align:left}
 </style>
 </head>
 <body>
 <div id="intro"><img src="img/logo.jpg" alt=""></div><canvas id="bg"></canvas><img id="logoimg" src="img/logo.jpg" alt="" hidden>
 
-<nav><div class="wrap"><a href="#" class="brand"><img src="img/logo.jpg" alt="شعار نسمات الطفولة" class="logo">حضانة نسمات الطفولة</a><a href="https://wa.me/962790633369" class="btn">احجزي زيارة</a></div></nav>
+<nav><div class="wrap"><a href="#" class="brand"><img src="img/logo.jpg" alt="شعار نسمات الطفولة" class="logo"><span>حضانة نسمات الطفولة</span></a><div class="navr"><button class="lang" id="lang" type="button" dir="ltr"><span data-l="en">EN</span><i></i><span data-l="ar">ع</span></button><a href="https://wa.me/962790633369" class="btn">احجزي زيارة</a></div></div></nav>
 
 <header class="hero"><div class="wrap">
  <div class="rv">
@@ -185,17 +197,17 @@ footer{padding:50px 0 110px}
  <div class="svs"><div class="sv rv"><span>📹</span><h3>كاميرات أونلاين</h3><p>تابعي طفلك من تلفونك.</p></div><div class="sv rv"><span>🌱</span><h3>مونتيسوري</h3><p>تعلّم بالاستكشاف واللعب.</p></div><div class="sv rv"><span>📖</span><h3>مناهج وتربية إسلامية</h3><p>وطني أو إنجليزي، مع قيم وأخلاق.</p></div><div class="sv rv"><span>🛝</span><h3>مناطق لعب</h3><p>لعب آمن ومهارات حياتية.</p></div></div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section id="gallery" style="padding-top:0"><div class="wrap">
  <div class="sh rv"><small>من داخل الحضانة</small><h2>يوم حلو بكل تفاصيله</h2></div>
  <div class="gal rv"><figure><img src="img/crafts.jpg" alt="أشغال يدوية" loading="lazy"><figcaption>أشغال يدوية</figcaption></figure><figure><img src="img/garden.jpg" alt="ساحة اللعب" loading="lazy"><figcaption>ساحة اللعب</figcaption></figure><figure><img src="img/story.jpg" alt="وقت القصة" loading="lazy"><figcaption>وقت القصة</figcaption></figure><figure><img src="img/play.jpg" alt="ألعاب حركية" loading="lazy"><figcaption>ألعاب حركية</figcaption></figure><figure><img src="img/class.jpg" alt="صفّنا الحلو" loading="lazy"><figcaption>صفّنا الحلو</figcaption></figure><figure><img src="img/cones.jpg" alt="مهارات وتوازن" loading="lazy"><figcaption>مهارات وتوازن</figcaption></figure></div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section id="reviews" style="padding-top:0"><div class="wrap">
  <div class="sh rv"><small>من الأهالي</small><h2>كلامهم عنا</h2></div>
  <div class="qs"><figure class="q rv"><div class="st">★★★★★</div><blockquote>«هاد بالزبط اللي كنت بدوّر عليه، الحمدلله.»</blockquote><figcaption>أم</figcaption></figure><figure class="q rv"><div class="st">★★★★★</div><blockquote>«عنوان النظافة والأمانة، والمديرة أخلاق وأمانة.»</blockquote><figcaption>زائرة</figcaption></figure><figure class="q rv"><div class="st">★★★★★</div><blockquote>«من أجمل وأرقى الحضانات بالأردن.»</blockquote><figcaption>أم</figcaption></figure></div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section id="visit" style="padding-top:0"><div class="wrap">
  <div class="sh rv"><small>زورونا</small><h2>أوقات الدوام والموقع</h2></div>
  <div class="info">
   <div class="hours rv"><h3>أوقات الدوام</h3><div id="hrows"></div><div class="addr">📍 <span>شارع أحمد صويص، بالقرب من أكاديمية القادة الدولية، عمّان</span></div></div>
@@ -212,7 +224,7 @@ footer{padding:50px 0 110px}
  </div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section id="contact" style="padding-top:0"><div class="wrap">
  <div class="sh rv"><small>خلّينا على تواصل</small><h2>تابعونا وتواصلوا معنا</h2></div>
  <div class="cts rv"><a class="ct" style="--ac:#d6337a" href="https://instagram.com/nasamt163" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2A3.2 3.2 0 1112 8.8a3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 2c-2.7 0-3 0-4.1.1C4.7 2.2 2.2 4.7 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.2 2.6 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.2-.1 5.7-2.6 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.2-2.6-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg></i><span><b>إنستغرام</b><small>@nasamt163</small></span></a><a class="ct" style="--ac:#e8c400" href="https://snapchat.com/add/nasamt1874" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 2.5c2.7 0 4.8 2 4.9 4.8v2.6c.4.2.9.1 1.4-.1.5-.2 1.2.3.9.9-.4.6-1.6.8-2 1.2.3 1.6 2 3.2 3.6 3.6.4.1.4.6 0 .8-.7.4-1.6.4-1.9.9-.2.4-.2 1-.9 1-.8 0-1.6-.4-2.7.4-.9.6-1.8 1.4-3.3 1.4s-2.4-.8-3.3-1.4c-1.1-.8-1.9-.4-2.7-.4-.7 0-.7-.6-.9-1-.3-.5-1.2-.5-1.9-.9-.4-.2-.4-.7 0-.8 1.6-.4 3.3-2 3.6-3.6-.4-.4-1.6-.6-2-1.2-.3-.6.4-1.1.9-.9.5.2 1 .3 1.4.1V7.3C7.2 4.5 9.3 2.5 12 2.5z"/></svg></i><span><b>سناب شات</b><small>nasamt1874</small></span></a><a class="ct" style="--ac:#1877f2" href="https://www.facebook.com/profile.php?id=61568243106462" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H17l.6-4h-4v-2c0-.6.4-1 1-1z"/></svg></i><span><b>فيسبوك</b><small>Nasamt Al Tofolah</small></span></a><a class="ct" style="--ac:#25d366" href="https://wa.me/962790633369" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2z"/></svg></i><span><b>واتساب</b><small>+962 79 063 3369</small></span></a><a class="ct" style="--ac:#2f6fac" href="tel:+962790633369" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></i><span><b>اتصلي فينا</b><small>+962 79 063 3369</small></span></a><a class="ct" style="--ac:#ec8d3b" href="mailto:nasamatmb@gmail.com" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 9v8h16V9l-8 5.5L4 9z"/></svg></i><span><b>الإيميل</b><small>nasamatmb@gmail.com</small></span></a></div>
 </div></section>
@@ -224,22 +236,109 @@ footer{padding:50px 0 110px}
 <footer><span class="sig">صُمّم بكل محبة <span class="h">❤</span> من <a href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener">يوسف القواسمي</a></span></footer>
 <a class="wa" href="https://wa.me/962790633369" aria-label="واتساب"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg></a>
 <script>
-const H={"0": ["07:00", "18:00"], "1": ["07:00", "18:00"], "2": ["07:00", "18:00"], "3": ["07:00", "18:00"], "4": ["07:00", "18:00"], "5": null, "6": ["07:00", "17:00"]},N=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Amman'})),d=now.getDay(),m=now.getHours()*60+now.getMinutes(),M=s=>+s.slice(0,2)*60+ +s.slice(3);
-const h=H[d],open=h&&m>=M(h[0])&&m<M(h[1]);
-const st=document.getElementById('status');if(!open)st.classList.add('cl');
-let nx='';for(let k=1;k<=7;k++){const j=(d+k)%7;if(H[j]){nx=(k==1?'بكرا':'يوم '+N[j])+' من الساعة '+H[j][0];break}}
-document.getElementById('stxt').textContent=open?`أبوابنا مفتوحة الآن · لحد ${h[1]}`:`بنستناكم ${nx} 🌙`;
-document.getElementById('today').textContent=h?`اليوم ${h[0]}–${h[1]}`:'اليوم مغلق';
-document.getElementById('hrows').innerHTML=[6,0,1,2,3,4,5].map(i=>`<div class="hr${i===d?' t':''}"><span>${N[i]}</span><span dir="ltr">${H[i]?H[i][0]+' – '+H[i][1]:'مغلق'}</span></div>`).join('');
+// shared flags: a weak device gets a lighter 3D scene and game
+window.__weak=matchMedia('(pointer:coarse)').matches||innerWidth<760||(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4;
+// ---------- Arabic / English (Arabic is what's written in the page; English lives here) ----------
+const EN={
+ 'nav .brand span':'Nasamat Al Tofolah Nursery',
+ 'nav .btn':'Book a visit',
+ '.badge':'<b>5.0</b><span class="gs">★★★★★</span>21 reviews on Google',
+ '.hero h1':'A safe home<br>for your <em>little&nbsp;ones</em>.',
+ '.lead':'Spotless and caring, with live cameras so you can check on your child from work, national and English curricula with Montessori and Islamic values, and a warm team that truly invests in every child.',
+ '.cta .btn:not(.lt)':'💬 Book a visit on WhatsApp',
+ '.cta .btn.lt':'See our services',
+ '.card .row .k':'Nursery & kindergarten · Amman',
+ '.card .big+.k':'from 21 real reviews',
+ '.card .pill:not(#today)':'Live cameras for parents',
+ '#services .sh small':'Our services',
+ '#services .sh h2':'Everything your child needs, in one place',
+ '.sv:nth-child(1) h3':'Live cameras','.sv:nth-child(1) p':'Watch over your child from your phone.',
+ '.sv:nth-child(2) h3':'Montessori','.sv:nth-child(2) p':'Learning through discovery and play.',
+ '.sv:nth-child(3) h3':'Curriculum & Islamic values','.sv:nth-child(3) p':'National or English, with good manners and values.',
+ '.sv:nth-child(4) h3':'Play areas','.sv:nth-child(4) p':'Safe play and real-life skills.',
+ '#gallery .sh small':'Inside the nursery',
+ '#gallery .sh h2':'Every day, full of little joys',
+ '.gal figure:nth-child(1) figcaption':'Arts & crafts',
+ '.gal figure:nth-child(2) figcaption':'Our playground',
+ '.gal figure:nth-child(3) figcaption':'Story time',
+ '.gal figure:nth-child(4) figcaption':'Active play',
+ '.gal figure:nth-child(5) figcaption':'Our lovely classroom',
+ '.gal figure:nth-child(6) figcaption':'Skills & balance',
+ '#reviews .sh small':'From our parents',
+ '#reviews .sh h2':'What families say about us',
+ '.q:nth-child(1) blockquote':'“This is exactly what I was looking for. Thank God.”','.q:nth-child(1) figcaption':'A mom',
+ '.q:nth-child(2) blockquote':'“The very definition of cleanliness and trust, and the principal is kind and honest.”','.q:nth-child(2) figcaption':'A visitor',
+ '.q:nth-child(3) blockquote':'“One of the loveliest, most refined nurseries in Jordan.”','.q:nth-child(3) figcaption':'A mom',
+ '#visit .sh small':'Come visit us',
+ '#visit .sh h2':'Opening hours & location',
+ '.hours h3':'Opening hours',
+ '.addr span':'Ahmad Sweis Street, near Leaders International Academy, Amman',
+ '.game>small':'✨ A game for our little heroes',
+ '.game h2':'Pop the bubbles… without touching!',
+ '.game .sub':'Type your little hero’s name, then let them wave a hand in front of the camera and pop 20 bubbles. They’ll earn a certificate with their name on it 🏆',
+ '#play-cam':'✋ Play with the camera',
+ '#play-touch':'👆 Play by touch',
+ '.priv':'🔒 The camera only turns on when you tap, and the picture never leaves your device or gets saved anywhere.',
+ '.lams':'Powered by LAMS · لمس',
+ '#dl':'⬇️ Download the certificate',
+ '#again':'🔁 Play again',
+ '#contact .sh small':'Let’s stay in touch',
+ '#contact .sh h2':'Follow us & say hello',
+ '.ct:nth-child(1) b':'Instagram','.ct:nth-child(2) b':'Snapchat','.ct:nth-child(3) b':'Facebook',
+ '.ct:nth-child(4) b':'WhatsApp','.ct:nth-child(5) b':'Call us','.ct:nth-child(6) b':'Email',
+ '.final h2':'Ready to visit us?',
+ '.final p':'Book your visit in seconds, and come by with no waiting.',
+ '.final .btn':'💬 Book a visit on WhatsApp',
+ '.sig':'Crafted with <span class="h">❤</span> by <a href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener">Yousef Al-Qawasmi</a>',
+};
+const EN_ATTR=[['nav .brand img','alt','Nasamat Al Tofolah logo'],['#kid','placeholder','Your hero’s name'],['.wa','aria-label','WhatsApp'],['#lang','aria-label','التبديل إلى العربية']];
+const TX={
+ ar:{title:'حضانة نسمات الطفولة',days:['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],
+  open:e=>`أبوابنا مفتوحة الآن · لحد ${e}`,see:x=>`بنستناكم ${x} 🌙`,next:(tom,day,at)=>(tom?'بكرا':'يوم '+day)+' من الساعة '+at,
+  today:(a,b)=>`اليوم ${a}–${b}`,closedToday:'اليوم مغلق',closed:'مغلق',langBtn:'Switch to English',
+  needName:'اكتبي اسم البطل أول 🙂',loading:'⏳ ثواني وبنبلّش…',camOk:'✋ حرّك إيدك بالهوا وفقّع الفقاعات!',touch:'👆 فقّع الفقاعات بإصبعك أو بالماوس',
+  certTitle:'شهادة بطل نسمات الطفولة',certSub:'تُمنح هذه الشهادة للبطل/ة',certLine:n=>'لأنه فقّع '+n+' فقاعة بمهارة وسرعة! 🫧',certFoot:d=>'حضانة نسمات الطفولة · '+d.toLocaleDateString('ar-JO'),file:'شهادة-'},
+ en:{title:'Nasamat Al Tofolah Nursery',days:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+  open:e=>`We’re open now · until ${e}`,see:x=>`See you ${x} 🌙`,next:(tom,day,at)=>(tom?'tomorrow':'on '+day)+' from '+at,
+  today:(a,b)=>`Today ${a}–${b}`,closedToday:'Closed today',closed:'Closed',langBtn:'التبديل إلى العربية',
+  needName:'Type the hero’s name first 🙂',loading:'⏳ Just a few seconds…',camOk:'✋ Wave your hand in the air and pop the bubbles!',touch:'👆 Pop the bubbles with your finger or mouse',
+  certTitle:'Nasamat Al Tofolah Champion Certificate',certSub:'This certificate is proudly awarded to',certLine:n=>`for popping ${n} bubbles with skill and speed! 🫧`,certFoot:d=>'Nasamat Al Tofolah Nursery · '+d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),file:'certificate-'},
+};
+let LANG='ar';try{if(localStorage.getItem('nasamat.lang')==='en')LANG='en'}catch(e){}
+window.lang=()=>LANG;window.t=k=>TX[LANG][k];
+const AR={},AR_ATTR={};
+function setLang(l){
+ LANG=l;const de=document.documentElement;de.lang=l;de.dir=l==='en'?'ltr':'rtl';document.title=TX[l].title;
+ for(const sel in EN){const el=document.querySelector(sel);if(!el)continue;if(!(sel in AR))AR[sel]=el.innerHTML;el.innerHTML=l==='en'?EN[sel]:AR[sel]}
+ for(const [sel,a,v] of EN_ATTR){const el=document.querySelector(sel);if(!el)continue;const k=sel+'|'+a;if(!(k in AR_ATTR))AR_ATTR[k]=el.getAttribute(a)||'';el.setAttribute(a,l==='en'?v:AR_ATTR[k])}
+ document.getElementById('lang').setAttribute('aria-label',TX[l].langBtn);
+ document.querySelectorAll('.gal figure').forEach(f=>f.querySelector('img').alt=f.querySelector('figcaption').textContent);
+ document.querySelectorAll('#lang span').forEach(s=>s.classList.toggle('on',s.dataset.l===l));
+ renderHours();dispatchEvent(new Event('langchange'));
+}
+document.getElementById('lang').onclick=()=>{setLang(LANG==='en'?'ar':'en');try{localStorage.setItem('nasamat.lang',LANG)}catch(e){}};
+// ---------- hours ----------
+const H={"0": ["07:00", "18:00"], "1": ["07:00", "18:00"], "2": ["07:00", "18:00"], "3": ["07:00", "18:00"], "4": ["07:00", "18:00"], "5": null, "6": ["07:00", "17:00"]};
+function renderHours(){
+ const T=TX[LANG],N=T.days;
+ const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Amman'})),d=now.getDay(),m=now.getHours()*60+now.getMinutes(),M=s=>+s.slice(0,2)*60+ +s.slice(3);
+ const h=H[d],open=h&&m>=M(h[0])&&m<M(h[1]);
+ document.getElementById('status').classList.toggle('cl',!open);
+ let nx='';for(let k=1;k<=7;k++){const j=(d+k)%7;if(H[j]){nx=T.next(k==1,N[j],H[j][0]);break}}
+ document.getElementById('stxt').textContent=open?T.open(h[1]):T.see(nx);
+ document.getElementById('today').textContent=h?T.today(h[0],h[1]):T.closedToday;
+ document.getElementById('hrows').innerHTML=[6,0,1,2,3,4,5].map(i=>`<div class="hr${i===d?' t':''}"><span>${N[i]}</span><span dir="ltr">${H[i]?H[i][0]+' – '+H[i][1]:T.closed}</span></div>`).join('');
+}
+setLang(LANG);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 <script type="module">
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 const cv=document.getElementById('bg');
-const R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
-R.setPixelRatio(Math.min(devicePixelRatio,1.75));
+const WEAK=window.__weak;
+const R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:!WEAK,powerPreference:'low-power'});
+R.setPixelRatio(Math.min(devicePixelRatio,WEAK?1:1.5));
 const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(40,1,.1,100);C.position.set(0,0,12);
 S.add(new THREE.HemisphereLight(0xffffff,0xbcd4ee,1.6));const dl=new THREE.DirectionalLight(0xffffff,1.6);dl.position.set(4,6,8);S.add(dl);
 const M=c=>new THREE.MeshStandardMaterial({color:c,roughness:.45,metalness:.05});
@@ -269,8 +368,8 @@ for(const s of[-1,1]){const l=new THREE.Mesh(new THREE.IcosahedronGeometry(.45,1
 logo.scale.setScalar(.95);
 // bubbles
 const bub=[];const bg=new THREE.SphereGeometry(1,24,16);
-for(let i=0;i<34;i++){const c=[0x9cc8f2,0xffc58f,0xbfe0ff,0xffe0bf][i%4];
- const m=new THREE.Mesh(bg,new THREE.MeshPhysicalMaterial({color:c,roughness:.1,transmission:.6,thickness:.5,transparent:true,opacity:.55}));
+for(let i=0;i<(WEAK?14:34);i++){const c=[0x9cc8f2,0xffc58f,0xbfe0ff,0xffe0bf][i%4];
+ const m=new THREE.Mesh(bg,WEAK?new THREE.MeshStandardMaterial({color:c,roughness:.15,transparent:true,opacity:.55}):new THREE.MeshPhysicalMaterial({color:c,roughness:.1,transmission:.6,thickness:.5,transparent:true,opacity:.55}));
  const r=.08+Math.random()*.28;m.scale.setScalar(r);m.position.set((Math.random()-.5)*16,(Math.random()-.5)*12,-2-Math.random()*6);m.userData={v:.004+Math.random()*.01,ph:Math.random()*6};S.add(m);bub.push(m);}
 // clouds
 const clouds=[];for(let i=0;i<5;i++){const g=new THREE.Group();const wm=new THREE.MeshStandardMaterial({color:0xffffff,roughness:1,transparent:true,opacity:.55});
@@ -284,72 +383,90 @@ const t0=performance.now();const ease=t=>1-Math.pow(1-Math.min(Math.max(t,0),1),
 let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
 function size(){const w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();}size();addEventListener('resize',size);
 const mob=()=>innerWidth<760;
-function loop(now){const t=(now-t0)/1000;const doc=document.documentElement;const p=Math.min(1,scrollY/Math.max(1,doc.scrollHeight-innerHeight));
+// one loop only, and none at all while the game runs or the tab is hidden
+let raf=0,side=document.documentElement.dir==='ltr'?-1:1;const idle=()=>window.__gameOn||document.hidden;
+function kick(){if(!raf&&!idle())raf=requestAnimationFrame(loop)}
+addEventListener('nasamat:game',kick);document.addEventListener('visibilitychange',kick);
+function loop(now){raf=0;if(idle())return;const t=(now-t0)/1000;const doc=document.documentElement;const p=Math.min(1,scrollY/Math.max(1,doc.scrollHeight-innerHeight));
  parts.forEach(q=>{const k=ease((t-.4-q.userData.d)/1.2);q.position.lerpVectors(q.userData.from||(q.userData.from=q.position.clone()),q.userData.home,k)});
  const open=p<.85?Math.min(1,.6+p*1.5):Math.max(0,1-(p-.85)*6);
  pages.forEach(({piv,s})=>piv.rotation.z=s*(.12+(1-open)*1.3));
  pen.rotation.y=t*.4+p*6;
  logo.rotation.y=Math.sin(t*.3)*.25+p*Math.PI*1.2+mx*.5;logo.rotation.x=.18+my*.25+Math.sin(t*.5)*.05;
- logo.position.x=mob()?0:-3.3*Math.cos(p*Math.PI);
+ side+=((document.documentElement.dir==='ltr'?-1:1)-side)*.08;
+ logo.position.x=mob()?0:-3.3*Math.cos(p*Math.PI)*side;
  logo.position.y=mob()?2.6:.2+Math.sin(t*.8)*.12;logo.scale.setScalar(mob()?.6:.95);
  C.position.z=12-p*2;C.position.y=-p*1.5;C.lookAt(0,-p*1.5,0);
  bub.forEach(b=>{b.position.y+=b.userData.v;b.position.x+=Math.sin(t+b.userData.ph)*.003;if(b.position.y>8)b.position.y=-8});
  clouds.forEach(c=>{c.position.x+=c.userData.v;if(c.position.x>11)c.position.x=-11});
  stars.forEach((s,i)=>{s.rotation.y=t*2+i;s.scale.setScalar(1+Math.sin(t*3+i)*.3)});
- R.render(S,C);requestAnimationFrame(loop);}
-requestAnimationFrame(loop);
+ R.render(S,C);raf=requestAnimationFrame(loop);}
+kick();
 </script>
-<script>
-(()=>{
+<script type="module">
+// The bubble game. Hand tracking = LAMS lite (lams-lite.js). The camera picture is never drawn:
+// the video stays invisible and only the orange pointer shows where the fingertip is.
+import { preload, startPointer } from './lams-lite.js';
 const $=s=>document.querySelector(s);const st=$('#stage'),cv=$('#gc'),x=cv.getContext('2d'),vid=$('#gv');
-let W,H,bubs=[],parts=[],score=0,goal=20,run=false,hand=null,lm=null,lastT=0,name='';
-function fit(){const r=st.getBoundingClientRect();W=cv.width=r.width*devicePixelRatio;H=cv.height=r.height*devicePixelRatio}
+const WEAK=window.__weak,D=Math.min(devicePixelRatio||1,WEAK?1.5:2),MAXB=WEAK?7:9;
+let W,H,bubs=[],parts=[],score=0,goal=20,run=false,won=false,ptr=null,hand=null,name='',gid=0,mode='',tries=0,winT=0;
+const T=k=>window.t(k);
+function setMode(k){mode=k;$('#mode').textContent=k?T(k):''}
+function gameOn(v){window.__gameOn=v;dispatchEvent(new Event('nasamat:game'))}
+function fit(){const r=st.getBoundingClientRect();W=cv.width=r.width*D;H=cv.height=r.height*D}
 const cols=['#5b9bd8','#ec8d3b','#2f6fac','#f7b267','#7cc4f5'];
-function spawn(){const r=(28+Math.random()*30)*devicePixelRatio;bubs.push({x:r+Math.random()*(W-2*r),y:H+r,r,c:cols[Math.random()*5|0],v:(.8+Math.random()*1.2)*devicePixelRatio,ph:Math.random()*6})}
-function pop(b){score++;$('#sc').textContent=score+' / '+goal;for(let i=0;i<14;i++){const a=Math.random()*6.28,s=(2+Math.random()*4)*devicePixelRatio;parts.push({x:b.x,y:b.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:b.c,st:i%3==0})}
+function spawn(){const r=(28+Math.random()*30)*D;bubs.push({x:r+Math.random()*(W-2*r),y:H+r,r,c:cols[Math.random()*5|0],v:(.8+Math.random()*1.2)*D,ph:Math.random()*6})}
+function pop(b){score++;$('#sc').textContent=score+' / '+goal;for(let i=0;i<(WEAK?8:14);i++){const a=Math.random()*6.28,s=(2+Math.random()*4)*D;parts.push({x:b.x,y:b.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:b.c,st:i%3==0})}
  if(score>=goal)win()}
-function hit(px,py){bubs=bubs.filter(b=>{if(Math.hypot(b.x-px,b.y-py)<b.r+14*devicePixelRatio){pop(b);return false}return true})}
+function hit(px,py){if(!run||won)return;bubs=bubs.filter(b=>{if(!won&&Math.hypot(b.x-px,b.y-py)<b.r+14*D){pop(b);return false}return true})}
 function star(cx,cy,r,c){x.fillStyle=c;x.beginPath();for(let i=0;i<10;i++){const a=i*Math.PI/5-Math.PI/2,rr=i%2?r/2.2:r;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.fill()}
-function draw(t){if(!run)return;x.clearRect(0,0,W,H);
- if(Math.random()<.035&&bubs.length<9)spawn();
- bubs.forEach(b=>{b.y-=b.v;b.x+=Math.sin(t/500+b.ph)*.6;const g=x.createRadialGradient(b.x-b.r/3,b.y-b.r/3,b.r/6,b.x,b.y,b.r);g.addColorStop(0,'#fff');g.addColorStop(.35,b.c+'cc');g.addColorStop(1,b.c+'66');x.fillStyle=g;x.beginPath();x.arc(b.x,b.y,b.r,0,7);x.fill();x.strokeStyle='#ffffffaa';x.lineWidth=2*devicePixelRatio;x.stroke()});
+function draw(t){gid=0;if(!run)return;x.clearRect(0,0,W,H);
+ if(!won&&Math.random()<.035&&bubs.length<MAXB)spawn();
+ bubs.forEach(b=>{b.y-=b.v;b.x+=Math.sin(t/500+b.ph)*.6;const g=x.createRadialGradient(b.x-b.r/3,b.y-b.r/3,b.r/6,b.x,b.y,b.r);g.addColorStop(0,'#fff');g.addColorStop(.35,b.c+'cc');g.addColorStop(1,b.c+'66');x.fillStyle=g;x.beginPath();x.arc(b.x,b.y,b.r,0,7);x.fill();x.strokeStyle='#ffffffaa';x.lineWidth=2*D;x.stroke()});
  bubs=bubs.filter(b=>b.y>-b.r);
- parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15*devicePixelRatio;p.l-=.025;x.globalAlpha=Math.max(p.l,0);p.st?star(p.x,p.y,7*devicePixelRatio,'#f7c35f'):(x.fillStyle=p.c,x.beginPath(),x.arc(p.x,p.y,4*devicePixelRatio,0,7),x.fill())});x.globalAlpha=1;parts=parts.filter(p=>p.l>0);
- if(lm&&vid.readyState>=2&&t-lastT>45){lastT=t;const r=lm.detectForVideo(vid,t);hand=r.landmarks&&r.landmarks[0]?r.landmarks[0][8]:null}
- if(hand){const px=(1-hand.x)*W,py=hand.y*H;hit(px,py);x.fillStyle='#ec8d3b';x.beginPath();x.arc(px,py,16*devicePixelRatio,0,7);x.fill();x.strokeStyle='#fff';x.lineWidth=4*devicePixelRatio;x.stroke()}
- requestAnimationFrame(draw)}
-st.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();hit((e.clientX-r.left)*devicePixelRatio,(e.clientY-r.top)*devicePixelRatio)});
-st.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect();hit((e.clientX-r.left)*devicePixelRatio,(e.clientY-r.top)*devicePixelRatio)});
-async function start(cam){name=$('#kid').value.trim();if(!name){$('#kid').focus();$('#kid').placeholder='اكتبي اسم البطل أول 🙂';return}
- $('#cert').classList.remove('on');st.classList.add('on');fit();score=0;bubs=[];parts=[];$('#sc').textContent='0 / '+goal;$('#who').textContent='🦸 '+name;run=true;requestAnimationFrame(draw);
+ parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.15*D;p.l-=.025;x.globalAlpha=Math.max(p.l,0);p.st?star(p.x,p.y,7*D,'#f7c35f'):(x.fillStyle=p.c,x.beginPath(),x.arc(p.x,p.y,4*D,0,7),x.fill())});x.globalAlpha=1;parts=parts.filter(p=>p.l>0);
+ hand=ptr?ptr.sample(t,W,H):null;
+ if(hand){hit(hand.x,hand.y);x.fillStyle='#ec8d3b';x.beginPath();x.arc(hand.x,hand.y,16*D,0,7);x.fill();x.strokeStyle='#fff';x.lineWidth=4*D;x.stroke()}
+ gid=requestAnimationFrame(draw)}
+const at=e=>{const r=cv.getBoundingClientRect();hit((e.clientX-r.left)*D,(e.clientY-r.top)*D)};
+st.addEventListener('pointermove',at);st.addEventListener('pointerdown',at);
+// load the hand model in the background as soon as a name is typed (the camera stays off)
+const warm=()=>{if($('#kid').value.trim())preload().catch(()=>{})};
+$('#kid').addEventListener('input',warm);$('#play-cam').addEventListener('pointerenter',()=>preload().catch(()=>{}));
+async function start(cam){name=$('#kid').value.trim();if(!name){$('#kid').focus();$('#kid').placeholder=T('needName');return}
+ const my=++tries;clearTimeout(winT);stopCam();
+ $('#cert').classList.remove('on');st.classList.add('on');fit();score=0;won=false;bubs=[];parts=[];$('#sc').textContent='0 / '+goal;$('#who').textContent='🦸 '+name;
+ run=true;gameOn(true);cancelAnimationFrame(gid);gid=requestAnimationFrame(draw);
  st.scrollIntoView({behavior:'smooth',block:'center'});
- if(cam){$('#mode').textContent='⏳ عم نجهّز الكاميرا…';try{
-  const s=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:640,height:480}});vid.srcObject=s;await vid.play();
-  const V=await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs');
-  const fs=await V.FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
-  lm=await V.HandLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task',delegate:'GPU'},runningMode:'VIDEO',numHands:1});
-  $('#mode').textContent='✋ حرّك إيدك بالهوا وفقّع الفقاعات!'}catch(e){$('#mode').textContent='👆 فقّع الفقاعات بإصبعك أو بالماوس'}}
- else $('#mode').textContent='👆 فقّع الفقاعات بإصبعك أو بالماوس'}
-function stopCam(){if(vid.srcObject){vid.srcObject.getTracks().forEach(t=>t.stop());vid.srcObject=null}lm=null;hand=null}
-function confetti(){for(let i=0;i<160;i++){const a=Math.random()*6.28,s=(3+Math.random()*7)*devicePixelRatio;parts.push({x:W/2,y:H/2,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,l:1.6,c:cols[i%5],st:i%4==0})}}
-function win(){confetti();setTimeout(()=>{run=false;stopCam();cert()},1600)}
-function cert(){const c=$('#cc'),g=c.getContext('2d');c.width=1400;c.height=990;
+ if(!cam){setMode('touch');return}
+ setMode('loading');
+ try{const p=await startPointer(vid);if(my!==tries||!run||won){p.stop();return}ptr=p;setMode('camOk')}
+ catch(e){if(my===tries)setMode('touch')}}
+function stopCam(){if(ptr){ptr.stop();ptr=null}else if(vid.srcObject){vid.srcObject.getTracks().forEach(t=>t.stop());vid.srcObject=null}hand=null}
+function confetti(){for(let i=0;i<(WEAK?90:160);i++){const a=Math.random()*6.28,s=(3+Math.random()*7)*D;parts.push({x:W/2,y:H/2,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,l:1.6,c:cols[i%5],st:i%4==0})}}
+function win(){if(won)return;won=true;confetti();stopCam();winT=setTimeout(()=>{run=false;gameOn(false);cert(true)},1600)}
+async function cert(scroll){const en=window.lang()==='en',F=en?'Poppins,"Readex Pro",sans-serif':'"Readex Pro",sans-serif';
+ try{await Promise.all([document.fonts.load('700 72px '+F),document.fonts.load('400 36px '+F)])}catch(e){}
+ const c=$('#cc'),g=c.getContext('2d');c.width=1400;c.height=990;
  const bg=g.createLinearGradient(0,0,1400,990);bg.addColorStop(0,'#fff8ef');bg.addColorStop(1,'#eaf3ff');g.fillStyle=bg;g.fillRect(0,0,1400,990);
  g.strokeStyle='#2f6fac';g.lineWidth=14;g.strokeRect(30,30,1340,930);g.strokeStyle='#ec8d3b';g.lineWidth=4;g.strokeRect(56,56,1288,878);
  for(let i=0;i<26;i++){g.globalAlpha=.25;g.fillStyle=cols[i%5];g.beginPath();g.arc(Math.random()*1400,Math.random()*990,8+Math.random()*26,0,7);g.fill()}g.globalAlpha=1;
  const lg=$('#logoimg');g.drawImage(lg,600,80,200,190);
- g.textAlign='center';g.direction='rtl';g.fillStyle='#2f6fac';g.font='700 72px "Readex Pro",sans-serif';g.fillText('شهادة بطل نسمات الطفولة',700,355);
- g.fillStyle='#6d6a64';g.font='400 36px "Readex Pro",sans-serif';g.fillText('تُمنح هذه الشهادة للبطل/ة',700,440);
- g.fillStyle='#ec8d3b';g.font='700 96px "Readex Pro",sans-serif';g.fillText(name,700,565);
- g.fillStyle='#151515';g.font='400 36px "Readex Pro",sans-serif';g.fillText('لأنه فقّع '+score+' فقاعة بمهارة وسرعة! 🫧',700,650);
+ // one line of text, centred, shrunk if it would run past the frame
+ const line=(txt,y,w,size,color,font=F,dir=en?'ltr':'rtl')=>{g.direction=dir;g.fillStyle=color;let s=size;do{g.font=`${w} ${s}px ${font}`;s-=2}while(g.measureText(txt).width>1220&&s>20);g.fillText(txt,700,y)};
+ g.textAlign='center';
+ line(T('certTitle'),355,700,72,'#2f6fac');
+ line(T('certSub'),440,400,36,'#6d6a64');
+ const ar=/[؀-ۿ]/.test(name);line(name,565,700,96,'#ec8d3b',ar?'"Readex Pro",sans-serif':F,ar?'rtl':'ltr');
+ line(T('certLine')(score),650,400,36,'#151515');
  for(let i=0;i<5;i++){g.save();g.translate(540+i*80,740);g.fillStyle='#f7c35f';g.beginPath();for(let k=0;k<10;k++){const a=k*Math.PI/5-Math.PI/2,r=k%2?15:34;g.lineTo(Math.cos(a)*r,Math.sin(a)*r)}g.fill();g.restore()}
- g.fillStyle='#6d6a64';g.font='400 26px "Readex Pro",sans-serif';g.fillText('حضانة نسمات الطفولة · '+new Date().toLocaleDateString('ar-JO'),700,860);
- $('#cert').classList.add('on');$('#cert').scrollIntoView({behavior:'smooth',block:'center'})}
+ line(T('certFoot')(new Date()),860,400,26,'#6d6a64');
+ $('#cert').classList.add('on');if(scroll)$('#cert').scrollIntoView({behavior:'smooth',block:'center'})}
+addEventListener('langchange',()=>{if(mode)setMode(mode);if($('#cert').classList.contains('on'))cert(false)});
 $('#play-cam').onclick=()=>start(true);$('#play-touch').onclick=()=>start(false);
-$('#dl').onclick=()=>{const a=document.createElement('a');a.download='شهادة-'+name+'.png';a.href=$('#cc').toDataURL('image/png');a.click()};
+$('#dl').onclick=()=>{const a=document.createElement('a');a.download=T('file')+name+'.png';a.href=$('#cc').toDataURL('image/png');a.click()};
 $('#again').onclick=()=>start(true);
 addEventListener('resize',()=>{if(run)fit()});
-})();
 </script>
 <script>addEventListener('load',()=>setTimeout(()=>document.getElementById('intro').classList.add('go'),1500));setTimeout(()=>document.getElementById('intro').classList.add('go'),3500)</script>
 </body>
