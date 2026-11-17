@@ -221,7 +221,7 @@ html[lang=en] h1{letter-spacing:-1.5px;font-size:clamp(40px,5.4vw,70px)}
   <div class="gstart"><input id="kid" maxlength="24" placeholder="اسم البطل أو البطلة"><button class="gbtn" id="play-cam">✋ العب بالكاميرا</button><button class="gbtn lt" id="play-touch">👆 العب باللمس</button></div>
   <p class="priv">🔒 الكاميرا ما بتشتغل إلا لما تكبسي، والصورة ما بتطلع من جهازك ولا بتنحفظ بأي مكان.</p>
   <div class="stage" id="stage"><video id="gv" playsinline muted></video><canvas id="gc"></canvas><div class="hud"><span id="who"></span><span id="sc">0 / 20</span></div><div class="hud" style="top:auto;bottom:34px;justify-content:center"><span id="mode"></span></div><div class="lams">بتقنية LAMS · لمس</div></div>
-  <div class="cert" id="cert"><canvas id="cc"></canvas><div class="row2"><button class="gbtn" id="dl">⬇️ حمّلي الشهادة</button><button class="gbtn lt" id="again">🔁 العب مرة ثانية</button></div></div>
+  <div class="cert" id="cert"><canvas id="cc"></canvas><div class="row2"><button class="gbtn" id="dl">⬇️ حمّلي الشهادة</button><button class="gbtn lt" id="pr">🖨️ اطبعي الشهادة</button><button class="gbtn lt" id="again">🔁 العب مرة ثانية</button></div></div>
  </div>
 </div></section>
 
@@ -283,6 +283,7 @@ const EN={
  '.lams':'Powered by LAMS · لمس',
  '#dl':'⬇️ Download the certificate',
  '#again':'🔁 Play again',
+ '#pr':'🖨️ Print certificate',
  '#contact .sh small':'Let’s stay in touch',
  '#contact .sh h2':'Follow us & say hello',
  '.ct:nth-child(1) b':'Instagram','.ct:nth-child(2) b':'Snapchat','.ct:nth-child(3) b':'Facebook',
@@ -466,7 +467,12 @@ async function cert(scroll){const en=window.lang()==='en',F=en?'Poppins,"Readex 
  $('#cert').classList.add('on');if(scroll)$('#cert').scrollIntoView({behavior:'smooth',block:'center'})}
 addEventListener('langchange',()=>{if(mode)setMode(mode);if($('#cert').classList.contains('on'))cert(false)});
 $('#play-cam').onclick=()=>start(true);$('#play-touch').onclick=()=>start(false);
-$('#dl').onclick=()=>{const a=document.createElement('a');a.download=T('file')+name+'.png';a.href=$('#cc').toDataURL('image/png');a.click()};
+$('#dl').onclick=()=>{const fn=T('file')+name+'.png';$('#cc').toBlob(async b=>{
+ const f=new File([b],fn,{type:'image/png'});
+ if(matchMedia('(pointer:coarse)').matches&&navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:fn});return}catch(e){if(e.name==='AbortError')return}}
+ const a=document.createElement('a');a.download=fn;a.href=URL.createObjectURL(b);document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)},'image/png')};
+$('#pr').onclick=()=>{const u=$('#cc').toDataURL('image/png');const w=open('','_blank');if(!w)return;
+ w.document.write('<!doctype html><html><head><title>'+T('file')+name+'</title><style>@page{size:A4 landscape;margin:0}html,body{margin:0;height:100%}body{display:grid;place-items:center}img{width:100%;height:100vh;object-fit:contain}</style></head><body><img src="'+u+'" onload="setTimeout(()=>print(),300)"></body></html>');w.document.close()};
 $('#again').onclick=()=>start(true);
 addEventListener('resize',()=>{if(run)fit()});
 </script>
