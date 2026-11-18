@@ -465,7 +465,8 @@ async function cert(scroll){const en=window.lang()==='en',F=en?'Poppins,"Readex 
  const ar=/[؀-ۿ]/.test(name);line(name,565,700,96,'#ec8d3b',ar?'"Readex Pro",sans-serif':F,ar?'rtl':'ltr');
  line(T('certLine')(score),650,400,36,'#151515');
  for(let i=0;i<5;i++){g.save();g.translate(540+i*80,740);g.fillStyle='#f7c35f';g.beginPath();for(let k=0;k<10;k++){const a=k*Math.PI/5-Math.PI/2,r=k%2?15:34;g.lineTo(Math.cos(a)*r,Math.sin(a)*r)}g.fill();g.restore()}
- line(T('certFoot')(new Date()),860,400,26,'#6d6a64');
+ line(T('certFoot')(new Date()),845,400,26,'#6d6a64');
+ line(document.documentElement.lang==='en'?'Touchless game powered by LAMS ✋':'لعبة بدون لمس بتقنية لمس LAMS ✋',895,400,20,'#2f6fac');
  $('#cert').classList.add('on');if(scroll)$('#cert').scrollIntoView({behavior:'smooth',block:'center'})}
 addEventListener('langchange',()=>{if(mode)setMode(mode);if($('#cert').classList.contains('on'))cert(false)});
 $('#play-cam').onclick=()=>start(true);$('#play-touch').onclick=()=>start(false);
