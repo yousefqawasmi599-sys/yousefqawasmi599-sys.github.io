@@ -25,13 +25,9 @@ class OneEuro2D {
 class Mapper {
   reset() { this.anchor = null; this.palm = 0; }
   map(tip, palm, fw, fh, vw, vh) {
-    const tx = tip.x, ty = tip.y * (fh / fw);
-    this.palm = this.palm ? this.palm * 0.92 + palm * 0.08 : palm;
-    if (!this.anchor) this.anchor = { x: tx, y: ty };
-    const sx0 = SPAN_PALMS * this.palm, sy0 = sx0 * (vh / vw);
-    let sx = 0.5 - (tx - this.anchor.x) / sx0, sy = 0.5 + (ty - this.anchor.y) / sy0;
-    if (sx < 0 || sx > 1) { const c = Math.min(1, Math.max(0, sx)); this.anchor.x -= (sx - c) * sx0; sx = c; }
-    if (sy < 0 || sy > 1) { const c = Math.min(1, Math.max(0, sy)); this.anchor.y += (sy - c) * sy0; sy = c; }
+    // fixed, mirrored window over the middle of the camera frame: same hand spot -> same screen spot
+    const c = (v) => Math.min(1, Math.max(0, v));
+    const sx = c(1 - (tip.x - 0.2) / 0.6), sy = c((tip.y - 0.15) / 0.55);
     return { x: sx * vw, y: sy * vh };
   }
 }

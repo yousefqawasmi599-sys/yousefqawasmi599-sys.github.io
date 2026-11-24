@@ -149,8 +149,7 @@ footer{border-top:1px solid #1d1e20;margin-top:72px}footer .wrap{display:flex;ju
 .char{opacity:0;transform:translateY(40px) scale(.96);transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
 .lit .char{opacity:1;transform:none}.lit .char.a{transition-delay:.35s}
 .char:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(16,17,18,.55));pointer-events:none}
-.char.talk{box-shadow:0 0 0 2px var(--gold),0 0 60px rgba(215,183,123,.45),0 30px 80px rgba(0,0,0,.55)}
-.char.talk img{animation:nod .5s ease-in-out infinite}
+.char.talk{box-shadow:0 0 0 2px var(--gold),0 0 60px rgba(215,183,123,var(--glow,.45)),0 30px 80px rgba(0,0,0,.55)}
 @keyframes nod{50%{transform:translateY(-3px) rotate(-.6deg)}}
 .name-tag{position:absolute;bottom:14px;inset-inline:0;text-align:center;z-index:1;font-weight:700;letter-spacing:.04em;text-shadow:0 2px 10px #000}
 .listen-btn{display:inline-flex;align-items:center;gap:10px}
@@ -158,9 +157,9 @@ footer{border-top:1px solid #1d1e20;margin-top:72px}footer .wrap{display:flex;ju
 .playing .eq i{animation:eq .6s ease-in-out infinite}.playing .eq i:nth-child(2){animation-delay:.15s}.playing .eq i:nth-child(3){animation-delay:.3s}.playing .eq i:nth-child(4){animation-delay:.45s}
 @keyframes eq{50%{height:18px}}
 .face{position:relative;transition:box-shadow .3s}
-.face.talk{box-shadow:0 0 0 10px rgba(215,183,123,.18),0 0 70px rgba(215,183,123,.45)}
-.face.talk img{animation:nod .5s ease-in-out infinite}
-.breath{animation:breath 4s ease-in-out infinite}@keyframes breath{50%{transform:scale(1.015)}}
+.face.talk{box-shadow:0 0 0 10px rgba(215,183,123,.18),0 0 70px rgba(215,183,123,var(--glow,.45))}
+
+.breath{}@keyframes breath{50%{transform:scale(1.015)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
 .burst{position:absolute;pointer-events:none;z-index:6;font-size:26px;color:var(--gold);animation:fly 1s ease-out forwards}
 @keyframes fly{to{transform:translate(var(--dx),var(--dy)) scale(.4) rotate(160deg);opacity:0}}
@@ -279,10 +278,11 @@ function stopTalk() { if (current) { current.stop(); current = null; } }
 /** talk(key, faceImg, who, setState, enabled, done): plays audio/key.mp3; frames swap idle/speak with loudness */
 function talk(key, img, who, setState, enabled, done, holder) {
   stopTalk(); done = done || (() => {});
-  const fin = () => { cancelAnimationFrame(raf); img.src = IMG(who, 'idle'); holder && holder.classList.remove('talk'); setState('idle'); current = null; done(); };
+  const fin = () => { cancelAnimationFrame(raf); img.src = IMG(who, 'idle'); holder && (holder.classList.remove('talk'), holder.style.removeProperty('--glow')); setState('idle'); current = null; done(); };
   let raf = 0, a = null, an = null, buf = null;
   setState('speak'); holder && holder.classList.add('talk');
-  const flap = (lvl) => { img.src = IMG(who, lvl > .12 ? 'speak' : 'idle'); };
+  img.src = IMG(who, 'speak'); let sm = 0;
+  const flap = (lvl) => { sm = sm * .8 + lvl * .2; if (holder) holder.style.setProperty('--glow', (0.25 + sm * 1.6).toFixed(2)); };
   const tick = () => { if (an) { an.getByteTimeDomainData(buf); let m = 0; for (let i = 0; i < buf.length; i++) m = Math.max(m, Math.abs(buf[i] - 128)); flap(m / 128); } raf = requestAnimationFrame(tick); };
   if (enabled && audioOK[key] !== false) {
     a = new Audio('audio/' + key + '.mp3'); a.preload = 'auto';
@@ -293,7 +293,7 @@ function talk(key, img, who, setState, enabled, done, holder) {
     current = { stop() { a.pause(); fin(); } };
   } else silent();
   function silent() { // no recording: animate the mouth for a reading-length beat
-    let on = false; const iv = setInterval(() => { on = !on; img.src = IMG(who, on ? 'speak' : 'idle'); }, 170);
+    const iv = 0;
     const t = setTimeout(() => { clearInterval(iv); fin(); }, 1600);
     current = { stop() { clearInterval(iv); clearTimeout(t); fin(); } };
   }
