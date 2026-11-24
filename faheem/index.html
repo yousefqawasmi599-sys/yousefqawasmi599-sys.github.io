@@ -184,6 +184,11 @@ form.send input{flex:1;min-height:48px;border-radius:999px;border:1px solid #263
 .market{justify-content:center;margin-top:26px}
 .hd{display:flex;align-items:center;gap:10px}.igb{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold2);color:var(--gold)}.igb:hover{border-color:var(--gold)}
 footer .fl{display:flex;gap:18px;align-items:center}footer .fl a{color:var(--mute);text-decoration:none;display:inline-flex;gap:6px;align-items:center}footer .fl a:hover{color:var(--gold)}
+.systabs{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.frame{margin:0;width:100%;max-width:980px;border-radius:18px;overflow:hidden;border:1px solid var(--gold2);box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 80px rgba(215,183,123,.08);background:#0e0f10}
+.frame .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1a1b1d;border-bottom:1px solid #26272a;direction:ltr}.frame .bar i{width:10px;height:10px;border-radius:50%;background:#3a3b3e}.frame .bar span{margin-inline-start:12px;font-size:12px;color:var(--dim)}
+.frame img{width:100%;height:auto;display:block;transition:opacity .25s}
+.syscap{margin:0;color:var(--mute);text-align:center;max-width:620px}
 .trial{margin-top:22px;text-align:center;color:var(--mute)}.trial b{color:var(--gold)}
 
 /* kids */
@@ -234,7 +239,7 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 <a class="topbar" href="#offer"><span>🎁 عرض للمحلات:</span> اعمل موقعك معنا، وخُذ فهيمة على الواتساب شهر ببلاش <b>اعرف أكتر ←</b></a>
 <header><div class="wrap">
  <a class="brand" href="#top"><img src="assets/mark.svg" alt=""><div><b>FAHEEM</b><span>فهيم</span></div></a>
- <nav aria-label="الأقسام"><a href="#offer">العرض</a><a href="#try">جرّبها</a><a href="#services">الخدمات</a><a href="#pricing">الأسعار</a><a href="#faq">أسئلة</a></nav>
+ <nav aria-label="الأقسام"><a href="#offer">العرض</a><a href="#try">جرّبها</a><a href="#system">اللوحة</a><a href="#services">الخدمات</a><a href="#pricing">الأسعار</a><a href="#faq">أسئلة</a></nav>
  <span class="hd"><a class="igb" href="https://www.instagram.com/faheem.assistant/" target="_blank" rel="noopener" aria-label="فهيم على إنستغرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a class="btn wa" data-wa="مرحبا، بدي أعرف أكتر عن فهيم" href="#">واتساب</a></span>
 </div></header>
 
@@ -289,6 +294,21 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
    <div class="chips" id="chips"></div>
    <form class="send" id="send"><label class="sr" for="bin">رسالتك</label><input id="bin" autocomplete="off" placeholder="اكتب رسالة…"><button class="ic-btn" aria-label="إرسال"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#101112" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></form>
   </div><p class="note">تجربة بردود محضّرة وأسماء ومحلات وهمية. بالنسخة الحقيقية بتنربط بالذكاء الاصطناعي، وبمعلومات بزنسك ومواعيدك الحقيقية.</p></div>
+ </div>
+</div></section>
+
+<section class="sec" id="system" aria-labelledby="syt"><div class="wrap">
+ <p class="kicker">لوحة فهيم</p>
+ <h2 id="syt">وإنت؟ بتشوف كل إشي من مكان واحد</h2>
+ <p class="lead">كل محادثة، وكل حجز، وكل زبون، قدامك. وإذا بدك ترد بنفسك، بتستلم المحادثة بكبسة.</p>
+ <div class="systabs reveal">
+  <div class="seg" id="sysTabs" role="tablist">
+   <button type="button" role="tab" data-s="dash" aria-pressed="true">لوحة التحكم</button>
+   <button type="button" role="tab" data-s="inbox" aria-pressed="false">صندوق المحادثات</button>
+   <button type="button" role="tab" data-s="settings" aria-pressed="false">فهيم أو فهيمة</button>
+  </div>
+  <figure class="frame"><div class="bar"><i></i><i></i><i></i><span>app.faheem</span></div><img id="sysImg" src="assets/sys-dash.webp" alt="لوحة تحكم فهيم: عدد المحادثات والحجوزات ونسبة اللي حلّها المساعد" width="772" height="463" loading="lazy"></figure>
+  <p class="syscap" id="sysCap">أرقام شغلك بنظرة وحدة: محادثات اليوم، والحجوزات، وقدّيش حلّت فهيمة لحالها.</p>
  </div>
 </div></section>
 
@@ -414,6 +434,13 @@ function persona(faceEl, stateEl, getWho) {
   const setM = m => { document.querySelectorAll('#market button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === m)); document.querySelectorAll('.amt').forEach(e => e.textContent = e.dataset[m]); document.querySelectorAll('.cur').forEach(e => e.textContent = m === 'aed' ? 'درهم' : 'دينار'); };
   $('#market').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setM(b.dataset.m); });
   if (/Dubai|Abu_Dhabi/.test(Intl.DateTimeFormat().resolvedOptions().timeZone || '')) setM('aed');
+}
+// system screenshots tabs
+{
+  const cap = {dash: 'أرقام شغلك بنظرة وحدة: محادثات اليوم، والحجوزات، وقدّيش حلّت فهيمة لحالها.', inbox: 'كل المحادثات من واتساب وإنستغرام وفيسبوك بمكان واحد، ومعها بيانات الزبون وملاحظاتك.', settings: 'بتختار بلدك (الأردن أو الإمارات) ومين يرد على زباينك: فهيم أو فهيمة.'};
+  const alt = {dash: 'لوحة تحكم فهيم', inbox: 'صندوق محادثات فهيم', settings: 'إعدادات فهيم: البلد والشخصية'};
+  const img = $('#sysImg');
+  $('#sysTabs').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const k = b.dataset.s; $('#sysTabs').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); img.style.opacity = 0; setTimeout(() => { img.src = `assets/sys-${k}.webp`; img.alt = alt[k]; img.style.opacity = 1; }, 180); $('#sysCap').textContent = cap[k]; });
 }
 // reveal on scroll
 { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .12}); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); }
