@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فهيم | رفيقك الذكي العربي</title>
+<meta name="description" content="فهيم وفهيمة: شخصيتين ذكيتين بيحكوا لهجتك. بيعلّموا الأطفال، وبيشرحوا للطلاب، وبيردّوا على زباين مشروعك.">
+<meta property="og:title" content="فهيم | رفيقك الذكي العربي">
+<meta property="og:description" content="شخصيتين ذكيتين إلهم وجه وصوت، وبيحكوا لهجتك.">
+<meta property="og:image" content="assets/faheem-full.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+/* VOICE: warm, confident, Jordanian-colloquial; a premium Arabic companion
+   IDEA: a dark golden stage where two characters perform and react
+   PICTURE: Faheem & Faheema lit by a gold spotlight; their faces change as they listen, think and speak
+   COLOUR/TYPE: black #101112, charcoal, gold #D7B77B, ivory #F4EFE6; IBM Plex Sans Arabic
+   LAYOUT: hero stage, three doors, three live demos, why, contact */
+@font-face{font-family:Plex;src:url(assets/ibm-plex-sans-arabic-400.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Plex;src:url(assets/ibm-plex-sans-arabic-600.woff2) format('woff2');font-weight:600 700;font-display:swap}
+:root{--bg:#101112;--bg2:#0b0c0d;--card:#17181a;--card2:#1c1a16;--line:#2a2b2e;--gold:#d7b77b;--gold2:#3a3224;--ink:#f4efe6;--mute:#c9c2b6;--dim:#a9a39a;--ok:#9fd5a8}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 Plex,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--gold)}
+img{display:block;max-width:100%}
+button,input{font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;border:0;cursor:pointer;font-weight:700;text-decoration:none;font-size:17px}
+.btn.gold{background:var(--gold);color:#101112}.btn.gold:hover{background:#e6caa0}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--gold2)}.btn.line:hover{border-color:var(--gold)}
+.kicker{margin:0;color:var(--gold);font-weight:600;font-size:15px}
+h1,h2,h3{line-height:1.2;margin:0;font-weight:700}
+.sec{padding:88px 0}
+.sec h2{font-size:clamp(28px,4vw,40px)}
+.lead{color:var(--mute);font-size:18px;max-width:640px;margin:12px 0 0}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(16,17,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid #1d1e20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:32px;height:32px}
+.brand b{font:800 14px/1 system-ui;letter-spacing:.2em}.brand span{display:block;color:var(--gold);font-size:13px;font-weight:600}
+nav{display:flex;gap:22px;flex-wrap:wrap}nav a{color:#d9d3c8;text-decoration:none;font-size:16px}nav a:hover{color:var(--gold)}
+@media(max-width:760px){nav{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:40px 0 64px;text-align:center}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 55% at 50% 62%,rgba(215,183,123,.22),transparent 70%);pointer-events:none}
+.hero h1{font-size:clamp(36px,6vw,66px);margin:10px auto 0;max-width:900px}.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{margin:16px auto 0}
+.stage{position:relative;max-width:900px;height:clamp(360px,52vw,540px);margin:34px auto 0}
+.stage .floor{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:80%;height:80px;border-radius:50%;background:radial-gradient(ellipse,rgba(215,183,123,.35),transparent 70%)}
+.char{position:absolute;bottom:18px;width:min(44%,380px);aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid #2e2c28;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:bob 5s ease-in-out infinite}
+.char img{width:100%;height:100%;object-fit:cover;object-position:top}
+.char.f{right:6%}.char.a{left:6%;animation-delay:-2.5s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.bubble{position:absolute;top:0;right:30%;max-width:300px;background:var(--ink);color:#101112;padding:14px 20px;border-radius:22px 22px 6px 22px;text-align:right;box-shadow:0 18px 40px rgba(0,0,0,.45);font-size:16px;line-height:1.6;min-height:56px}
+.bubble b{display:block;font-size:18px}
+@media(max-width:600px){.bubble{right:8%;max-width:240px;font-size:14px}.char{width:47%}}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+
+/* doors */
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;margin-top:32px}
+.door{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:24px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:transform .25s,border-color .25s}
+.door:hover{transform:translateY(-4px);border-color:var(--gold)}
+.door:first-child{background:linear-gradient(180deg,var(--card2),#141414);border-color:var(--gold2)}
+.door .ic{width:56px;height:56px;border-radius:16px;background:rgba(215,183,123,.14);display:grid;place-items:center}
+.door h3{font-size:26px}.door p{margin:0;color:var(--mute)}.door .go{margin-top:auto;color:var(--gold);font-weight:600}
+
+/* demo shared */
+.demo{background:var(--bg2);border-block:1px solid #1d1e20}
+.demo .grid{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;margin-top:32px}
+.side{flex:1 1 300px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.face{width:220px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--gold);box-shadow:0 0 0 10px rgba(215,183,123,.08),0 20px 60px rgba(0,0,0,.5);background:#1a1a1a}
+.face img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;transition:opacity .2s}
+.state{display:inline-flex;gap:8px;align-items:center;font-size:15px;color:var(--dim)}
+.state i{width:9px;height:9px;border-radius:50%;background:var(--dim)}
+.state.speak i{background:var(--ok);box-shadow:0 0 10px var(--ok)}.state.think i{background:var(--gold)}.state.listen i{background:#8fb7ff}
+.main{flex:999 1 520px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.voice{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--gold2);color:var(--ink);border-radius:999px;min-height:44px;padding:0 16px;cursor:pointer}
+.voice[aria-pressed=true]{background:var(--gold);color:#101112;border-color:var(--gold)}
+
+/* kids game */
+.play{position:relative;padding:24px}
+.qline{font-size:22px;font-weight:700;text-align:center;margin:0 0 6px}
+.qline .L{color:var(--gold);font-size:40px;padding:0 6px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.pick{position:relative;aspect-ratio:1;border-radius:22px;border:2px solid var(--line);background:#f4efe6;cursor:pointer;display:grid;place-items:center;padding:10px;transition:transform .2s}
+.pick:hover,.pick.hov{transform:scale(1.04);border-color:var(--gold)}
+.pick svg{width:80%;height:80%}
+.pick .ring{position:absolute;inset:-2px;border-radius:22px;pointer-events:none}
+.pick.good{border-color:#4caf6a;box-shadow:0 0 0 6px rgba(76,175,106,.35)}.pick.bad{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.pick .nm{position:absolute;bottom:6px;left:0;right:0;text-align:center;color:#3a3833;font-weight:700;font-size:15px;opacity:0;transition:opacity .2s}.pick.good .nm{opacity:1}
+.kbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-top:18px}
+.stars{font-size:26px;letter-spacing:4px;color:#4a4740}.stars b{color:var(--gold)}
+#hand{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:#ec8d3b;border:4px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.4);pointer-events:none;display:none;z-index:5}
+#kvid{display:none}
+.lams{font-size:13px;color:var(--dim)}
+.win{display:none;text-align:center;padding:30px}.win.on{display:block}.win h3{font-size:30px;color:var(--gold)}
+
+/* lesson */
+.lesson{padding:28px}
+.dots{display:flex;gap:8px;margin-bottom:18px}.dots span{flex:1;height:5px;border-radius:5px;background:#2a2b2e}.dots span.on{background:var(--gold)}
+.lesson h3{font-size:24px;margin-bottom:10px}.lesson p{color:var(--mute);margin:0 0 10px}
+.ex{background:#101112;border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0;color:var(--ink)}
+.opts{display:grid;gap:10px;margin-top:14px}
+.opt{min-height:48px;text-align:right;padding:10px 16px;border-radius:14px;border:1px solid var(--line);background:#101112;color:var(--ink);cursor:pointer}
+.opt.ok{border-color:#4caf6a;color:#9fd5a8}.opt.no{border-color:#e06c5a;color:#f0a596}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+/* chat */
+.chat{display:flex;flex-direction:column;height:560px}
+.chead{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.chead img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid var(--gold)}
+.chead small{display:block;color:var(--dim);font-size:13px}
+.msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.m{max-width:82%;padding:11px 15px;border-radius:18px;line-height:1.6;font-size:16px;white-space:pre-line}
+.m.u{align-self:flex-start;background:#26282b;border-radius:18px 18px 18px 6px}
+.m.b{align-self:flex-end;background:#2c2619;border:1px solid var(--gold2);border-radius:18px 18px 6px 18px}
+.m.typing{color:var(--dim)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 12px}
+.chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--gold2);background:transparent;color:#e9dfc9;cursor:pointer;font-size:15px}
+.chip:hover{border-color:var(--gold)}
+form.send{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+form.send input{flex:1;min-height:48px;border-radius:999px;border:1px solid var(--line);background:#101112;color:var(--ink);padding:0 18px;font-size:16px}
+.ic-btn{width:48px;height:48px;border-radius:50%;border:0;background:var(--gold);display:grid;place-items:center;cursor:pointer}
+.note{font-size:13px;color:var(--dim);margin-top:10px}
+
+/* why + cta */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:24px;margin-top:32px}
+.why div{border-top:2px solid var(--gold);padding-top:16px}.why h3{font-size:20px;margin-bottom:6px}.why p{margin:0;color:var(--mute)}
+.cta-band{background:var(--ink);color:#101112;border-radius:32px;padding:52px 44px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.cta-band h2{font-size:clamp(28px,4vw,38px)}.cta-band p{margin:8px 0 0;color:#4a463e}
+.cta-band .btn{background:#101112;color:var(--ink)}
+footer{border-top:1px solid #1d1e20;margin-top:72px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:26px;color:var(--dim);font-size:15px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:600px){.face{width:140px}.demo .grid{gap:22px}.chat{height:520px}.cards{gap:10px}.play{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="brand" href="#top"><img src="assets/mark.svg" alt=""><div><b>FAHEEM</b><span>فهيم</span></div></a>
+ <nav aria-label="الأقسام"><a href="#kids">للأطفال</a><a href="#learn">للتعلّم</a><a href="#business">للمشاريع</a><a href="#why">ليش فهيم؟</a></nav>
+ <a class="btn gold" href="#business">جرّب فهيمة</a>
+</div></header>
+
+<main>
+<section class="hero" id="top"><div class="wrap">
+ <p class="kicker">رفيقك الذكي العربي</p>
+ <h1>بيحكي <em>لهجتك</em>، وبيفهم عليك.</h1>
+ <p class="lead">فهيم وفهيمة شخصيتين إلهم وجه وصوت. بيعلّموا الأطفال، وبيشرحوا للطلاب، وبيردّوا على زباين مشروعك، بالعامية.</p>
+ <div class="stage">
+  <div class="floor"></div>
+  <div class="char a"><img src="assets/faheema-full.webp" alt="فهيمة"></div>
+  <div class="char f"><img src="assets/faheem-full.webp" alt="فهيم"></div>
+  <div class="bubble" aria-live="polite"><b id="bt">أهلين! أنا فهيم</b><span id="bs">وهاي فهيمة. احكيلنا، مين إنت؟</span></div>
+ </div>
+ <div class="cta"><a class="btn gold" href="#doors">مين إنت؟ اختار بابك</a><a class="btn line" href="#business">شوف فهيمة شغّالة</a></div>
+</div></section>
+
+<section class="sec" id="doors" aria-labelledby="dt"><div class="wrap">
+ <h2 id="dt">اختار بابك</h2>
+ <p class="lead">كل باب إله تجربة حيّة. جرّبها هلأ.</p>
+ <div class="doors">
+  <a class="door" href="#kids"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D7B77B" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span><h3>أنا صغير</h3><p>العب مع فهيم وتعلّم الحروف. بتجاوب بإيدك قدام الشاشة، بدون ما تلمس إشي.</p><span class="go">العب هلأ ←</span></a>
+  <a class="door" href="#learn"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D7B77B" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M2 8l10-5 10 5-10 5z"/><path d="M6 10v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span><h3>بدّي أتعلّم</h3><p>فهيم بيشرحلك خطوة خطوة بالعامية، وبيسألك عشان يتأكد إنك فهمت.</p><span class="go">ابدأ الدرس ←</span></a>
+  <a class="door" href="#business"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D7B77B" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><h3>عندي مشروع</h3><p>فهيمة بتصير موظفة الاستقبال تبعتك: بترد على زباينك وبتاخد حجوزاتهم، ليل نهار.</p><span class="go">جرّبها كزبون ←</span></a>
+ </div>
+</div></section>
+
+<!-- KIDS -->
+<section class="sec demo" id="kids" aria-labelledby="kt"><div class="wrap">
+ <p class="kicker">عالم فهيم · للأطفال</p>
+ <h2 id="kt">لعبة الحروف مع فهيم</h2>
+ <p class="lead">فهيم بيسأل، والطفل بيأشّر بإيده على الصورة الصح قدام الكاميرا. أو بيضغط عليها بإصبعه.</p>
+ <div class="grid">
+  <div class="side"><div class="face"><img id="kface" src="assets/faheem-idle.webp" alt="فهيم"></div><span class="state" id="kstate"><i></i>فهيم جاهز</span><button class="voice" id="kvoice" aria-pressed="true" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>صوت فهيم</button></div>
+  <div class="main"><div class="panel play" id="kplay">
+   <p class="qline" id="kq">وين الصورة اللي بتبلّش بحرف <span class="L">ب</span>؟</p>
+   <div class="cards" id="kcards"></div>
+   <div class="win" id="kwin"><h3>برافو يا بطل!</h3><p>صرت بطل حرف الباء.</p></div>
+   <div class="kbar"><div class="stars" id="kstars" aria-label="النجوم"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn gold" id="kcam" type="button">العب بإيدك (كاميرا)</button><button class="btn line" id="kagain" type="button">من الأول</button></div></div>
+   <p class="lams" id="kmode">بتقنية LAMS · لمس. الكاميرا بتشتغل على جهازك بس، وما بنرفع ولا صورة.</p>
+   <video id="kvid" playsinline muted></video><div id="hand"></div>
+  </div></div>
+ </div>
+</div></section>
+
+<!-- LEARN -->
+<section class="sec" id="learn" aria-labelledby="lt"><div class="wrap">
+ <p class="kicker">فهيم المعلّم · للطلاب والكبار</p>
+ <h2 id="lt">درس بدقيقتين: كيف الموقع بيوصلك؟</h2>
+ <p class="lead">زي أستاذ خصوصي بيحكي لغتك. هاد مثال، وفهيم بيقدر يشرح أي موضوع بنفس الطريقة.</p>
+ <div class="grid">
+  <div class="side"><div class="face"><img id="lface" src="assets/faheem-idle.webp" alt="فهيم"></div><span class="state" id="lstate"><i></i>فهيم المعلّم</span></div>
+  <div class="main"><div class="panel lesson"><div class="dots" id="ldots"></div><div id="lbody" aria-live="polite"></div><div class="nav2"><button class="btn line" id="lprev" type="button">رجوع</button><button class="btn gold" id="lnext" type="button">كمّل</button></div></div></div>
+ </div>
+</div></section>
+
+<!-- BUSINESS -->
+<section class="sec demo" id="business" aria-labelledby="bt2"><div class="wrap">
+ <p class="kicker">فهيمة · للمشاريع</p>
+ <h2 id="bt2">فهيمة موظفة استقبال عيادتك</h2>
+ <p class="lead">تخيّل إنك زبون بعيادة. احكي معها: احجز موعد، اسأل عن الأسعار أو الدوام أو الموقع.</p>
+ <div class="grid">
+  <div class="side"><div class="face"><img id="bface" src="assets/faheema-idle.webp" alt="فهيمة"></div><span class="state" id="bstate"><i></i>فهيمة جاهزة</span><button class="voice" id="bvoice" aria-pressed="true" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>صوت فهيمة</button></div>
+  <div class="main"><div class="panel chat">
+   <div class="chead"><img src="assets/faheema-idle.webp" alt=""><div><b>فهيمة</b><small>عيادة الشفاء (ديمو)</small></div></div>
+   <div class="msgs" id="msgs" aria-live="polite"></div>
+   <div class="chips" id="chips"></div>
+   <form class="send" id="send"><label class="sr" for="bin">رسالتك</label><input id="bin" autocomplete="off" placeholder="احكي اللي ببالك…"><button class="ic-btn" aria-label="إرسال"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#101112" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></form>
+  </div><p class="note">ديمو بردود محضّرة. النسخة الحقيقية بتنربط بالذكاء الاصطناعي وبمواعيد عيادتك الفعلية وواتساب.</p></div>
+ </div>
+</div></section>
+
+<section class="sec" id="why" aria-labelledby="wt"><div class="wrap">
+ <h2 id="wt">ليش فهيم، مش أي شات؟</h2>
+ <div class="why">
+  <div><h3>إله شخصية</h3><p>وجه وصوت وتعابير بتتغيّر: بيسمع، وبيفكّر، وبيحكي.</p></div>
+  <div><h3>بيحكي عامية</h3><p>أردني وخليجي، زي ما بتحكي إنت، مش فصحى رسمية.</p></div>
+  <div><h3>آمن للأطفال</h3><p>عالم خاص بمحتوى مرتب، وبدون جمع بيانات عن الأطفال.</p></div>
+  <div><h3>بدون لمس</h3><p>الأطفال بيجاوبوا بإيديهم قدام الشاشة، بتقنية LAMS.</p></div>
+ </div>
+</div></section>
+
+<section aria-labelledby="ct"><div class="wrap"><div class="cta-band" id="contact">
+ <div><h2 id="ct">بدّك فهيم أو فهيمة لمشروعك؟</h2><p>عيادة، صالون، حضانة، مدرسة، أو محل. احكيلنا شو بدك، وبنجهزلك ياه.</p></div>
+ <a class="btn" href="https://yousefqawasmi599-sys.github.io/" id="wa">تواصل معنا</a>
+</div></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 FAHEEM · فهيم · من تطوير يوسف القواسمي</span><span>افهم. حلّ. ساعد.</span></div></footer>
+
+<script type="module">
+import { preload, startPointer } from './lams-lite.js';
+{
+const $ = s => document.querySelector(s);
+const IMG = (who, st) => `assets/${who}-${st}.webp`;
+const LBL = {idle:'جاهز', listen:'بيسمع…', think:'بيفكّر…', speak:'بيحكي…'};
+const LBLF = {idle:'جاهزة', listen:'بتسمع…', think:'بتفكّر…', speak:'بتحكي…'};
+
+// ---------- voice ----------
+const synth = window.speechSynthesis;
+let arVoice = null;
+const pickVoice = () => { try { const vs = synth.getVoices(); arVoice = vs.find(v => /ar[-_](JO|SA|AE)/i.test(v.lang)) || vs.find(v => /^ar/i.test(v.lang)) || null; } catch (e) {} };
+if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
+function say(text, on, done) {
+  if (!synth || !on || !arVoice) { setTimeout(done, Math.min(4000, 900 + text.length * 35)); return; }
+  try { synth.cancel(); const u = new SpeechSynthesisUtterance(text.replace(/[✓←]/g, '')); u.voice = arVoice; u.lang = arVoice.lang; u.rate = 1;
+    u.onend = done; u.onerror = done; synth.speak(u); } catch (e) { done(); }
+}
+function persona(faceEl, stateEl, who, name) {
+  return st => { faceEl.src = IMG(who, st); stateEl.className = 'state ' + st; stateEl.lastChild.textContent = name + ' ' + (who === 'faheema' ? LBLF : LBL)[st]; };
+}
+function toggle(btn) { btn.addEventListener('click', () => { const v = btn.getAttribute('aria-pressed') !== 'true'; btn.setAttribute('aria-pressed', v); if (!v && synth) synth.cancel(); }); }
+toggle($('#kvoice')); toggle($('#bvoice'));
+const on = btn => btn.getAttribute('aria-pressed') === 'true';
+
+// ---------- hero bubble ----------
+const lines = [['أهلين! أنا فهيم', 'وهاي فهيمة. احكيلنا، مين إنت؟'], ['أنا فهيمة', 'بقدر أرد على زباين مشروعك ليل نهار.'], ['بتحب تلعب؟', 'نزّل لتحت وجرّب لعبة الحروف بإيدك!']];
+let li = 0; setInterval(() => { li = (li + 1) % lines.length; $('#bt').textContent = lines[li][0]; $('#bs').textContent = lines[li][1]; }, 4500);
+
+// ---------- KIDS ----------
+const ART = {
+  'بطة': '<ellipse cx="52" cy="66" rx="30" ry="20" fill="#f7c948"/><circle cx="70" cy="40" r="15" fill="#f7c948"/><path d="M84 40l12 4-12 4z" fill="#ec8d3b"/><circle cx="73" cy="36" r="2.6" fill="#222"/><path d="M40 62q10 8 22 0" stroke="#e0a91f" stroke-width="3" fill="none"/>',
+  'بيت': '<rect x="24" y="48" width="52" height="38" fill="#d97757"/><path d="M16 50L50 20l34 30z" fill="#7a3e2c"/><rect x="44" y="64" width="12" height="22" fill="#5a3522"/><rect x="30" y="56" width="10" height="10" fill="#fff3c4"/><rect x="60" y="56" width="10" height="10" fill="#fff3c4"/>',
+  'بطيخ': '<path d="M12 46a38 38 0 0 0 76 0z" fill="#3c9a4a"/><path d="M18 46a32 32 0 0 0 64 0z" fill="#e8504a"/>' + [[34,56],[50,62],[66,56],[42,68],[58,68]].map(p => `<ellipse cx="${p[0]}" cy="${p[1]}" rx="2.4" ry="3.6" fill="#222"/>`).join(''),
+  'باب': '<rect x="28" y="12" width="44" height="76" rx="4" fill="#9a5b34"/><rect x="34" y="18" width="32" height="28" rx="2" fill="#b06d42"/><rect x="34" y="52" width="32" height="30" rx="2" fill="#b06d42"/><circle cx="64" cy="52" r="3.5" fill="#f7c948"/>',
+  'تفاحة': '<circle cx="50" cy="58" r="28" fill="#e8504a"/><path d="M50 30q2-10 8-14" stroke="#5a3522" stroke-width="4" fill="none"/><path d="M54 28q12-8 18 0q-10 8-18 0z" fill="#3c9a4a"/>',
+  'شمس': '<circle cx="50" cy="50" r="20" fill="#f7c948"/>' + Array.from({length:8}, (_, i) => { const a = i * Math.PI / 4; return `<line x1="${50 + Math.cos(a) * 28}" y1="${50 + Math.sin(a) * 28}" x2="${50 + Math.cos(a) * 40}" y2="${50 + Math.sin(a) * 40}" stroke="#ec8d3b" stroke-width="6" stroke-linecap="round"/>`; }).join(''),
+  'قمر': '<circle cx="48" cy="50" r="32" fill="#f7d774"/><circle cx="64" cy="42" r="28" fill="#f4efe6"/>',
+  'سمكة': '<ellipse cx="46" cy="50" rx="28" ry="17" fill="#5b9bd8"/><path d="M72 50l18-14v28z" fill="#2f6fac"/><circle cx="32" cy="45" r="3" fill="#fff"/><circle cx="32" cy="45" r="1.5" fill="#222"/>',
+};
+const ROUNDS = [['بطة', 'شمس', 'تفاحة'], ['قمر', 'سمكة', 'بيت'], ['تفاحة', 'بطيخ', 'سمكة'], ['شمس', 'قمر', 'باب']];
+const GOOD = ['بطة', 'بيت', 'بطيخ', 'باب'];
+const kset = persona($('#kface'), $('#kstate'), 'faheem', 'فهيم');
+let round = 0, stars = 0, busy = false, ptr = null, gid = 0, hov = null, hovT = 0;
+const cards = $('#kcards');
+function renderRound() {
+  const items = ROUNDS[round].slice().sort(() => Math.random() - .5);
+  cards.innerHTML = items.map(n => `<button class="pick" type="button" data-n="${n}" aria-label="${n}"><svg viewBox="0 0 100 100" aria-hidden="true">${ART[n]}</svg><svg class="ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="98" height="98" rx="20" fill="none" stroke="#D7B77B" stroke-width="3" pathLength="100" stroke-dasharray="0 100"/></svg><span class="nm">${n}</span></button>`).join('');
+  cards.querySelectorAll('.pick').forEach(b => b.addEventListener('click', () => choose(b)));
+  $('#kstars').innerHTML = Array.from({length: ROUNDS.length}, (_, i) => i < stars ? '<b>★</b>' : '★').join('');
+}
+function speakK(t, st, cb) { kset('speak'); say(t, on($('#kvoice')), () => { kset(st || 'idle'); cb && cb(); }); }
+function choose(b) {
+  if (busy) return; busy = true;
+  const n = b.dataset.n;
+  if (n === GOOD[round]) {
+    b.classList.add('good'); stars++; $('#kstars').innerHTML = Array.from({length: ROUNDS.length}, (_, i) => i < stars ? '<b>★</b>' : '★').join('');
+    speakK(`برافو! ${n} بتبلّش بحرف الباء`, 'idle', () => {
+      round++; busy = false;
+      if (round >= ROUNDS.length) { cards.style.display = 'none'; $('#kq').style.display = 'none'; $('#kwin').classList.add('on'); speakK('برافو يا بطل! صرت بطل حرف الباء'); stopCam(); }
+      else renderRound();
+    });
+  } else { b.classList.add('bad'); kset('think'); speakK(`${n}؟ لأ، جرّب كمان مرة`, 'idle', () => { b.classList.remove('bad'); busy = false; }); }
+}
+function reset() { round = 0; stars = 0; busy = false; cards.style.display = ''; $('#kq').style.display = ''; $('#kwin').classList.remove('on'); renderRound(); kset('idle'); }
+$('#kagain').addEventListener('click', reset);
+// hand pointer: hover a card ~1s to choose it
+const play = $('#kplay'), handEl = $('#hand');
+function loop(t) {
+  const r = play.getBoundingClientRect();
+  const p = ptr ? ptr.sample(t, r.width, r.height) : null;
+  if (p) {
+    handEl.style.display = 'block'; handEl.style.left = p.x + 'px'; handEl.style.top = p.y + 'px';
+    let over = null;
+    cards.querySelectorAll('.pick').forEach(b => { const q = b.getBoundingClientRect(); const x = p.x + r.left, y = p.y + r.top; if (x > q.left && x < q.right && y > q.top && y < q.bottom) over = b; });
+    if (over !== hov) { if (hov) { hov.classList.remove('hov'); hov.querySelector('.ring rect').setAttribute('stroke-dasharray', '0 100'); } hov = over; hovT = t; }
+    if (hov && !busy) { const k = Math.min(1, (t - hovT) / 1000); hov.classList.add('hov'); hov.querySelector('.ring rect').setAttribute('stroke-dasharray', `${k * 100} 100`); if (k >= 1) { const b = hov; hov = null; b.classList.remove('hov'); choose(b); } }
+  } else handEl.style.display = 'none';
+  gid = requestAnimationFrame(loop);
+}
+function stopCam() { if (ptr) { ptr.stop(); ptr = null; } cancelAnimationFrame(gid); handEl.style.display = 'none'; $('#kcam').textContent = 'العب بإيدك (كاميرا)'; }
+$('#kcam').addEventListener('pointerenter', () => preload().catch(() => {}));
+$('#kcam').addEventListener('click', async () => {
+  if (ptr) { stopCam(); return; }
+  $('#kmode').textContent = 'عم بنشغّل الكاميرا… ارفع إيدك قدامها.';
+  try { ptr = await startPointer($('#kvid')); $('#kcam').textContent = 'وقّف الكاميرا'; $('#kmode').textContent = 'حرّك إصبعك، وخلّي النقطة البرتقالية على الصورة الصح ثانية.'; gid = requestAnimationFrame(loop); speakK('ارفع إيدك وأشّر على الصورة الصح'); }
+  catch (e) { $('#kmode').textContent = 'ما قدرنا نشغّل الكاميرا. ولا يهمك، العب بإصبعك أو بالماوس.'; }
+});
+renderRound();
+
+// ---------- LEARN ----------
+const lset = persona($('#lface'), $('#lstate'), 'faheem', 'فهيم');
+const L = [
+  {t: 'لما تكتب google.com، شو بيصير؟', p: ['جهازك ما بيفهم أسماء، بيفهم أرقام بس. كل موقع إله رقم اسمه IP، زي رقم البيت.', 'فأول إشي، جهازك بيسأل "دليل التلفون" تبع الإنترنت، واسمه DNS: "شو رقم google.com؟"'], ex: 'google.com ← DNS ← 142.250.x.x'},
+  {t: 'بعدين جهازك بيسلّم على السيرفر', p: ['قبل ما يبعت أي إشي، جهازك بيعمل "سلام" من 3 خطوات مع سيرفر جوجل:', 'مرحبا (SYN)، أهلين (SYN-ACK)، تمام (ACK). وهيك بينفتح الخط بينهم.'], ex: 'SYN ← SYN-ACK ← ACK'},
+  {t: 'وبالآخر بيتشفّر كلشي', p: ['بعد السلام، بيتفقوا على تشفير (HTTPS)، عشان ما حدا بالنص يقدر يقرأ شو بتبعتوا لبعض.', 'وبعدها بيوصلك الموقع. كل هاد بيصير بأقل من ثانية!'], ex: 'http:// ← https://'},
+  {q: 'شو أول إشي بيعمله جهازك لما تكتب اسم موقع؟', o: ['بيبعت الصفحة', 'بيسأل الـ DNS عن رقم الموقع', 'بيشفّر الرسالة'], a: 1, w: 'صح! لازم يعرف الرقم (IP) أول، والـ DNS هو اللي بيعطيه ياه.'},
+  {q: 'السلام بين جهازك والسيرفر، كم خطوة؟', o: ['خطوتين', '3 خطوات', '5 خطوات'], a: 1, w: 'برافو! SYN، وSYN-ACK، وACK.'},
+];
+let ls = 0;
+function renderL() {
+  $('#ldots').innerHTML = L.map((_, i) => `<span class="${i <= ls ? 'on' : ''}"></span>`).join('');
+  const s = L[ls];
+  if (s.q) {
+    $('#lbody').innerHTML = `<h3>سؤال من فهيم</h3><p>${s.q}</p><div class="opts">${s.o.map((o, i) => `<button class="opt" type="button" data-i="${i}">${o}</button>`).join('')}</div><p id="lfb" style="margin-top:12px"></p>`;
+    lset('think');
+    $('#lbody').querySelectorAll('.opt').forEach(b => b.addEventListener('click', () => {
+      const i = +b.dataset.i; $('#lbody').querySelectorAll('.opt').forEach(x => x.disabled = true);
+      $('#lbody').querySelectorAll('.opt')[s.a].classList.add('ok');
+      if (i === s.a) { $('#lfb').textContent = s.w; lset('speak'); } else { b.classList.add('no'); $('#lfb').textContent = 'قريب! الجواب الصح هو المعلّم بالأخضر. ' + s.w.replace(/^[^!]*!\s*/, ''); lset('listen'); }
+      setTimeout(() => lset('idle'), 2200);
+    }));
+  } else {
+    $('#lbody').innerHTML = `<h3>${s.t}</h3>${s.p.map(x => `<p>${x}</p>`).join('')}<div class="ex" dir="ltr" style="text-align:center;font-weight:600">${s.ex}</div>`;
+    lset('speak'); setTimeout(() => lset('idle'), 1800);
+  }
+  $('#lprev').disabled = ls === 0;
+  $('#lnext').textContent = ls === L.length - 1 ? 'من الأول' : 'كمّل';
+}
+$('#lnext').addEventListener('click', () => { ls = ls === L.length - 1 ? 0 : ls + 1; renderL(); });
+$('#lprev').addEventListener('click', () => { if (ls > 0) { ls--; renderL(); } });
+renderL();
+
+// ---------- BUSINESS ----------
+const bset = persona($('#bface'), $('#bstate'), 'faheema', 'فهيمة');
+const msgs = $('#msgs');
+const book = {step: null, day: null};
+const add = (t, c) => { const d = document.createElement('div'); d.className = 'm ' + c; d.textContent = t; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d; };
+function chips(list) { $('#chips').innerHTML = list.map(c => `<button class="chip" type="button">${c}</button>`).join(''); $('#chips').querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => user(b.textContent))); }
+const MAIN = ['بدّي أحجز موعد', 'قديش الكشفية؟', 'وقتيش الدوام؟', 'وين العيادة؟'];
+function reply(text, next) {
+  bset('think'); const ty = add('فهيمة عم تكتب…', 'b typing');
+  setTimeout(() => { ty.remove(); add(text, 'b'); bset('speak'); say(text, on($('#bvoice')), () => bset('idle')); chips(next || MAIN); }, 900 + Math.random() * 500);
+}
+function answer(t) {
+  const s = t.replace(/[؟?!.]/g, '');
+  if (book.step === 'day') {
+    const day = /بكرا|بكره/.test(s) ? 'بكرا' : /اليوم/.test(s) ? 'اليوم' : /خميس/.test(s) ? 'الخميس' : null;
+    if (day) { book.day = day; book.step = 'time'; return reply(`تمام، ${day} عنا موعدين فاضيين عند الدكتورة: الساعة 10:00 الصبح، والساعة 4:30 العصر. أي وقت بناسبك؟`, ['10:00 الصبح', '4:30 العصر']); }
+    return reply('أي يوم بناسبك؟ اليوم، بكرا، ولا الخميس؟', ['اليوم', 'بكرا', 'الخميس']);
+  }
+  if (book.step === 'time') {
+    const tm = /10|عشرة|الصبح/.test(s) ? '10:00 الصبح' : /4|اربع|أربع|العصر/.test(s) ? '4:30 العصر' : null;
+    if (tm) { book.step = 'name'; book.time = tm; return reply(`حلو! ${book.day} الساعة ${tm}. شو الاسم الكريم عشان أسجّل الموعد؟`, []); }
+    return reply('أي وقت أحسنلك: 10:00 الصبح ولا 4:30 العصر؟', ['10:00 الصبح', '4:30 العصر']);
+  }
+  if (book.step === 'name') {
+    book.step = null; const nm = t.trim().split(/\s+/).slice(0, 3).join(' ');
+    return reply(`تم الحجز ✓\n${nm}، موعدك ${book.day} الساعة ${book.time} عند الدكتورة.\nرح يوصلك تذكير على واتساب قبل الموعد بساعة. بتأمرني بإشي ثاني؟`);
+  }
+  if (/موعد|احجز|أحجز|حجز|كشف/.test(s) && !/قديش|سعر|كم/.test(s)) { book.step = 'day'; return reply('أكيد! أي يوم بناسبك؟', ['اليوم', 'بكرا', 'الخميس']); }
+  if (/قديش|سعر|كم|كشفية|فلوس|بكم/.test(s)) return reply('الكشفية 150 درهم، والمراجعة خلال أسبوعين مجانية. وبنقبل التأمين الصحي كمان. بتحب أحجزلك؟', ['بدّي أحجز موعد', 'وقتيش الدوام؟']);
+  if (/دوام|وقت|ساعة|متى|إيمت|ايمت|فاتح/.test(s)) return reply('دوامنا من السبت للخميس، من الساعة 9 الصبح لـ 9 بالليل. والجمعة مسكّرين.', MAIN);
+  if (/وين|موقع|عنوان|مكان|لوكيشن/.test(s)) return reply('العيادة بدبي، بمنطقة البرشاء، بناية الشفاء الطابق الثاني. وفي مواقف قدام البناية. (هاد عنوان ديمو)', MAIN);
+  if (/مرحبا|هلا|السلام|أهلين|اهلين|هاي/.test(s)) return reply('أهلين وسهلين! أنا فهيمة، موظفة الاستقبال بعيادة الشفاء. كيف بقدر أساعدك؟');
+  if (/شكرا|يسلمو|مشكور|تسلم/.test(s)) return reply('العفو! هاد واجبي. نوّرتنا، وإذا احتجت إشي أنا هون ليل نهار.');
+  return reply('سؤال حلو! بهاد الديمو بقدر أساعدك بالحجز، والأسعار، والدوام، والموقع. وبالنسخة الحقيقية بجاوب على أي سؤال عن العيادة.');
+}
+function user(t) { if (!t.trim()) return; add(t, 'u'); $('#chips').innerHTML = ''; answer(t); }
+$('#send').addEventListener('submit', e => { e.preventDefault(); const i = $('#bin'); user(i.value); i.value = ''; bset('idle'); });
+$('#bin').addEventListener('input', () => bset($('#bin').value ? 'listen' : 'idle'));
+add('أهلين! أنا فهيمة، موظفة الاستقبال بعيادة الشفاء. كيف بقدر أساعدك اليوم؟', 'b'); chips(MAIN);
+}
+</script>
+</body>
+</html>
