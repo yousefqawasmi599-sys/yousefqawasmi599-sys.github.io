@@ -172,6 +172,7 @@ form.send input{flex:1;min-height:48px;border-radius:999px;border:1px solid #263
 .offer{padding:0 0 72px;margin-top:-24px;position:relative;z-index:2}
 .offer .combo{margin-top:0;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(215,183,123,.25),0 0 80px rgba(215,183,123,.12)}
 .combo h2{font-size:clamp(24px,3.2vw,34px)}.combo h2 em{font-style:normal;color:var(--gold)}
+.market{justify-content:center;margin-top:26px}
 .trial{margin-top:22px;text-align:center;color:var(--mute)}.trial b{color:var(--gold)}
 
 /* kids */
@@ -228,7 +229,7 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 
 <main>
 <section class="hero" id="top"><canvas id="dust" aria-hidden="true"></canvas><div class="sweep" aria-hidden="true"></div><div class="wrap">
- <p class="kicker">موظف استقبال ذكي لبزنسك · بلهجتك</p>
+ <p class="kicker">موظف استقبال ذكي لبزنسك · بالأردن والإمارات</p>
  <h1>كل رسالة إلها رد. <em>فوراً، وبلهجتك.</em></h1>
  <p class="lead">فهيم وفهيمة بيردّوا على زباينك على واتساب وإنستغرام وفيسبوك، ٢٤ ساعة، بالعامية. بيجاوبوا عن الأسعار والدوام، وبيحجزولهم مواعيد، وإنت مشغول بشغلك.</p>
  <div class="cta"><a class="btn gold" href="#try">جرّبهم هلأ</a><a class="btn wa" data-wa="مرحبا، بدي فهيم أو فهيمة لبزنسي" href="#">احكي معنا واتساب</a></div>
@@ -300,16 +301,17 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
  <p class="kicker">الأسعار · موظف الاستقبال الذكي</p>
  <h2 id="pt">أرخص من موظف، وما بينام</h2>
  <p class="lead">اشتراك شهري واضح، وبتلغي إيمتى ما بدك.</p>
+ <div class="seg market" id="market" role="group" aria-label="البلد"><button type="button" data-m="jod" aria-pressed="true">🇯🇴 الأردن</button><button type="button" data-m="aed" aria-pressed="false">🇦🇪 الإمارات</button></div>
  <div class="plans reveal" style="text-align:right">
-  <div class="plan"><h3>أساسي</h3><div class="price">35 <small>دينار / شهر</small></div>
+  <div class="plan"><h3>أساسي</h3><div class="price"><span class="amt" data-jod="35" data-aed="180">35</span> <small><span class="cur">دينار</span> / شهر</small></div>
    <ul><li>واتساب</li><li>رد ٢٤ ساعة بالعامية</li><li>حجز مواعيد وطلبات</li><li>فهيم أو فهيمة، إنت بتختار</li><li>لوحة فهيم: بتشوف المحادثات والحجوزات، وبتعدّل أسعارك ودوامك</li></ul>
-   <a class="btn line" data-wa="مرحبا، بدي باقة أساسي (35 دينار)" href="#">ابدأ بالأساسي</a></div>
-  <div class="plan pop"><span class="tag">الأكثر طلباً</span><h3>متقدّم</h3><div class="price">65 <small>دينار / شهر</small></div>
+   <a class="btn line" data-wa="مرحبا، بدي باقة أساسي" href="#">ابدأ بالأساسي</a></div>
+  <div class="plan pop"><span class="tag">الأكثر طلباً</span><h3>متقدّم</h3><div class="price"><span class="amt" data-jod="65" data-aed="340">65</span> <small><span class="cur">دينار</span> / شهر</small></div>
    <ul><li>كل اللي بالأساسي</li><li>إنستغرام كمان</li><li>تذكير تلقائي قبل الموعد</li><li>بترد بنفسك من اللوحة وقت ما بدك</li><li>قائمة زباينك كاملة</li></ul>
-   <a class="btn gold" data-wa="مرحبا، بدي باقة متقدّم (65 دينار)" href="#">ابدأ بالمتقدّم</a></div>
-  <div class="plan"><h3>فخم</h3><div class="price">100 <small>دينار / شهر</small></div>
+   <a class="btn gold" data-wa="مرحبا، بدي باقة متقدّم" href="#">ابدأ بالمتقدّم</a></div>
+  <div class="plan"><h3>فخم</h3><div class="price"><span class="amt" data-jod="100" data-aed="520">100</span> <small><span class="cur">دينار</span> / شهر</small></div>
    <ul><li>كل اللي بالمتقدّم</li><li>فيسبوك كمان</li><li>نظام فهيم الكامل: تقارير وإحصائيات</li><li>تصدير بيانات الزباين والحجوزات</li><li>أولوية بالدعم</li></ul>
-   <a class="btn line" data-wa="مرحبا، بدي باقة فخم (100 دينار)" href="#">ابدأ بالفخم</a></div>
+   <a class="btn line" data-wa="مرحبا، بدي باقة فخم" href="#">ابدأ بالفخم</a></div>
  </div>
  <p class="trial">باقي الخدمات سعرها حسب مشروعك، احكي معنا.</p>
 </div></section>
@@ -394,6 +396,12 @@ function persona(faceEl, stateEl, getWho) {
       await wait(500);
     }
   })();
+}
+// pricing: Jordan (JOD) or UAE (AED)
+{
+  const setM = m => { document.querySelectorAll('#market button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === m)); document.querySelectorAll('.amt').forEach(e => e.textContent = e.dataset[m]); document.querySelectorAll('.cur').forEach(e => e.textContent = m === 'aed' ? 'درهم' : 'دينار'); };
+  $('#market').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setM(b.dataset.m); });
+  if (/Dubai|Abu_Dhabi/.test(Intl.DateTimeFormat().resolvedOptions().timeZone || '')) setM('aed');
 }
 // reveal on scroll
 { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .12}); document.querySelectorAll('.reveal').forEach(el => io.observe(el)); }
