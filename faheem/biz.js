@@ -79,13 +79,15 @@ export const GENERIC = {
 };
 
 export const HERO = [
-  ['faheema', 'أنا فهيمة، وهاد أخوي فهيم. إحنا بنرد على زباينك وإنت مشغول، وحتى وإنت نايم.'],
-  ['faheem', 'على واتساب وإنستغرام وفيسبوك، وبلهجتك. نزّل لتحت وجرّبنا بنفسك!'],
+  ['faheema', 'أهلين! أنا فهيمة، موظفة استقبال ذكية.'],
+  ['faheem', 'وأنا فهيم. بنرد على زباينك على واتساب وإنستغرام وفيسبوك.'],
+  ['faheema', 'بنجاوب عن الأسعار والدوام، وبنحجزلهم مواعيدهم.'],
+  ['faheem', 'ليل نهار، وبلهجتهم. جرّبنا تحت!'],
 ];
 
 /** every recorded line: key -> [who, text] */
 export function allLines() {
-  const out = { h_1: HERO[0], h_2: HERO[1] };
+  const out = {};
   for (const [wk, w] of Object.entries(WHO)) {
     for (const k of ['other', 'thanks']) out[`g_${w.code}_${k}`] = [wk, GENERIC[k]];
     for (const [bk, b] of Object.entries(BIZ)) {
