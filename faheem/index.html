@@ -167,6 +167,11 @@ form.send input{flex:1;min-height:48px;border-radius:999px;border:1px solid #263
 .combo h3{font-size:clamp(22px,2.6vw,28px)}.combo h3 em{font-style:normal;color:var(--gold)}
 .combo p{margin:0;color:var(--mute)}.combo p b{color:var(--ink)}
 .combo ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--mute);font-size:15px}.combo li:before{content:"✓ ";color:var(--gold);font-weight:700}
+.topbar{display:block;text-align:center;padding:10px 16px;background:linear-gradient(90deg,#b8955a,#e6caa0,#b8955a);color:#101112;text-decoration:none;font-size:15px;font-weight:600;line-height:1.5}
+.topbar b{white-space:nowrap;margin-inline-start:6px}.topbar:hover b{text-decoration:underline}
+.offer{padding:0 0 72px;margin-top:-24px;position:relative;z-index:2}
+.offer .combo{margin-top:0;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(215,183,123,.25),0 0 80px rgba(215,183,123,.12)}
+.combo h2{font-size:clamp(24px,3.2vw,34px)}.combo h2 em{font-style:normal;color:var(--gold)}
 .trial{margin-top:22px;text-align:center;color:var(--mute)}.trial b{color:var(--gold)}
 
 /* kids */
@@ -214,9 +219,10 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 </style>
 </head>
 <body>
+<a class="topbar" href="#offer"><span>🎁 عرض للمحلات:</span> اعمل موقعك معنا، وخُذ فهيمة على الواتساب شهر ببلاش <b>اعرف أكتر ←</b></a>
 <header><div class="wrap">
  <a class="brand" href="#top"><img src="assets/mark.svg" alt=""><div><b>FAHEEM</b><span>فهيم</span></div></a>
- <nav aria-label="الأقسام"><a href="#try">جرّبها</a><a href="#services">الخدمات</a><a href="#pricing">الأسعار</a><a href="#faq">أسئلة</a></nav>
+ <nav aria-label="الأقسام"><a href="#offer">العرض</a><a href="#try">جرّبها</a><a href="#services">الخدمات</a><a href="#pricing">الأسعار</a><a href="#faq">أسئلة</a></nav>
  <a class="btn wa" data-wa="مرحبا، بدي أعرف أكتر عن فهيم" href="#">واتساب</a>
 </div></header>
 
@@ -236,6 +242,17 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
   <div class="say f" id="sayF" aria-live="polite"><div class="who"><img src="assets/faheem-idle.webp" alt="">فهيم</div><div class="txt"></div></div>
  </div>
 </div></section>
+
+<section class="offer" id="offer" aria-labelledby="ot"><div class="wrap"><div class="combo">
+  <div class="pair"><img src="assets/faheema-idle.webp" alt=""><img src="assets/faheem-idle.webp" alt=""></div>
+  <div class="txt">
+   <span class="tag">عرض خاص للمحلات</span>
+   <h2 id="ot">اعمل موقع لمحلك، وخُذ فهيمة <em>شهر كامل ببلاش</em></h2>
+   <p>بنصمملك موقع فخم بيعرّف الناس على محلك. ومعه هدية: فهيم أو فهيمة بيردّوا على زباينك على <b>الواتساب</b> شهر كامل، مجاناً. وبعد الشهر، إذا عجبك بتكمّل، وإذا لا، الموقع بيضل إلك.</p>
+   <ul><li>تصميم خاص لمحلك، مش قالب جاهز</li><li>بيشتغل منيح على الموبايل</li><li>السعر حسب الموقع اللي بدّك ياه</li></ul>
+  </div>
+  <a class="btn gold" data-wa="مرحبا، بدي عرض الموقع + فهيمة شهر ببلاش لمحلي" href="#">اطلب عرض سعر لمحلك</a>
+ </div></div></section>
 
 <section class="sec alt" id="try" aria-labelledby="tt"><div class="wrap">
  <p class="kicker">تجربة حيّة</p>
@@ -293,16 +310,6 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
   <div class="plan"><h3>فخم</h3><div class="price">100 <small>دينار / شهر</small></div>
    <ul><li>كل اللي بالمتقدّم</li><li>فيسبوك كمان</li><li>لوحة تحكم كاملة</li><li>تقرير شهري بالزباين والحجوزات</li><li>أولوية بالدعم</li></ul>
    <a class="btn line" data-wa="مرحبا، بدي باقة فخم (100 دينار)" href="#">ابدأ بالفخم</a></div>
- </div>
- <div class="combo reveal">
-  <div class="pair"><img src="assets/faheema-idle.webp" alt=""><img src="assets/faheem-idle.webp" alt=""></div>
-  <div class="txt">
-   <span class="tag">باقة المحل الكامل</span>
-   <h3>موقع لمحلك، ومعه فهيم وفهيمة <em>هدية لشهر</em></h3>
-   <p>بنصمملك موقع فخم لمحلك، وفوقه بنشغّلك فهيم أو فهيمة على واتساب وإنستغرام وفيسبوك <b>مجاناً لأول شهر</b>. وبعد الشهر، إذا عجبك بتكمّل بالباقة اللي بتناسبك.</p>
-   <ul><li>موقع بتصميم خاص لمحلك، بيشتغل منيح على الموبايل</li><li>فهيم أو فهيمة على كل مواقع التواصل، شهر كامل ببلاش</li><li>السعر حسب حجم الموقع واللي بدك ياه</li></ul>
-  </div>
-  <a class="btn gold" data-wa="مرحبا، بدي باقة المحل الكامل (موقع + فهيم شهر هدية)" href="#">اطلب سعر لمحلك</a>
  </div>
  <p class="trial">باقي الخدمات سعرها حسب مشروعك، احكي معنا.</p>
 </div></section>
