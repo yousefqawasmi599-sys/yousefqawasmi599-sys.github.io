@@ -161,6 +161,12 @@ form.send input{flex:1;min-height:48px;border-radius:999px;border:1px solid #263
 .plan h3{font-size:22px}.plan .price{font-size:48px;font-weight:700;line-height:1}.plan .price small{font-size:17px;color:var(--dim);font-weight:400}
 .plan ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;color:var(--mute)}.plan li:before{content:"✓ ";color:var(--gold);font-weight:700}
 .plan .btn{margin-top:auto}
+.combo{margin-top:26px;text-align:right;display:flex;flex-wrap:wrap;align-items:center;gap:24px 32px;padding:32px;border-radius:26px;background:linear-gradient(135deg,#2a2418,#151412 65%);border:1px solid var(--gold)}
+.combo .pair{display:flex}.combo .pair img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:2px solid var(--gold);background:#1a1a1a}.combo .pair img+img{margin-inline-start:-18px}
+.combo .txt{flex:1 1 420px;display:flex;flex-direction:column;gap:10px}
+.combo h3{font-size:clamp(22px,2.6vw,28px)}.combo h3 em{font-style:normal;color:var(--gold)}
+.combo p{margin:0;color:var(--mute)}.combo p b{color:var(--ink)}
+.combo ul{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--mute);font-size:15px}.combo li:before{content:"✓ ";color:var(--gold);font-weight:700}
 .trial{margin-top:22px;text-align:center;color:var(--mute)}.trial b{color:var(--gold)}
 
 /* kids */
@@ -287,6 +293,16 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
   <div class="plan"><h3>فخم</h3><div class="price">100 <small>دينار / شهر</small></div>
    <ul><li>كل اللي بالمتقدّم</li><li>فيسبوك كمان</li><li>لوحة تحكم كاملة</li><li>تقرير شهري بالزباين والحجوزات</li><li>أولوية بالدعم</li></ul>
    <a class="btn line" data-wa="مرحبا، بدي باقة فخم (100 دينار)" href="#">ابدأ بالفخم</a></div>
+ </div>
+ <div class="combo reveal">
+  <div class="pair"><img src="assets/faheema-idle.webp" alt=""><img src="assets/faheem-idle.webp" alt=""></div>
+  <div class="txt">
+   <span class="tag">باقة المحل الكامل</span>
+   <h3>موقع لمحلك، ومعه فهيم وفهيمة <em>هدية لشهر</em></h3>
+   <p>بنصمملك موقع فخم لمحلك، وفوقه بنشغّلك فهيم أو فهيمة على واتساب وإنستغرام وفيسبوك <b>مجاناً لأول شهر</b>. وبعد الشهر، إذا عجبك بتكمّل بالباقة اللي بتناسبك.</p>
+   <ul><li>موقع بتصميم خاص لمحلك، بيشتغل منيح على الموبايل</li><li>فهيم أو فهيمة على كل مواقع التواصل، شهر كامل ببلاش</li><li>السعر حسب حجم الموقع واللي بدك ياه</li></ul>
+  </div>
+  <a class="btn gold" data-wa="مرحبا، بدي باقة المحل الكامل (موقع + فهيم شهر هدية)" href="#">اطلب سعر لمحلك</a>
  </div>
  <p class="trial">باقي الخدمات سعرها حسب مشروعك، احكي معنا.</p>
 </div></section>
