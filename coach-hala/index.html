@@ -110,9 +110,9 @@ section{padding:96px 0}
 /* results */
 .results{background:var(--ink);color:#fff}
 .results .head p{color:#d9c3ca}
-.ba{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
-.ba figure{background:#4a3840;border-radius:22px;overflow:hidden;aspect-ratio:424/350;display:grid;place-items:center;position:relative;border:1px solid #5e4851}
-.ba figure img{width:100%;height:100%;object-fit:cover}
+.ba{columns:3 260px;column-gap:20px;max-width:1080px;margin:0 auto}
+.ba figure{background:#4a3840;border-radius:22px;overflow:hidden;display:block;break-inside:avoid;margin:0 0 20px;place-items:center;position:relative;border:1px solid #5e4851}
+.ba figure img{width:100%;height:auto;display:block}
 .ba figure figcaption{position:absolute;bottom:14px;right:14px;background:rgba(255,255,255,.92);color:var(--ink);font-size:13px;padding:6px 14px;border-radius:99px;font-weight:700}
 .ba .empty{color:#c9a9b4;font-size:15px;text-align:center;padding:20px}
 .ba .empty svg{width:34px;height:34px;stroke:#c9a9b4;fill:none;stroke-width:1.5;margin:0 auto 10px}
@@ -278,7 +278,7 @@ html{background:#f9dfe7}
 }
 .ba .tag{position:absolute;top:12px;background:rgba(255,255,255,.9);color:#b5476c;font-size:12px;font-weight:800;padding:4px 12px;border-radius:99px}
 .ba .t1{left:12px}.ba .t2{right:12px}
-@media(max-width:700px){.ba{grid-template-columns:1fr}}
+@media(max-width:700px){.ba{columns:2;column-gap:10px}.ba figure{margin-bottom:10px;border-radius:14px}.ba figure figcaption{font-size:11px;padding:4px 10px;bottom:8px;right:8px}}
 /* rose pass */
 section:not(.hero):not(.results):not(.get){background:linear-gradient(180deg,rgba(251,230,236,.0),rgba(248,217,226,.55))}
 .get{background:#f8d9e2}
@@ -400,8 +400,14 @@ footer{background:#f6d0db}
 <section class="results" id="results"><svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0h1440v30c-240 40-480 40-720 10S240 10 0 40z" fill="#fff"/></svg><div class="wrap">
   <div class="head reveal"><span class="kicker line">REAL RESULTS</span><h2>نتايج مشتركاتي</h2><p>قصص حقيقية لبنات التزموا بالخطة وشافوا الفرق.</p></div>
   <div class="ba" id="ba">
-    <figure class="reveal"><img src="assets/result-1.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>−9 كيلو · 40 يوم</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-2.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>هدفي أوصلك لهدفك</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-3.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 103 إلى 75 كيلو</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-1.jpg" alt="نتيجة مشتركة" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>−9 كيلو · 40 يوم</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-4.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 110.8 إلى 87.9 · 6 أشهر</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-6.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 78 إلى 75 · 14 يوم</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-2.jpg" alt="نتيجة مشتركة" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>هدفي أوصلك لهدفك</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-7.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 61.8 إلى 57.7 · 30 يوم</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-5.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>−2.6 كيلو بالميزان الذكي</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-8.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 67.5 إلى 63.9</figcaption></figure>
   </div>
   <p class="note" style="color:#c9a9b4">النتائج بتختلف من شخص لشخص حسب الالتزام وطبيعة الجسم.</p>
 </div></section>
@@ -409,8 +415,11 @@ footer{background:#f6d0db}
 <section><div class="wrap">
   <div class="head reveal"><span class="kicker line">FEEDBACK</span><h2>شو حكوا المشتركات؟</h2></div>
   <div class="reviews" id="reviews">
+    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«حابة أشارك تجربتي مع كوتش حلا.. نزلت معها من 92 إلى 78 خلال 4 شهور بس! والأحلى من النزول كله إنها مو بس غيّرت جسمي.. كمان صار عندي إقبال وحماس للحياة واللبس»</p><div class="who">مشتركة · 4 أشهر</div></div>
     <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«النظام مدته شهر.. وأنا بعد ١٠ أيام منه نزلت ٣.٥ كيلو.. وهيك صارلي ٤٠ يوم معاكم نزلت فيهم ٩ كيلو بالضبط»</p><div class="who">مشتركة · 40 يوم</div></div>
     <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«الصراحة الرجيم ما في جوع أبداً، وأحلى إشي ما في قيود بمواعيد الأكل.. عمري ما نزلت ٥ كيلو ونص بأسبوعين»</p><div class="who">مشتركة من الكويت</div></div>
+    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«بعد 14 يوم: الوزن من 115.4 لـ 111.3، وكتلة الدهون من 55.8 لـ 52.6.. حسيت بفرق في الملابس والمشي، والنظام تعودت عليه وما حسيت إني تعبانة»</p><div class="who">مشتركة · 14 يوم</div></div>
+    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«ما توقعت أوصله بتاتاً.. وصلني لوزن ما كنت بحلم فيه، والتزامك ودعمك وتشجيعك الدائم هو اللي وصلني»</p><div class="who">مشتركة</div></div>
     <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«أحلى كوتش بالمجرة، على طول بتحفزني وبتقوّي معنوياتي.. أحلى شعور الواحد بتعامل مع كوتش زيها»</p><div class="who">مشتركة</div></div>
   </div>
 </div></section>
