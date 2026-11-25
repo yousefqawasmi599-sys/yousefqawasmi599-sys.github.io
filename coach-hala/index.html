@@ -110,8 +110,8 @@ section{padding:96px 0}
 /* results */
 .results{background:var(--ink);color:#fff}
 .results .head p{color:#d9c3ca}
-.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.ba figure{background:#4a3840;border-radius:22px;overflow:hidden;aspect-ratio:4/5;display:grid;place-items:center;position:relative;border:1px solid #5e4851}
+.ba{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:980px;margin:0 auto}
+.ba figure{background:#4a3840;border-radius:22px;overflow:hidden;aspect-ratio:424/350;display:grid;place-items:center;position:relative;border:1px solid #5e4851}
 .ba figure img{width:100%;height:100%;object-fit:cover}
 .ba figure figcaption{position:absolute;bottom:14px;right:14px;background:rgba(255,255,255,.92);color:var(--ink);font-size:13px;padding:6px 14px;border-radius:99px;font-weight:700}
 .ba .empty{color:#c9a9b4;font-size:15px;text-align:center;padding:20px}
@@ -276,6 +276,9 @@ html{background:#f9dfe7}
  .price.best{transform:none}
  .w{filter:none}
 }
+.ba .tag{position:absolute;top:12px;background:rgba(255,255,255,.9);color:#b5476c;font-size:12px;font-weight:800;padding:4px 12px;border-radius:99px}
+.ba .t1{left:12px}.ba .t2{right:12px}
+@media(max-width:700px){.ba{grid-template-columns:1fr}}
 /* rose pass */
 section:not(.hero):not(.results):not(.get){background:linear-gradient(180deg,rgba(251,230,236,.0),rgba(248,217,226,.55))}
 .get{background:#f8d9e2}
@@ -397,11 +400,8 @@ footer{background:#f6d0db}
 <section class="results" id="results"><svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0h1440v30c-240 40-480 40-720 10S240 10 0 40z" fill="#fff"/></svg><div class="wrap">
   <div class="head reveal"><span class="kicker line">REAL RESULTS</span><h2>نتايج مشتركاتي</h2><p>قصص حقيقية لبنات التزموا بالخطة وشافوا الفرق.</p></div>
   <div class="ba" id="ba">
-    <!-- صور قبل وبعد: ضعي الصور في assets/ ثم بدّلي المربعات، مثال:
-    <figure><img src="assets/result-1.jpg" alt="نتيجة مشتركة"><figcaption>−8 كغ · 3 أشهر</figcaption></figure> -->
-    <figure class="reveal"><div class="empty"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-6 6"/></svg>صورة قبل وبعد</div></figure>
-    <figure class="reveal"><div class="empty"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-6 6"/></svg>صورة قبل وبعد</div></figure>
-    <figure class="reveal"><div class="empty"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-6 6"/></svg>صورة قبل وبعد</div></figure>
+    <figure class="reveal"><img src="assets/result-1.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>−9 كيلو · 40 يوم</figcaption></figure>
+    <figure class="reveal"><img src="assets/result-2.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>هدفي أوصلك لهدفك</figcaption></figure>
   </div>
   <p class="note" style="color:#c9a9b4">النتائج بتختلف من شخص لشخص حسب الالتزام وطبيعة الجسم.</p>
 </div></section>
@@ -409,10 +409,9 @@ footer{background:#f6d0db}
 <section><div class="wrap">
   <div class="head reveal"><span class="kicker line">FEEDBACK</span><h2>شو حكوا المشتركات؟</h2></div>
   <div class="reviews" id="reviews">
-    <!-- الفيدباك: انسخي كلام المشتركات الحقيقي هون -->
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«مكان رأي المشتركة»</p><div class="who">مشتركة · اشتراك 3 أشهر</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«مكان رأي المشتركة»</p><div class="who">مشتركة · اشتراك شهر</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«مكان رأي المشتركة»</p><div class="who">مشتركة · اشتراك 6 أشهر</div></div>
+    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«النظام مدته شهر.. وأنا بعد ١٠ أيام منه نزلت ٣.٥ كيلو.. وهيك صارلي ٤٠ يوم معاكم نزلت فيهم ٩ كيلو بالضبط»</p><div class="who">مشتركة · 40 يوم</div></div>
+    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«الصراحة الرجيم ما في جوع أبداً، وأحلى إشي ما في قيود بمواعيد الأكل.. عمري ما نزلت ٥ كيلو ونص بأسبوعين»</p><div class="who">مشتركة من الكويت</div></div>
+    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«أحلى كوتش بالمجرة، على طول بتحفزني وبتقوّي معنوياتي.. أحلى شعور الواحد بتعامل مع كوتش زيها»</p><div class="who">مشتركة</div></div>
   </div>
 </div></section>
 
