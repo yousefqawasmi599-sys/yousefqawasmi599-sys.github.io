@@ -259,6 +259,14 @@ html{background:#f9dfe7}
 .divider:after{transform:scaleX(-1)}
 .divider i{width:9px;height:9px;transform:rotate(45deg);background:var(--rg)}
 
+#intro{background:#f3c7d3;overflow:hidden}
+#intro .introvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:zoomOut 4.2s ease-out forwards}
+@keyframes zoomOut{to{transform:scale(1)}}
+#intro .introveil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.78) 0%,rgba(255,255,255,.35) 35%,rgba(255,255,255,0) 70%)}
+#intro .introlo{position:relative;z-index:2;animation-delay:.9s!important;filter:drop-shadow(0 6px 24px rgba(255,255,255,.9)) blur(6px)}
+@keyframes logoIn{to{opacity:1;transform:none;filter:drop-shadow(0 6px 24px rgba(255,255,255,.9))}}
+#intro .skip{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;background:rgba(255,255,255,.75);border:0;border-radius:99px;padding:8px 22px;font:600 14px var(--sans);color:#a24d68;cursor:pointer;backdrop-filter:blur(6px)}
+
 /* rose pass */
 section:not(.hero):not(.results):not(.get){background:linear-gradient(180deg,rgba(251,230,236,.0),rgba(248,217,226,.55))}
 .get{background:#f8d9e2}
@@ -286,7 +294,12 @@ footer{background:#f6d0db}
 </style>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><img src="assets/logo.webp" alt="" class="introlo"></div>
+<div id="intro" aria-hidden="true">
+  <video class="introvid" autoplay muted playsinline preload="auto" poster="assets/intro-poster.jpg"><source src="assets/intro.webm" type="video/webm"><source src="assets/intro.mp4" type="video/mp4"></video>
+  <div class="introveil"></div>
+  <img src="assets/logo.webp" alt="" class="introlo">
+  <button type="button" class="skip" id="skip">تخطي</button>
+</div>
 <canvas id="bg"></canvas>
 <div class="grain"></div>
 <div class="progress" id="progress"></div>
@@ -449,7 +462,7 @@ document.getElementById('y').textContent=new Date().getFullYear();
 /* intro */
 const intro=document.getElementById('intro');
 const endIntro=()=>intro&&intro.classList.add('done');
-window.addEventListener('load',()=>setTimeout(endIntro,2100));setTimeout(endIntro,3500);
+setTimeout(endIntro,4300);document.getElementById('skip').addEventListener('click',endIntro);{const v=document.querySelector('.introvid');v&&v.addEventListener('ended',endIntro)}
 /* scroll progress */
 const pr=document.getElementById('progress');
 addEventListener('scroll',()=>{const h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
