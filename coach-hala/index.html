@@ -275,7 +275,13 @@ html{background:#f9dfe7}
  .portrait{transform:none!important;transition:none}
  .price.best{transform:none}
  .w{filter:none}
+ .shine,.portrait .arch,.about .card .big,.band,.contact .box{animation:none!important}
+ .price.best:after{animation:none}
+ .watermark{display:none}
+ .reveal{transition-duration:.5s!important}
+ html{-webkit-tap-highlight-color:transparent}
 }
+html{scroll-behavior:smooth}
 .ba .tag{position:absolute;top:12px;background:rgba(255,255,255,.9);color:#b5476c;font-size:12px;font-weight:800;padding:4px 12px;border-radius:99px}
 .ba .t1{left:12px}.ba .t2{right:12px}
 @media(max-width:700px){.ba{columns:2;column-gap:10px}.ba figure{margin-bottom:10px;border-radius:14px}.ba figure figcaption{font-size:11px;padding:4px 10px;bottom:8px;right:8px}}
@@ -484,7 +490,7 @@ const endIntro=()=>intro&&intro.classList.add('done');
 window.addEventListener('load',()=>setTimeout(endIntro,2100));setTimeout(endIntro,3500);
 /* scroll progress */
 const pr=document.getElementById('progress');
-addEventListener('scroll',()=>{const h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+{let q=0;addEventListener('scroll',()=>{if(q)return;q=requestAnimationFrame(()=>{q=0;const h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'})},{passive:true});}
 /* stagger index */
 document.querySelectorAll('.plans,.steps,.reviews,.pricing,.ba').forEach(g=>[...g.children].forEach((c,i)=>c.style.setProperty('--i',i)));
 /* glow follows cursor */
@@ -505,7 +511,7 @@ const petal=(p)=>{cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);
  else{const g=cx.createRadialGradient(0,0,0,0,0,p.r*2);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.22,'rgba(205,210,220,.95)');g.addColorStop(.55,'rgba(170,176,188,.35)');g.addColorStop(1,'rgba(190,195,205,0)');cx.fillStyle=g;cx.beginPath();cx.arc(0,0,p.r*2,0,Math.PI*2);cx.fill();
   if(tw>.9){cx.globalAlpha=(tw-.9)*8*p.o;cx.strokeStyle='#fff';cx.lineWidth=DPR;cx.beginPath();cx.moveTo(-p.r*2.6,0);cx.lineTo(p.r*2.6,0);cx.moveTo(0,-p.r*2.6);cx.lineTo(0,p.r*2.6);cx.stroke()}}
  cx.restore()};
-const tick=()=>{cx.clearRect(0,0,W,H);for(const p of P){p.y-=p.v;p.x+=Math.sin(p.a)*.35*DPR;p.a+=p.s;if(p.y<-30){p.y=H+30;p.x=Math.random()*W}petal(p)}if(!reduce)requestAnimationFrame(tick)};tick();}
+let lt=0;const tick=(ts=0)=>{if(document.hidden||(MOB&&ts-lt<33)){if(!reduce)requestAnimationFrame(tick);return}lt=ts;cx.clearRect(0,0,W,H);for(const p of P){p.y-=p.v;p.x+=Math.sin(p.a)*.35*DPR;p.a+=p.s;if(p.y<-30){p.y=H+30;p.x=Math.random()*W}petal(p)}if(!reduce)requestAnimationFrame(tick)};tick();}
 /* split headings into words */
 document.querySelectorAll('.head h2,.about h2,.contact h2').forEach(h=>{let i=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.append(t)}else{const sp=document.createElement('span');sp.className='w';sp.style.setProperty('--w',i++);sp.textContent=t;f.append(sp)}});c.replaceWith(f)}else if(c.nodeType===1&&!c.classList.contains('w'))walk(c)})};walk(h);h.classList.add('split','reveal')});
 const fine=matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -519,7 +525,7 @@ if(fine){
 }
 /* parallax watermarks & blobs */
 {const wm=[...document.querySelectorAll('.watermark')],bl=[...document.querySelectorAll('.blob')];
- addEventListener('scroll',()=>{const y=scrollY;wm.forEach((w,i)=>w.style.translate=`${(i%2?-1:1)*y*.08}px 0`);bl.forEach((b,i)=>b.style.translate=`0 ${y*(.1+i*.05)}px`)},{passive:true});}
+ if(!(innerWidth<820||matchMedia('(pointer:coarse)').matches)){let q2=0;addEventListener('scroll',()=>{if(q2)return;q2=requestAnimationFrame(()=>{q2=0;const y=scrollY;wm.forEach((w,i)=>w.style.translate=`${(i%2?-1:1)*y*.08}px 0`);bl.forEach((b,i)=>b.style.translate=`0 ${y*(.1+i*.05)}px`)})},{passive:true});}}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
