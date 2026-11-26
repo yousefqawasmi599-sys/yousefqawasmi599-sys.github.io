@@ -560,7 +560,7 @@ footer{background:#f6d0db}
 
 <section id="pricing"><span class="watermark" style="bottom:-20px;left:-30px">PLANS</span><div class="wrap">
   <div class="head reveal"><span class="kicker line">SUBSCRIPTION PLANS</span><h2>باقات الاشتراك</h2><p>اختاري المدة اللي بتناسبك، وكل الباقات فيها خطة مخصصة ومتابعة.</p></div>
-  <div class="ptabs reveal" role="tablist"><button type="button" class="on" data-k="full">جدول غذائي + رياضي</button><button type="button" data-k="diet">جدول غذائي فقط</button></div>
+  <div class="ptabs reveal" role="tablist"><button type="button" class="on" data-k="diet">جدول غذائي فقط</button><button type="button" data-k="full">جدول غذائي + رياضي</button></div>
   <div class="pricing">
     <div class="price reveal" data-kind="full"><h3>شهر واحد</h3><div class="amt">350 <small>ر.س</small></div><div class="per">بداية مثالية لتغيير حياتك · وفّري 50 ريال</div>
       <ul><li>نظام غذائي مخصص</li><li>برنامج رياضي مخصص</li><li>متابعة وتعديل مستمر</li><li>قياسات وتقييم كل شهر</li><li>دعم واستشارات يومية</li></ul>
@@ -611,7 +611,7 @@ const link=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 const hi='مرحبا كوتش حلا، حابة أعرف أكثر عن الأنظمة والاشتراك';
 document.getElementById('waMain').href=link(hi);
 document.getElementById('waFloat').href=link(hi);
-{const tabs=document.querySelectorAll('.ptabs button');const show=k=>{tabs.forEach(t=>t.classList.toggle('on',t.dataset.k===k));document.querySelectorAll('#pricing [data-kind]').forEach(e=>e.classList.toggle('off',e.dataset.kind!==k))};tabs.forEach(t=>t.onclick=()=>show(t.dataset.k));show('full')}
+{const tabs=document.querySelectorAll('.ptabs button');const show=k=>{tabs.forEach(t=>t.classList.toggle('on',t.dataset.k===k));document.querySelectorAll('#pricing [data-kind]').forEach(e=>e.classList.toggle('off',e.dataset.kind!==k))};tabs.forEach(t=>t.onclick=()=>show(t.dataset.k));show('diet')}
 document.addEventListener('play',e=>{if(e.target.tagName==='VIDEO'&&e.target.closest('.vgrid'))document.querySelectorAll('.vgrid video').forEach(v=>{if(v!==e.target)v.pause()})},true);
 document.querySelectorAll('.more').forEach(b=>b.onclick=()=>{document.getElementById(b.dataset.t).classList.add('open');b.parentNode.remove()});
 {const lb=document.getElementById('lb'),li=lb.querySelector('img');document.querySelectorAll('.ba img').forEach(i=>i.onclick=()=>{li.src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')})}
