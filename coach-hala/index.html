@@ -315,6 +315,14 @@ footer .soc{background:#fff;border-color:var(--line);color:var(--rose-deep)}
 #lb.on{display:flex}
 #lb img{max-width:100%;max-height:92vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 #lb b{position:absolute;top:14px;left:18px;color:#fff;font-size:30px;font-weight:300}
+.igwall{columns:3 280px;column-gap:18px}
+.igc{break-inside:avoid;margin:0 0 18px;background:#121212;color:#f5f5f5;border-radius:18px;padding:16px 18px;font-family:-apple-system,'Segoe UI',Tajawal,sans-serif;box-shadow:0 14px 34px -18px rgba(60,20,40,.6)}
+.igh{display:flex;align-items:center;gap:9px;margin-bottom:8px;direction:ltr}
+.igh .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)}
+.igh b{font-size:13.5px}.igh i{font-style:normal;color:#a8a8a8;font-size:12.5px}
+.igc p{font-size:14.5px;line-height:1.75;text-align:right}
+.igf{margin-top:10px;color:#a8a8a8;font-size:12px;direction:ltr;display:flex;justify-content:space-between}
+.igsrc{text-align:center;color:var(--soft);margin:-10px 0 26px;font-size:14px}.igsrc a{color:#b5476c;font-weight:700}
 /* rose pass */
 section:not(.hero):not(.results):not(.get){background:linear-gradient(180deg,rgba(251,230,236,.0),rgba(248,217,226,.55))}
 .get{background:#f8d9e2}
@@ -460,6 +468,10 @@ footer{background:#f6d0db}
     <figure class="reveal xtra"><img src="assets/res/r21.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
     <figure class="reveal xtra"><img src="assets/res/r22.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
     <figure class="reveal xtra"><img src="assets/res/r23.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r24.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r25.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r26.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r27.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
   </div>
   <div class="morewrap"><button type="button" class="more" data-t="ba">شوفي نتائج أكتر ↓</button></div>
   <p class="note" style="color:#c9a9b4">النتائج بتختلف من شخص لشخص حسب الالتزام وطبيعة الجسم.</p>
@@ -483,19 +495,27 @@ footer{background:#f6d0db}
     <figure class="reveal xtra"><img src="assets/res/c13.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
     <figure class="reveal xtra"><img src="assets/res/c14.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
     <figure class="reveal xtra"><img src="assets/res/c15.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c16.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c17.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c18.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c19.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
   </div>
   <div class="morewrap"><button type="button" class="more" data-t="cw">شوفي رسائل أكتر ↓</button></div>
 </div></section>
 
 <section><div class="wrap">
   <div class="head reveal"><span class="kicker line">FEEDBACK</span><h2>شو حكوا المشتركات؟</h2></div>
-  <div class="reviews" id="reviews">
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«حابة أشارك تجربتي مع كوتش حلا.. نزلت معها من 92 إلى 78 خلال 4 شهور بس! والأحلى من النزول كله إنها مو بس غيّرت جسمي.. كمان صار عندي إقبال وحماس للحياة واللبس»</p><div class="who">مشتركة · 4 أشهر</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«النظام مدته شهر.. وأنا بعد ١٠ أيام منه نزلت ٣.٥ كيلو.. وهيك صارلي ٤٠ يوم معاكم نزلت فيهم ٩ كيلو بالضبط»</p><div class="who">مشتركة · 40 يوم</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«الصراحة الرجيم ما في جوع أبداً، وأحلى إشي ما في قيود بمواعيد الأكل.. عمري ما نزلت ٥ كيلو ونص بأسبوعين»</p><div class="who">مشتركة من الكويت</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«بعد 14 يوم: الوزن من 115.4 لـ 111.3، وكتلة الدهون من 55.8 لـ 52.6.. حسيت بفرق في الملابس والمشي، والنظام تعودت عليه وما حسيت إني تعبانة»</p><div class="who">مشتركة · 14 يوم</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«ما توقعت أوصله بتاتاً.. وصلني لوزن ما كنت بحلم فيه، والتزامك ودعمك وتشجيعك الدائم هو اللي وصلني»</p><div class="who">مشتركة</div></div>
-    <div class="review reveal"><div class="stars">♥♥♥♥♥</div><p>«أحلى كوتش بالمجرة، على طول بتحفزني وبتقوّي معنوياتي.. أحلى شعور الواحد بتعامل مع كوتش زيها»</p><div class="who">مشتركة</div></div>
+  <p class="igsrc reveal">من تعليقات المشتركات على <a href="https://www.instagram.com/coach_hala_raed_qawasmi/" target="_blank" rel="noopener">انستغرام كوتش حلا</a></p>
+  <div class="igwall" id="reviews">
+    <div class="igc reveal"><div class="igh"><span class="av">A</span><b dir="ltr">assora2022</b><i>10w</i></div><p>حابة أشارك تجربتي مع كوتش حلا.. نزلت معها من 92 إلى 78 خلال 4 شهور بس!<br>أكثر شي عجبني فيها أنها صارمة وشديدة، بس بنفس الوقت مركزة معي ومتابعتي خطوة بخطوة. صحيح المتابعة كانت أونلاين، لكنها دائماً على رأسي وموجودة لكل استفسار، وحريصة اني اصور وجباتي الها يومييييا.. ❤️❤️❤️<br>وكمان التمارين الرياضية كانت بخطط مدروسة وبدقة.<br>والأحلى من النزول كله إنها مو بس غيرت جسمي.. كمان صار عندي إقبال وحماس للحياة واللبس<br>شكرا يا اروع كوتش😍😍😍</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">S</span><b dir="ltr">samesdm</b><i>10w</i></div><p>انا صاحبة الاشتراك<br>وحقيقي يابنات الاشتراك عندها يحمسسسس وسهل يحتاج منك شوي التزام بس<br>ترد عليك باسرع وقت حتى السعر والله العظيم ماتلقوه عند اي نظام 🥺🌸🌸🌸🌸</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">M</span><b dir="ltr">mona321042</b><i>6w</i></div><p>كوتش حلا تجربتي معاك من بعدك مارجع وزني أنا اشتريت وزني ١١٢ اليوم وزني بين ٨٠ الى ٨٥ ومبسوطه فيه وان شاء الله بكمل طبعا رحلة نزول الوزن كانت سنتين ياربي لك شكرا من القلب❤️❤️❤️❤️❤️❤️</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">B</span><b dir="ltr">bassimalbban</b><i>1d</i></div><p>السلام عليكم حبيباتي ولغاليه الكوتش حلا كانت معايا في مرحلة صعبه من تعبي في المراره. وعطتني وجبات ومتابعه فعلاً من اخت. ربي يسعدها. ونزلت نزول صحي جميل. وان شاءالله راح ارجع لها تاني قريب. باذن الله تعالى 😍😍😍😍😍</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">J</span><b dir="ltr">je.7176</b><i>2d</i></div><p>كوتش حلا تعامل جدا مرن ومريح واهتمامها بالصحه وباني اكون مرتاحه وردها على تسائلاتي بكل اريحيه ومتابعتها حتى في عز انشغالها وتشجيعها المستمر والداعم لي شكرا من القلب لك ....</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">O</span><b dir="ltr">omaimailamid</b><i>2d</i></div><p>كوتش حلا مشاء الله عليها ساعدتني في رحلت إنقاص الوزن و الصراحة انا فخورة بالنتيجة يلي وصلت لها لحين يا حلا انتي الحلا يلي معرضنا في نضام غذائنا نحبك كثير❤️❤️❤️</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">D</span><b dir="ltr">deiaa.ana</b><i>10w</i></div><p>يلي ما جرب الكوتش حلا ضاع عليه كل عمرو اروع كوتش بتاريخ المجره من بعدك مافي كوتشات بتجنني نطامك رووووووعه تمارينك ولا معسكر هههههه اشتقت 😭😭🌹🌹 ارجعيلنا خربت الدنيا من بعدك بحبككككككككككك 😭</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">D</span><b dir="ltr">duaa_kholani</b><i>2d</i></div><p>احلى كوتش واحلى متابعة واحلى شي بالحياة💕</p><div class="igf">Reply · See translation <span>♡</span></div></div>
+    <div class="igc reveal"><div class="igh"><span class="av">S</span><b dir="ltr">saja.abualreish</b><i>10w</i></div><p>ما شاء الله تبارك الله 🔥👏</p><div class="igf">Reply · See translation <span>♡</span></div></div>
   </div>
 </div></section>
 
