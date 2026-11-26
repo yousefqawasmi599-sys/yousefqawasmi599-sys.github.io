@@ -290,6 +290,20 @@ html{scroll-behavior:smooth}
 .soc:hover{transform:translateY(-2px);background:rgba(255,255,255,.3)}
 .soc svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8}
 footer .soc{background:#fff;border-color:var(--line);color:var(--rose-deep)}
+.step .sub{margin-top:10px;font-size:13.5px;color:#a24d68;background:#fdeef2;border-radius:12px;padding:10px 12px;line-height:1.8}
+.bonus{margin-top:28px;background:#fff;border-radius:26px;padding:30px;border:1px solid var(--line)}
+.bonus h3{font-family:var(--display);font-size:26px;margin-bottom:14px;color:var(--ink)}
+.bonus ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 26px}
+.bonus li{display:flex;gap:10px;font-size:15.5px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.bonus li:before{content:"♥";color:var(--rose)}
+@media(max-width:700px){.bonus ul{grid-template-columns:1fr}.bonus{padding:22px}}
+.ptabs{display:flex;justify-content:center;gap:6px;margin:0 auto 34px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px;width:max-content;max-width:100%}
+.ptabs button{border:0;background:none;padding:10px 20px;border-radius:99px;font:700 15px var(--sans);color:var(--soft);cursor:pointer;transition:background .25s,color .25s}
+.ptabs button.on{background:var(--rose-deep);color:#fff}
+[data-kind].off{display:none!important}
+.duo{text-align:center;margin-top:26px;background:#fff;border:1px dashed var(--rose);border-radius:18px;padding:14px 18px;color:var(--ink)}
+.duo b{color:#b5476c}
+@media(max-width:480px){.ptabs button{padding:9px 13px;font-size:13.5px}}
 /* rose pass */
 section:not(.hero):not(.results):not(.get){background:linear-gradient(180deg,rgba(251,230,236,.0),rgba(248,217,226,.55))}
 .get{background:#f8d9e2}
@@ -382,8 +396,8 @@ footer{background:#f6d0db}
     <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21V3M5 10l7-7 7 7"/></svg></div><h3>أنظمة زيادة الوزن</h3><p>زيادة الوزن بطريقة صحية ومدروسة.</p></div>
     <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M4 9l5-5M15 20l5-5M2.5 10.5l3-3M18.5 21.5l3-3"/></svg></div><h3>أنظمة بناء العضلات</h3><p>دعم النمو العضلي وتحسين الأداء الرياضي.</p></div>
     <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h16M7 8l-3 4 3 4M17 8l3 4-3 4"/></svg></div><h3>أنظمة تثبيت الوزن</h3><p>المحافظة على النتائج وتنظيم العادات الغذائية.</p></div>
-    <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/><path d="M9 12h6M12 9v6"/></svg></div><h3>أنظمة غذائية للحالات الصحية</h3><p>خطط تراعي الاحتياجات الغذائية لمرضى السكري واضطرابات الغدة الدرقية والمرارة، بالتنسيق مع الطبيب أو أخصائي التغذية العلاجية حسب الحالة.</p></div>
-    <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><path d="M12 9c-3 0-5 2.5-5 6h3l1 6h2l1-6h3c0-3.5-2-6-5-6z"/></svg></div><h3>التغذية خلال الحمل</h3><p>إرشادات وخطط غذائية تراعي احتياجات الحامل، بالتنسيق مع الفريق الطبي.</p></div>
+    <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/><path d="M9 12h6M12 9v6"/></svg></div><h3>أنظمة غذائية للحالات الصحية</h3><p>خطط تراعي الاحتياجات الغذائية لمرضى السكري واضطرابات الغدة الدرقية والمرارة، بالتنسيق مع الطبيب حسب الحالة.</p></div>
+    <div class="plan reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><path d="M12 9c-3 0-5 2.5-5 6h3l1 6h2l1-6h3c0-3.5-2-6-5-6z"/></svg></div><h3>التغذية خلال الحمل</h3><p>إرشادات وخطط غذائية تراعي احتياجات الحامل، والتعامل مع سكري الحمل، وزيادة الوزن المفرطة بسبب اختلاف هرمونات الجسم واحتباس السوائل، بالتنسيق مع الفريق الطبي.</p></div>
   </div>
   <p class="note reveal"><strong>أنظمة تناسب مختلف الفئات:</strong> خطط تراعي اختلاف الأعمار والأوزان ومستويات النشاط والاحتياجات الغذائية.</p>
 </div></section>
@@ -392,13 +406,14 @@ footer{background:#f6d0db}
 <section class="get"><div class="wrap">
   <div class="head reveal"><span class="kicker line">WHAT YOU GET</span><h2>ما الذي تحصلين عليه عند الاشتراك معي؟</h2></div>
   <div class="steps">
-    <div class="step reveal"><h3>التقييم</h3><p>تقييم بياناتك واحتياجاتك وأهدافك.</p></div>
-    <div class="step reveal"><h3>نظام مخصص لكِ</h3><p>تصميم نظام غذائي مخصص لكِ، وليس نسخة مكررة من نظام مشتركة أخرى.</p></div>
+    <div class="step reveal"><h3>التقييم</h3><p>تقييم بياناتك واحتياجاتك وأهدافك.</p><p class="sub">يتم عن طريق عمل فحص <b class="en">InBody</b> لمعرفة بيانات الجسم كاملة من دهون وعضلات ودهون حشوية، وفحوصات شاملة مثل تحاليل <span class="en">CBC</span> وتحليل فيتامين د ومقاومة الإنسولين إن وُجدت.</p></div>
+    <div class="step reveal"><h3>نظام مخصص لكِ</h3><p>تصميم نظام غذائي مخصص لكِ، وليس نسخة مكررة من نظام مشتركة أخرى.</p><p class="sub">أنظمة علمية دقيقة مبنية على فحص <b class="en">InBody</b> خاص بكل مشتركة.</p></div>
     <div class="step reveal"><h3>تنويع الوجبات</h3><p>تنويع الوجبات والخيارات الغذائية بما يناسب حياتك.</p></div>
     <div class="step reveal"><h3>متابعة دورية</h3><p>متابعة دورية للالتزام والتقدم.</p></div>
     <div class="step reveal"><h3>تعديل الخطة</h3><p>مراجعة النتائج وتعديل الخطة حسب الحاجة.</p></div>
     <div class="step reveal"><h3>عادات مستمرة</h3><p>توجيه مستمر لمساعدتك على بناء عادات غذائية قابلة للاستمرار.</p></div>
   </div>
+  <div class="bonus reveal"><h3>وكمان مع اشتراكك 🎁</h3><ul><li>مجموعة من الوصفات الصحية للحلى والموالح</li><li>دليل طبخ وجباتك الصحية</li><li>قائمة المشتريات الخاصة بالنظام</li><li>جدول رياضي متكامل حسب الباقة المختارة، سواء بالمنزل أو بالنادي الرياضي</li><li>نظام خطوات محسوب مع كل جدول غذائي</li><li>جميع وجبات النظام من المنزل تماماً</li><li>دليل وجبات لمجموعة من المطاعم خارج المنزل، لو لم تتمكني من الطبخ في المنزل</li></ul></div>
 </div></section>
 
 <section><div class="wrap philo reveal">
@@ -443,17 +458,29 @@ footer{background:#f6d0db}
 
 <section id="pricing"><span class="watermark" style="bottom:-20px;left:-30px">PLANS</span><div class="wrap">
   <div class="head reveal"><span class="kicker line">SUBSCRIPTION PLANS</span><h2>باقات الاشتراك</h2><p>اختاري المدة اللي بتناسبك، وكل الباقات فيها خطة مخصصة ومتابعة.</p></div>
+  <div class="ptabs reveal" role="tablist"><button type="button" class="on" data-k="full">جدول غذائي + رياضي</button><button type="button" data-k="diet">جدول غذائي فقط</button></div>
   <div class="pricing">
-    <div class="price reveal"><h3>شهر واحد</h3><div class="amt">350 <small>ر.س</small></div><div class="per">بداية مثالية لتغيير حياتك · وفّري 50 ريال</div>
+    <div class="price reveal" data-kind="full"><h3>شهر واحد</h3><div class="amt">350 <small>ر.س</small></div><div class="per">بداية مثالية لتغيير حياتك · وفّري 50 ريال</div>
       <ul><li>نظام غذائي مخصص</li><li>برنامج رياضي مخصص</li><li>متابعة وتعديل مستمر</li><li>قياسات وتقييم كل شهر</li><li>دعم واستشارات يومية</li></ul>
-      <a class="btn ghost" data-plan="شهر واحد" href="#">اشتركي</a></div>
-    <div class="price best reveal"><span class="pill">الأكثر طلباً</span><h3>3 أشهر</h3><div class="amt">900 <small>ر.س</small></div><div class="per">تغيير حقيقي.. التزام أقوى · وفّري 150 ريال</div>
+      <a class="btn ghost" data-plan="شهر واحد (غذائي + رياضي)" href="#">اشتركي</a></div>
+    <div class="price best reveal" data-kind="full"><span class="pill">الأكثر طلباً</span><h3>3 أشهر</h3><div class="amt">900 <small>ر.س</small></div><div class="per">تغيير حقيقي.. التزام أقوى · وفّري 150 ريال</div>
       <ul><li>نظام غذائي مخصص</li><li>برنامج رياضي مخصص</li><li>متابعة وتعديل مستمر</li><li>قياسات وتقييم كل شهر</li><li>دعم واستشارات يومية</li></ul>
-      <a class="btn" data-plan="3 أشهر" href="#">اشتركي</a></div>
-    <div class="price reveal"><h3>6 أشهر</h3><div class="amt">1,550 <small>ر.س</small></div><div class="per">نتائج أقوى.. تجربة أوفر · وفّري 250 ريال</div>
+      <a class="btn" data-plan="3 أشهر (غذائي + رياضي)" href="#">اشتركي</a></div>
+    <div class="price reveal" data-kind="full"><h3>6 أشهر</h3><div class="amt">1,550 <small>ر.س</small></div><div class="per">نتائج أقوى.. تجربة أوفر · وفّري 250 ريال</div>
       <ul><li>نظام غذائي مخصص</li><li>برنامج رياضي مخصص</li><li>متابعة وتعديل مستمر</li><li>قياسات وتقييم كل شهر</li><li>دعم واستشارات يومية</li></ul>
-      <a class="btn ghost" data-plan="6 أشهر" href="#">اشتركي</a></div>
+      <a class="btn ghost" data-plan="6 أشهر (غذائي + رياضي)" href="#">اشتركي</a></div>
+    <div class="price reveal" data-kind="diet"><h3>شهر · 30 يوم</h3><div class="amt">199 <small>ر.س</small></div><div class="per">لبداية التغيير وتجربة المتابعة</div>
+      <ul><li>خطط غذائية مخصصة حسب هدفك</li><li>متابعة يومية ودعم واستشارات</li><li>دليل وصفات صحي</li><li>متابعة التقدم وتعديل الخطة</li></ul>
+      <a class="btn ghost" data-plan="شهر (جدول غذائي)" href="#">اشتركي</a></div>
+    <div class="price best reveal" data-kind="diet"><span class="pill">الأكثر إقبالاً</span><h3>3 أشهر · 90 يوم</h3><div class="amt">499 <small>ر.س</small></div><div class="per">تغيير حقيقي.. نتائج ملموسة</div>
+      <ul><li>خطط غذائية مخصصة حسب هدفك</li><li>متابعة يومية ودعم واستشارات</li><li>دليل وصفات صحي</li><li>متابعة التقدم وتعديل الخطة</li></ul>
+      <a class="btn" data-plan="3 أشهر (جدول غذائي)" href="#">اشتركي</a></div>
+    <div class="price reveal" data-kind="diet"><h3>6 أشهر · 180 يوم</h3><div class="amt">899 <small>ر.س</small></div><div class="per">التزام أقوى.. نتائج تدوم</div>
+      <ul><li>خطط غذائية مخصصة حسب هدفك</li><li>متابعة يومية ودعم واستشارات</li><li>دليل وصفات صحي</li><li>متابعة التقدم وتعديل الخطة</li></ul>
+      <a class="btn ghost" data-plan="6 أشهر (جدول غذائي)" href="#">اشتركي</a></div>
   </div>
+  <p class="duo reveal" data-kind="diet">💗 للاشتراكين معاً <b>خصم 15%</b> للشخصين، لتشجيعكم على الرحلة معاً نحو هدف واحد</p>
+
 </div></section>
 
 <section class="contact" id="contact" style="padding-top:20px"><div class="wrap"><div class="box reveal">
@@ -481,6 +508,7 @@ const link=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 const hi='مرحبا كوتش هلا 💗 حابة أعرف أكثر عن الأنظمة والاشتراك';
 document.getElementById('waMain').href=link(hi);
 document.getElementById('waFloat').href=link(hi);
+{const tabs=document.querySelectorAll('.ptabs button');const show=k=>{tabs.forEach(t=>t.classList.toggle('on',t.dataset.k===k));document.querySelectorAll('#pricing [data-kind]').forEach(e=>e.classList.toggle('off',e.dataset.kind!==k))};tabs.forEach(t=>t.onclick=()=>show(t.dataset.k));show('full')}
 document.querySelectorAll('[data-plan]').forEach(a=>{a.href=link(`مرحبا كوتش هلا 💗 حابة أشترك بباقة ${a.dataset.plan}`);a.target='_blank'});
 ['waMain','waFloat'].forEach(id=>document.getElementById(id).target='_blank');
 document.getElementById('y').textContent=new Date().getFullYear();
