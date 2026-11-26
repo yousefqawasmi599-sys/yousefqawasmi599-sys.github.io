@@ -304,6 +304,17 @@ footer .soc{background:#fff;border-color:var(--line);color:var(--rose-deep)}
 .duo{text-align:center;margin-top:26px;background:#fff;border:1px dashed var(--rose);border-radius:18px;padding:14px 18px;color:var(--ink)}
 .duo b{color:#b5476c}
 @media(max-width:480px){.ptabs button{padding:9px 13px;font-size:13.5px}}
+.ba .xtra{display:none}.ba.open .xtra{display:block}
+.morewrap{text-align:center;margin-top:10px}
+.more{border:0;background:#fff;color:#b5476c;font:700 15px var(--sans);padding:12px 26px;border-radius:99px;cursor:pointer;box-shadow:0 8px 24px -10px rgba(176,64,102,.5)}
+.ba figure{cursor:zoom-in}
+.chats{padding-top:70px}
+.cw{columns:3 240px}
+.cw figure{background:#1f1a1c;border:0}
+#lb{position:fixed;inset:0;z-index:200;background:rgba(30,15,22,.92);display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:92vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#lb b{position:absolute;top:14px;left:18px;color:#fff;font-size:30px;font-weight:300}
 /* rose pass */
 section:not(.hero):not(.results):not(.get){background:linear-gradient(180deg,rgba(251,230,236,.0),rgba(248,217,226,.55))}
 .get{background:#f8d9e2}
@@ -426,16 +437,54 @@ footer{background:#f6d0db}
 <section class="results" id="results"><svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0h1440v30c-240 40-480 40-720 10S240 10 0 40z" fill="#fff"/></svg><div class="wrap">
   <div class="head reveal"><span class="kicker line">REAL RESULTS</span><h2>نتايج مشتركاتي</h2><p>قصص حقيقية لبنات التزموا بالخطة وشافوا الفرق.</p></div>
   <div class="ba" id="ba">
-    <figure class="reveal"><img src="assets/result-3.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 103 إلى 75 كيلو</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-1.jpg" alt="نتيجة مشتركة" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>−9 كيلو · 40 يوم</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-4.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 110.8 إلى 87.9 · 6 أشهر</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-6.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 78 إلى 75 · 14 يوم</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-2.jpg" alt="نتيجة مشتركة" loading="lazy"><span class="tag t1">قبل</span><span class="tag t2">بعد</span><figcaption>هدفي أوصلك لهدفك</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-7.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 61.8 إلى 57.7 · 30 يوم</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-5.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>−2.6 كيلو بالميزان الذكي</figcaption></figure>
-    <figure class="reveal"><img src="assets/result-8.jpg" alt="نتيجة مشتركة" loading="lazy"><figcaption>من 67.5 إلى 63.9</figcaption></figure>
+    <figure class="reveal"><img src="assets/res/r1.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r2.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r3.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r4.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r5.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r6.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r7.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r8.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/r9.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r10.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r11.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r12.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r13.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r14.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r15.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r16.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r17.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r18.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r19.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r20.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r21.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r22.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/r23.jpg" alt="نتيجة مشتركة قبل وبعد" loading="lazy"></figure>
   </div>
+  <div class="morewrap"><button type="button" class="more" data-t="ba">شوفي نتائج أكتر ↓</button></div>
   <p class="note" style="color:#c9a9b4">النتائج بتختلف من شخص لشخص حسب الالتزام وطبيعة الجسم.</p>
+</div></section>
+
+<section class="chats"><div class="wrap">
+  <div class="head reveal"><span class="kicker line">REAL MESSAGES</span><h2>من رسائل مشتركاتي 💬</h2><p>كلامهم بالحرف، من محادثاتهم الحقيقية معي.</p></div>
+  <div class="ba cw" id="cw">
+    <figure class="reveal"><img src="assets/res/c1.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/c2.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/c3.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/c4.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/c5.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal"><img src="assets/res/c6.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c7.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c8.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c9.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c10.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c11.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c12.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c13.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c14.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+    <figure class="reveal xtra"><img src="assets/res/c15.jpg" alt="رسالة من مشتركة" loading="lazy"></figure>
+  </div>
+  <div class="morewrap"><button type="button" class="more" data-t="cw">شوفي رسائل أكتر ↓</button></div>
 </div></section>
 
 <section><div class="wrap">
@@ -492,6 +541,7 @@ footer{background:#f6d0db}
   <div class="socials"><a class="soc" href="https://www.instagram.com/coach_hala_raed_qawasmi/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>@coach_hala_raed_qawasmi</span></a><a class="soc" href="https://www.facebook.com/share/1Htzy6FSYE/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V11H7v4h3v6h4v-6h3l.5-4H14V8.7c0-.5.3-.7.7-.7z"/></svg><span>Facebook</span></a></div>
 </div></div></section>
 </main>
+<div id="lb"><b>×</b><img alt=""></div>
 
 <footer><div class="wrap">
   <img src="assets/logo.webp" alt="Coach Hala Qawasmi" style="width:min(300px,70vw);margin:0 auto 10px">
@@ -509,6 +559,8 @@ const hi='مرحبا كوتش هلا 💗 حابة أعرف أكثر عن الأ
 document.getElementById('waMain').href=link(hi);
 document.getElementById('waFloat').href=link(hi);
 {const tabs=document.querySelectorAll('.ptabs button');const show=k=>{tabs.forEach(t=>t.classList.toggle('on',t.dataset.k===k));document.querySelectorAll('#pricing [data-kind]').forEach(e=>e.classList.toggle('off',e.dataset.kind!==k))};tabs.forEach(t=>t.onclick=()=>show(t.dataset.k));show('full')}
+document.querySelectorAll('.more').forEach(b=>b.onclick=()=>{document.getElementById(b.dataset.t).classList.add('open');b.parentNode.remove()});
+{const lb=document.getElementById('lb'),li=lb.querySelector('img');document.querySelectorAll('.ba img').forEach(i=>i.onclick=()=>{li.src=i.src;lb.classList.add('on')});lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')})}
 document.querySelectorAll('[data-plan]').forEach(a=>{a.href=link(`مرحبا كوتش هلا 💗 حابة أشترك بباقة ${a.dataset.plan}`);a.target='_blank'});
 ['waMain','waFloat'].forEach(id=>document.getElementById(id).target='_blank');
 document.getElementById('y').textContent=new Date().getFullYear();
