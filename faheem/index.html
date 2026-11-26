@@ -293,6 +293,24 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 .wsx b{color:var(--gold)}
 @media(max-width:980px){.wsg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.wsg{grid-template-columns:1fr}.webserv{padding:24px 14px}}
+
+.plan .pl{margin:16px 0 4px;font-size:13.5px;font-weight:700;color:var(--gold);letter-spacing:.02em}
+.plan ul.sys li{color:var(--ink)}
+.vs{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;margin-top:50px;text-align:right;padding:28px;border-radius:28px;background:var(--card);border:1px solid var(--line)}
+.vsimg{position:relative}
+.vsimg img{width:100%;border-radius:16px;border:1px solid rgba(215,183,123,.25);box-shadow:0 30px 60px -25px rgba(0,0,0,.9);display:block}
+.vsimg span{position:absolute;bottom:-14px;right:20px;background:linear-gradient(135deg,#f3dcaa,#b8925a);color:#101112;font-weight:700;font-size:13px;padding:6px 14px;border-radius:99px}
+.vst h3{font-size:clamp(22px,2.6vw,30px);margin:0 0 16px}
+.vst h3 em{font-style:normal;color:var(--gold)}
+.vst table{width:100%;border-collapse:collapse;font-size:15px}
+.vst th{color:var(--dim);font-weight:600;font-size:13px;padding:8px 6px;text-align:center}
+.vst th:last-child{color:var(--gold)}
+.vst td{padding:10px 6px;border-top:1px solid var(--line);text-align:center;color:var(--ok);font-weight:700}
+.vst td:first-child{text-align:right;color:var(--ink);font-weight:500}
+.vst td.no{color:#7a7570}
+.vst td small{color:var(--dim);font-weight:400}
+.vst td:last-child{background:rgba(215,183,123,.06)}
+@media(max-width:860px){.vs{grid-template-columns:1fr;padding:18px}.vst table{font-size:14px}}
 </style>
 </head>
 <body>
@@ -430,18 +448,32 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 <section class="sec" id="pricing" aria-labelledby="pt"><div class="wrap center">
  <p class="kicker">الأسعار · موظف الاستقبال الذكي</p>
  <h2 id="pt">أرخص من موظف، وما بينام</h2>
- <p class="lead">اشتراك شهري واضح، وبتلغي إيمتى ما بدك.</p>
+ <p class="lead"><b style="color:var(--gold)">مش بوت… موظفة استقبال + نظام كامل لبزنسك.</b><br>اشتراك شهري واضح، وبتلغي إيمتى ما بدك.</p>
  <div class="seg market" id="market" role="group" aria-label="البلد"><button type="button" data-m="jod" aria-pressed="true">🇯🇴 الأردن</button><button type="button" data-m="aed" aria-pressed="false">🇦🇪 الإمارات</button></div>
  <div class="plans reveal" style="text-align:right">
   <div class="plan"><h3>أساسي</h3><div class="price"><span class="amt" data-jod="35" data-aed="180">35</span> <small><span class="cur">دينار</span> / شهر</small></div>
-   <ul><li>واتساب</li><li>رد ٢٤ ساعة بالعامية</li><li>حجز مواعيد وطلبات</li><li>فهيم أو فهيمة، إنت بتختار</li><li>لوحة فهيم: بتشوف المحادثات والحجوزات، وبتعدّل أسعارك ودوامك</li></ul>
+   <p class="pl">🤖 فهيمة بترد</p><ul><li>على الواتساب</li><li>٢٤ ساعة بالعامية</li><li>بتحجز مواعيد وبتاخد طلبات</li><li>فهيم أو فهيمة، إنت بتختار</li></ul><p class="pl">🖥️ وإنت بتاخد</p><ul class="sys"><li>لوحة بتشوف فيها كل المحادثات</li><li>الحجوزات بمكان واحد</li><li>بتعدّل أسعارك ودوامك بنفسك</li></ul>
    <a class="btn line" data-wa="مرحبا، بدي باقة أساسي" href="#">ابدأ بالأساسي</a></div>
   <div class="plan pop"><span class="tag">الأكثر طلباً</span><h3>متقدّم</h3><div class="price"><span class="amt" data-jod="65" data-aed="340">65</span> <small><span class="cur">دينار</span> / شهر</small></div>
-   <ul><li>كل اللي بالأساسي</li><li>إنستغرام كمان</li><li>تذكير تلقائي قبل الموعد</li><li>بترد بنفسك من اللوحة وقت ما بدك</li><li>قائمة زباينك كاملة</li></ul>
+   <p class="pl">🤖 فهيمة بترد</p><ul><li>كل اللي بالأساسي</li><li>على الإنستغرام كمان</li><li>بتذكّر الزبون قبل موعده</li></ul><p class="pl">🖥️ وإنت بتاخد</p><ul class="sys"><li>كل اللي بالأساسي</li><li>قائمة زباينك كاملة بأرقامهم</li><li>بترد بنفسك من اللوحة وقت ما بدك</li></ul>
    <a class="btn gold" data-wa="مرحبا، بدي باقة متقدّم" href="#">ابدأ بالمتقدّم</a></div>
   <div class="plan"><h3>فخم</h3><div class="price"><span class="amt" data-jod="100" data-aed="520">100</span> <small><span class="cur">دينار</span> / شهر</small></div>
-   <ul><li>كل اللي بالمتقدّم</li><li>فيسبوك كمان</li><li>نظام فهيم الكامل: تقارير وإحصائيات</li><li>تصدير بيانات الزباين والحجوزات</li><li>أولوية بالدعم</li></ul>
+   <p class="pl">🤖 فهيمة بترد</p><ul><li>كل اللي بالمتقدّم</li><li>على الفيسبوك كمان</li></ul><p class="pl">🖥️ وإنت بتاخد</p><ul class="sys"><li>نظام فهيم الكامل</li><li>تقارير: كم رسالة وكم حجز وكم زبون</li><li>تصدير بيانات الزباين والحجوزات</li><li>أولوية بالدعم</li></ul>
    <a class="btn line" data-wa="مرحبا، بدي باقة فخم" href="#">ابدأ بالفخم</a></div>
+ </div>
+
+ <div class="vs reveal">
+  <div class="vsimg"><img src="assets/sys-dash.webp" alt="لوحة فهيم: المحادثات والحجوزات والزباين" loading="lazy"><span>هيك بتشوف بزنسك كل يوم ✦</span></div>
+  <div class="vst"><h3>بوت عادي؟ لا. <em>نظام كامل.</em></h3>
+  <table><thead><tr><th></th><th>بوت عادي</th><th>فهيم / فهيمة</th></tr></thead><tbody>
+  <tr><td>بيرد على الرسايل</td><td>✓</td><td>✓ <small>بلهجتك</small></td></tr>
+  <tr><td>بيحجز مواعيد</td><td class="no">✗</td><td>✓</td></tr>
+  <tr><td>لوحة فيها كل المحادثات</td><td class="no">✗</td><td>✓</td></tr>
+  <tr><td>قائمة زباينك وأرقامهم</td><td class="no">✗</td><td>✓</td></tr>
+  <tr><td>تذكير قبل الموعد</td><td class="no">✗</td><td>✓</td></tr>
+  <tr><td>تقارير: كم زبون وكم حجز</td><td class="no">✗</td><td>✓</td></tr>
+  <tr><td>بتتدخل إنت وقت ما بدك</td><td class="no">✗</td><td>✓</td></tr>
+  </tbody></table></div>
  </div>
  <div class="webserv reveal">
   <p class="kicker lux" style="text-align:center">✦ المواقع والأنظمة ✦</p>
