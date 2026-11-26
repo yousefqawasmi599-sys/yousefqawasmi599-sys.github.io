@@ -279,6 +279,20 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 #try .note{text-align:center;color:var(--dim);font-size:13px;margin-top:12px}
 @media(max-width:700px){#try .pickers{width:100%;padding:16px 12px}#try .demo{padding:14px;border-radius:24px}#try .face{width:120px;padding:4px}}
 @media(prefers-reduced-motion:reduce){#try .face:before{animation:none}}
+
+.webserv{margin-top:60px;text-align:center;padding:36px 26px;border-radius:30px;background:linear-gradient(180deg,rgba(215,183,123,.07),rgba(255,255,255,.01));border:1px solid rgba(215,183,123,.2)}
+.wsh{font-size:clamp(24px,3vw,32px);margin:8px 0}
+.wsl{color:var(--mute);max-width:560px;margin:0 auto 26px}
+.wsg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:right}
+.wsv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;transition:border-color .25s,transform .25s}
+.wsv:hover{border-color:var(--gold2);transform:translateY(-3px)}
+.wsv h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
+.wsv p{margin:0;color:var(--dim);font-size:14.5px;line-height:1.8}
+.wsv span{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--gold);border:1px solid var(--gold2);border-radius:99px;padding:2px 10px}
+.wsx{margin:24px auto;color:var(--mute);font-size:14.5px;max-width:760px;line-height:1.9}
+.wsx b{color:var(--gold)}
+@media(max-width:980px){.wsg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.wsg{grid-template-columns:1fr}.webserv{padding:24px 14px}}
 </style>
 </head>
 <body>
@@ -429,7 +443,14 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
    <ul><li>كل اللي بالمتقدّم</li><li>فيسبوك كمان</li><li>نظام فهيم الكامل: تقارير وإحصائيات</li><li>تصدير بيانات الزباين والحجوزات</li><li>أولوية بالدعم</li></ul>
    <a class="btn line" data-wa="مرحبا، بدي باقة فخم" href="#">ابدأ بالفخم</a></div>
  </div>
- <p class="trial">باقي الخدمات سعرها حسب مشروعك، احكي معنا.</p>
+ <div class="webserv reveal">
+  <p class="kicker lux" style="text-align:center">✦ المواقع والأنظمة ✦</p>
+  <h3 class="wsh">سعرها حسب مشروعك</h3>
+  <p class="wsl">كل مشروع بنصممه من الصفر حسب بزنسك، فالسعر بيتحدد بعد ما نسمع منك شو بدك.</p>
+  <div class="wsg"><div class="wsv"><h4>صفحة تسويقية</h4><p>صفحة وحدة فخمة لمنتج أو خدمة أو حملة، بتحوّل الزائر لزبون على الواتساب.</p><span>زي موقع كوتش حلا</span></div><div class="wsv"><h4>موقع تعريفي كامل</h4><p>كل أقسام بزنسك: مين إنتو، الخدمات، الصور، التقييمات، الموقع على الخريطة.</p><span>زي حضانة نسمات الطفولة</span></div><div class="wsv"><h4>متجر إلكتروني</h4><p>منتجاتك أونلاين مع سلة وطلبات ولوحة تحكم.</p></div><div class="wsv"><h4>منيو رقمي بـQR</h4><p>منيو للمطعم أو الكافيه بينفتح من الطاولة، وبتعدّل الأسعار وقت ما بدك.</p></div><div class="wsv"><h4>نظام حجز وإدارة</h4><p>مواعيد وزباين وفواتير وتذكير بالواتساب، للعيادات والصالونات وغيرهم.</p><span>زي ClinicFlow</span></div><div class="wsv"><h4>شاشات تفاعلية للمحل</h4><p>شاشة بواجهة المحل بتنتصفح بحركة الإيد، مع ألعاب وخصومات.</p><span>LAMS · لمس</span></div><div class="wsv"><h4>بورتفوليو شخصي</h4><p>موقع يعرض شغلك وسيرتك للمصممين والمصورين والمدربين والمستقلين.</p></div><div class="wsv"><h4>صيانة وتطوير شهري</h4><p>تحديث المحتوى والعروض، وإضافة أقسام جديدة، والدعم الفني.</p></div></div>
+  <div class="wsx"><b>مع كل موقع:</b> بيشتغل منيح على الموبايل · زر واتساب · ربط مع خريطة جوجل · ظهور أساسي على جوجل · عربي وإنجليزي عند الطلب</div>
+  <a class="btn gold" data-wa="مرحبا، بدي عرض سعر لموقع لبزنسي" href="#">اطلب عرض سعر</a>
+ </div>
 </div></section>
 
 <section class="sec" aria-labelledby="ht"><div class="wrap">
