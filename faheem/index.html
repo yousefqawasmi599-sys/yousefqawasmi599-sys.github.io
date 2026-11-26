@@ -311,6 +311,15 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
 .vst td small{color:var(--dim);font-weight:400}
 .vst td:last-child{background:rgba(215,183,123,.06)}
 @media(max-width:860px){.vs{grid-template-columns:1fr;padding:18px}.vst table{font-size:14px}}
+
+.minis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mini{display:block;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;color:inherit;text-decoration:none;transition:transform .25s,border-color .25s}
+.mini:hover{transform:translateY(-4px);border-color:var(--gold2)}
+.mini img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.mini div{padding:16px 18px 20px}
+.mini h4{margin:8px 0 4px;font-size:19px}
+.mini p{margin:0;color:var(--dim);font-size:14.5px;line-height:1.8}
+@media(max-width:860px){.minis{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -441,6 +450,11 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
     <ul><li>عربي وإنجليزي</li><li>حجز زيارة بكبسة</li><li>لعبة بدون لمس للأطفال</li></ul>
     <a class="btn line" href="https://yousefqawasmi599-sys.github.io/s/nasamat/" target="_blank" rel="noopener">شوف الموقع ←</a></div>
   </article>
+  <div class="minis">
+   <a class="mini reveal" data-wa="مرحبا، شفت متجر TechStore وبدي متجر لبزنسي" href="#"><img src="assets/work-ts.jpg" alt="متجر TechStore للهواتف" loading="lazy"><div><span class="tag">متجر إلكتروني</span><h4>TechStore</h4><p>متجر هواتف بالعربي: فلترة وسلة وطلبات ولوحة إدارة.</p></div></a>
+   <a class="mini reveal" href="https://y-store-omega.vercel.app/" target="_blank" rel="noopener"><img src="assets/work-ys.jpg" alt="Y Store بغرفة ثلاثية الأبعاد" loading="lazy"><div><span class="tag">متجر تفاعلي 3D</span><h4>Y Store</h4><p>متجر ملابس بتتمشى فيه بغرفة ثلاثية الأبعاد.</p></div></a>
+   <a class="mini reveal" href="https://yousefqawasmi599-sys.github.io/" target="_blank" rel="noopener"><img src="assets/work-pf.jpg" alt="بورتفوليو شخصي" loading="lazy"><div><span class="tag">بورتفوليو شخصي</span><h4>Yousef Al Qawasmi</h4><p>موقع شخصي بيعرض الشغل والخبرات بشكل تقني فخم.</p></div></a>
+  </div>
  </div>
  <p class="trial" style="margin-top:28px">بدك موقع زي هيك لبزنسك؟ <a data-wa="مرحبا، شفت شغلكم وبدي موقع لبزنسي" href="#" style="color:var(--gold);font-weight:700">احكي معنا</a></p>
 </div></section>
@@ -479,7 +493,7 @@ footer{border-top:1px solid #1d1e20;margin-top:80px}footer .wrap{display:flex;ju
   <p class="kicker lux" style="text-align:center">✦ المواقع والأنظمة ✦</p>
   <h3 class="wsh">سعرها حسب مشروعك</h3>
   <p class="wsl">كل مشروع بنصممه من الصفر حسب بزنسك، فالسعر بيتحدد بعد ما نسمع منك شو بدك.</p>
-  <div class="wsg"><div class="wsv"><h4>صفحة تسويقية</h4><p>صفحة وحدة فخمة لمنتج أو خدمة أو حملة، بتحوّل الزائر لزبون على الواتساب.</p><span>زي موقع كوتش حلا</span></div><div class="wsv"><h4>موقع تعريفي كامل</h4><p>كل أقسام بزنسك: مين إنتو، الخدمات، الصور، التقييمات، الموقع على الخريطة.</p><span>زي حضانة نسمات الطفولة</span></div><div class="wsv"><h4>متجر إلكتروني</h4><p>منتجاتك أونلاين مع سلة وطلبات ولوحة تحكم.</p></div><div class="wsv"><h4>منيو رقمي بـQR</h4><p>منيو للمطعم أو الكافيه بينفتح من الطاولة، وبتعدّل الأسعار وقت ما بدك.</p></div><div class="wsv"><h4>نظام حجز وإدارة</h4><p>مواعيد وزباين وفواتير وتذكير بالواتساب، للعيادات والصالونات وغيرهم.</p><span>زي ClinicFlow</span></div><div class="wsv"><h4>شاشات تفاعلية للمحل</h4><p>شاشة بواجهة المحل بتنتصفح بحركة الإيد، مع ألعاب وخصومات.</p><span>LAMS · لمس</span></div><div class="wsv"><h4>بورتفوليو شخصي</h4><p>موقع يعرض شغلك وسيرتك للمصممين والمصورين والمدربين والمستقلين.</p></div><div class="wsv"><h4>صيانة وتطوير شهري</h4><p>تحديث المحتوى والعروض، وإضافة أقسام جديدة، والدعم الفني.</p></div></div>
+  <div class="wsg"><div class="wsv"><h4>صفحة تسويقية</h4><p>صفحة وحدة فخمة لمنتج أو خدمة أو حملة، بتحوّل الزائر لزبون على الواتساب.</p><span>زي موقع كوتش حلا</span></div><div class="wsv"><h4>موقع تعريفي كامل</h4><p>كل أقسام بزنسك: مين إنتو، الخدمات، الصور، التقييمات، الموقع على الخريطة.</p><span>زي حضانة نسمات الطفولة</span></div><div class="wsv"><h4>متجر إلكتروني</h4><p>منتجاتك أونلاين مع سلة وطلبات ولوحة تحكم.</p><span>زي TechStore وY Store</span></div><div class="wsv"><h4>منيو رقمي بـQR</h4><p>منيو للمطعم أو الكافيه بينفتح من الطاولة، وبتعدّل الأسعار وقت ما بدك.</p></div><div class="wsv"><h4>نظام حجز وإدارة</h4><p>مواعيد وزباين وفواتير وتذكير بالواتساب، للعيادات والصالونات وغيرهم.</p><span>زي ClinicFlow</span></div><div class="wsv"><h4>شاشات تفاعلية للمحل</h4><p>شاشة بواجهة المحل بتنتصفح بحركة الإيد، مع ألعاب وخصومات.</p><span>LAMS · لمس</span></div><div class="wsv"><h4>بورتفوليو شخصي</h4><p>موقع يعرض شغلك وسيرتك للمصممين والمصورين والمدربين والمستقلين.</p><span>زي بورتفوليو يوسف</span></div><div class="wsv"><h4>صيانة وتطوير شهري</h4><p>تحديث المحتوى والعروض، وإضافة أقسام جديدة، والدعم الفني.</p></div></div>
   <div class="wsx"><b>مع كل موقع:</b> بيشتغل منيح على الموبايل · زر واتساب · ربط مع خريطة جوجل · ظهور أساسي على جوجل · عربي وإنجليزي عند الطلب</div>
   <a class="btn gold" data-wa="مرحبا، بدي عرض سعر لموقع لبزنسي" href="#">اطلب عرض سعر</a>
  </div>
